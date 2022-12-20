@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="ERP.Patient.controller" project="NHMP" file="/NHMP/src/ERP/Patient/controller" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="666" width="386" x="50" y="-4"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="2" language="java" name="ERP.Patient.model.dao.PatientDao" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/model/dao/PatientDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1018" y="88"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="ERP.Patient.model.service.PatientService" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/model/service/PatientService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="162" width="240" x="863" y="441"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="common.JDBCTemplate" project="NHMP" file="/NHMP/src/common/JDBCTemplate.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="193" width="160" x="1142" y="201"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="ERP.Patient.model.vo.Patient" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/model/vo/Patient.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="473" width="185" x="562" y="-3"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="ERP.Patient.controller.PatientInsertServlet" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/controller/PatientInsertServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="195" x="50" y="46"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="ERP.Patient.controller.PatientDeleteServlet" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/controller/PatientDeleteServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="189" x="246" y="47"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="ERP.Patient.controller.PatientUpdateServlet" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/controller/PatientUpdateServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="189" x="54" y="462"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="ERP.Patient.controller.PatientSelectAllServlet" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/controller/PatientSelectAllServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="191" x="245" y="185"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="ERP.Patient.controller.PatientSelectOneServlet" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/controller/PatientSelectOneServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="190" x="51" y="184"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="ERP.Patient.controller.PatientSMSAllSendServlet" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/controller/PatientSMSAllSendServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="190" x="52" y="323"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="ERP.Patient.controller.PatientSMSOneSendServlet" project="NHMP" 
+    file="/NHMP/src/ERP/Patient/controller/PatientSMSOneSendServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="190" x="244" y="325"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="13">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="14">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="17">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="18">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="19">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
