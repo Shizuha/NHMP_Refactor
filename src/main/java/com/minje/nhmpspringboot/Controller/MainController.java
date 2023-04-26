@@ -8,6 +8,6 @@ public class MainController {
 
     @GetMapping("/")
     public String functionIntro() {
-        return "index";
+        return "index"; // 커밋 테스트
     }
 }
