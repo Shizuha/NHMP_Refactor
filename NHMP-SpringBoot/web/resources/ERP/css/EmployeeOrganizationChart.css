@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+.organMain{
+	
+	margin:50px;
+	background:white;
+	border-radius:5px;
+	display:inline-block;
+	padding:20px;
+	overflow:auto;
+	
+}
+.organHeader{
+	width:100%;
+	display:inline-block;
+		
+}
+ .organHeader-left{
+	width:450px;
+	float:left;
+	
+	
+}
+.organHeader-right{
+	
+	display:inline-block;
+	float:right;
+}
+h3{
+	margin: 0px 0px 0px 0px;	
+}
+.h3{
+	float:left;
+	margin:0px 350px 0px 0px;
+} 
+.dept{
+	
+	border:1px solid gray;
+	width:100%;
+	height:470px;
+	padding:5px;
+	
+	
+}
+
+.dept-left{
+	border: 1px solid gray;
+	float:left;
+	width:430px;
+	padding:10px;
+	height:460px;
+	overflow:auto;
+}
+.dept-right{
+	border: 1px solid gray;
+	float:right;
+	width:550px;
+	height:460px;
+	padding:10px;
+}
+ input[type="checkbox"]:checked~ul {
+        display:none;
+        transition:1.5s;
+    }  
+ input[type="checkbox"]{
+        display:none;
+    } 
+ul {
+	list-style:none;
+}
+.dept li{
+	margin-left:20px;
+	width:80px
+}
+.organ{
+	border-radius:3px;
+	padding:20px;
+	border:1px solid gray;
+}
