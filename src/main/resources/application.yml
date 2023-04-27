@@ -9,8 +9,17 @@ spring:
         prefix: classpath:/templates/ # 접두어 classpath:templates/ 가 default
         check-template-location: true # 정적 파일 경로
         suffix: .html # 접미어
-#    mvc:
-#        static-path-pattern: /resources/** # 정적 파일 경로 지정
+    devtools:
+        livereload:
+            enabled: true # 정적 리소스에 변화가 있을 때 바로 반영한다.
+    output:
+        ansi:
+            enabled: always # 콘솔에 색상 적용하기
+
+# 클래스 경로의 루트(src\main\resources)
+# 현재 디렉토리
+# 패키지 /config 클래스 패스에서
+# /config 현재 디렉토리의 하위 디렉토리
 
 #    [ TRACE < DEBUG < INFO < WARN < ERROR ]
 #    [1] ERROR : 요청을 처리하는 중 오류가 발생한 경우
