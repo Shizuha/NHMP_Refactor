@@ -6,7 +6,7 @@ spring:
         password: index8246! # 나중에 파일로 등록하는 방식으로 수정해야함
     thymeleaf:
         cache: false # 개발시 새로고침시 적용
-        prefix: classpath:/templates/ # 접두어 classpath:templates/ 가 default
+        prefix: classpath:/templates/ # 접두어 classpath:templates/가 default
         check-template-location: true # 정적 파일 경로
         suffix: .html # 접미어
     devtools:
