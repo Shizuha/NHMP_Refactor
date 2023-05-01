@@ -8,9 +8,33 @@ public class MainController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    @RequestMapping(path = "examples/landing") // 이곳으로 들어오는 API주소를 mapping, examples/landing주소로 받겠다 (localhost:8080/examples/landing)
-    public String functionIntro() { 
-        log.info("이 페이지로 잘 들어갔나요?");
-        return "landing";
+    @GetMapping(value = "index")
+    public String IntroPage() { 
+        log.info("index Controller와 잘 연결이 되었나요?");
+        return "index";
+    }
+
+    @GetMapping(value = "examples/landing")
+    public String landingPage() { 
+        log.info("landing Controller와 잘 연결이 되었나요?");
+        return "examples/landing";
+    }
+
+    @GetMapping(value = "examples/profile")
+    public String ProfilePage() { 
+        log.info("Profile Controller와 잘 연결이 되었나요?");
+        return "examples/profile";
+    }
+
+    @GetMapping(value = "examples/login")
+    public String LoginPage() { 
+        log.info("Login Controller와 잘 연결이 되었나요?");
+        return "examples/login";
+    }
+
+    @GetMapping(value = "examples/register")
+    public String RegisterPage() { 
+        log.info("Register Controller와 잘 연결이 되었나요?");
+        return "examples/register";
     }
 }
