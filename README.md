@@ -1,4 +1,4 @@
 # NHMP-SpringBoot
 NHMP Refactoring Repository
 
-개발 진행 중 입니다. 
+잠시 개발 중단을 했습니다. 
