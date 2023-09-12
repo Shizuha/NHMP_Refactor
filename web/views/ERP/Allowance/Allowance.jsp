@@ -2,7 +2,9 @@
 	pageEncoding="UTF-8"%>
 
 <%@
-	page import="Main.vo.NursingHospitalVo,java.util.ArrayList,ERP.Allowance.model.vo.Allowance"%>
+	page import="Main.vo.NursingHospitalVo,
+				java.util.ArrayList,
+				ERP.Allowance.model.vo.Allowance"%>
 
 <%
 NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");

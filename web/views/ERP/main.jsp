@@ -5,7 +5,7 @@
 	page import="Main.vo.NursingHospitalVo"%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 %>
 <!DOCTYPE html>
 <html lang="en">

@@ -15,5 +15,4 @@ public class CregistrationService {
 		CRTDao.insertCRT();
 		return null;
 	}
-
 }

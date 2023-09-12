@@ -376,8 +376,7 @@ public class NHDao {
 			
 				list.add(NH);
 			}
-			
-			
+				
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -405,8 +404,6 @@ public class NHDao {
 				
 				NH.setNH_USERID(rset.getString("NH_USERID"));
 				NH.setNH_USERPWD(rset.getString("NH_USERPWD"));
-				
-				
 			}
 			
 		} catch (SQLException e) {
@@ -467,16 +464,7 @@ public class NHDao {
 			close(rset);
 			close(pstmt);
 		}
-		
-		
+			
 		return result;
-	}
-
-
-
-
-
-	
-	
-	
+	}	
 }
