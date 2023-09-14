@@ -18,7 +18,7 @@ import Main.Comment.model.vo.Comment;
 import Main.service.QnaService;
 import Main.vo.QnaVo;
 
-@WebServlet(urlPatterns = {"/insertqna", "/viewqna", "/detailqna", "/updateqna", "/deleteqna"})
+@WebServlet(urlPatterns = {"/mainqnainsert", "/mainqnalist", "/mainqnadetail", "/mainqnaupdate", "/mainqnadelete"})
 public class QnaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -29,7 +29,7 @@ public class QnaServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		if(javax.servlet.annotation.WebServlet.urlPatterns("/insertqna").equals("/insertqna")) {
+		if(javax.servlet.annotation.WebServlet.urlPatterns("/mainqnainsert").equals("/mainqnainsert")) {
 			// Qna 등록 코드
 			request.setCharacterEncoding("UTF-8"); // 전송온 값에 한글이 있다면, 인코딩 처리
 		
@@ -41,7 +41,7 @@ public class QnaServlet extends HttpServlet {
 			qnaVoInsert.setQNA_DATE(Date.valueOf(request.getParameter("date")));
 			qnaVoInsert.setQNA_CONTENT(request.getParameter("content"));
 		
-			int resultInsert = new QnaService().insertQna(qnaVoInsert);
+			int resultInsert = new QnaService().mainqnainsert(qnaVoInsert);
 		
 			if (resultInsert > 0) {
 				response.sendRedirect("/NHMP/allqna"); // 뷰만 내보낼때 sendredirect, 다른것들을 내보낼때 RequestDispatcher
@@ -52,7 +52,7 @@ public class QnaServlet extends HttpServlet {
 			}
 		}
 		
-		if(javax.servlet.annotation.WebServlet.urlPatterns("/viewqna").equals("/viewqna")) {
+		if(javax.servlet.annotation.WebServlet.urlPatterns("/mainqnalist").equals("/mainqnalist")) {
 			// Qna 페이징 코드
 			int currentPage = 1;
 			
@@ -101,7 +101,7 @@ public class QnaServlet extends HttpServlet {
 				view.forward(request, response);
 		}
 		
-		if(javax.servlet.annotation.WebServlet.urlPatterns("/detailqna").equals("/detailqna")) {
+		if(javax.servlet.annotation.WebServlet.urlPatterns("/mainqnadetail").equals("/mainqnadetail")) {
 			// Qna 디테일 코드
 			int qnaNoDetail = Integer.parseInt(request.getParameter("no"));
 	
@@ -121,12 +121,12 @@ public class QnaServlet extends HttpServlet {
 			}
 		}
 		
-		if(javax.servlet.annotation.WebServlet.urlPatterns("/deleteqna").equals("/deleteqna")) {
+		if(javax.servlet.annotation.WebServlet.urlPatterns("/mainqnadelete").equals("/mainqnadelete")) {
 			// Qna 삭제용 코드
 			request.setCharacterEncoding("UTF-8");
 			int qnaNoDelete = Integer.parseInt(request.getParameter("no"));
 			
-			int resultDelete = new QnaService().deleteQna(qnaNoDelete);
+			int resultDelete = new QnaService().mainqnadelete(qnaNoDelete);
 			if(resultDelete > 0) {
 				response.sendRedirect("/NHMP/allqna");
 			} else {
@@ -139,7 +139,7 @@ public class QnaServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		if(javax.servlet.annotation.WebServlet.urlPatterns("/updateqna").equals("/updateqna")) {
+		if(javax.servlet.annotation.WebServlet.urlPatterns("/mainqnaupdate").equals("/mainqnaupdate")) {
 			// Qna 수정 코드
 			request.setCharacterEncoding("utf-8");
 			
@@ -152,10 +152,10 @@ public class QnaServlet extends HttpServlet {
 			qnaUpdate.setQNA_CONTENT(request.getParameter("content"));
 			qnaUpdate.setQNA_TYPE(request.getParameter("category"));
 		
-			int resultUpdate = new QnaService().updateQna(qnaUpdate);
+			int resultUpdate = new QnaService().mainqnaupdate(qnaUpdate);
 			RequestDispatcher view = null;
 			if (resultUpdate > 0) {
-				response.sendRedirect("/NHMP/detailqna?no="+request.getParameter("qnano")+"&update=complete");
+				response.sendRedirect("/NHMP/mainqnadetail?no="+request.getParameter("qnano")+"&update=complete");
 			} else {
 				view = request.getRequestDispatcher("views/common/Error.jsp");
 				request.setAttribute("message", qnaUpdate.getQNA_NO() + "번 공지사항 글 수정 실패했습니다.");
