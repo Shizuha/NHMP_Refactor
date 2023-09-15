@@ -44,7 +44,7 @@ public class QnaServlet extends HttpServlet {
 			int resultInsert = new QnaService().mainqnainsert(qnaVoInsert);
 		
 			if (resultInsert > 0) {
-				response.sendRedirect("/NHMP/allqna"); // 뷰만 내보낼때 sendredirect, 다른것들을 내보낼때 RequestDispatcher
+				response.sendRedirect("/NHMP/mainqnalist"); // 뷰만 내보낼때 sendredirect, 다른것들을 내보낼때 RequestDispatcher
 			} else {
 				RequestDispatcher view = request.getRequestDispatcher("views/common/Error.jsp");
 				request.setAttribute("message", "QNA 등록이 실패했습니다.");
@@ -128,7 +128,7 @@ public class QnaServlet extends HttpServlet {
 			
 			int resultDelete = new QnaService().mainqnadelete(qnaNoDelete);
 			if(resultDelete > 0) {
-				response.sendRedirect("/NHMP/allqna");
+				response.sendRedirect("/NHMP/mainqnalist");
 			} else {
 				view = request.getRequestDispatcher("views/common/Error.jsp");
 				request.setAttribute("message", qnaNoDelete + "번 공지글 삭제 실패!");

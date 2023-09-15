@@ -13,25 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import Main.Cnotice.model.service.*;
 import Main.Cnotice.model.vo.Cnotice;
 
-/**
- * Servlet implementation class CnoticeInsertServlet
- */
 @WebServlet(urlPatterns = {"/mainnoticeinsert", "/mainnoticelist", "/mainnoticedetail", "/mainnoticedelete", "/mainnoticeupdate"})
 public class CnoticeInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public CnoticeInsertServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

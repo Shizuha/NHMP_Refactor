@@ -56,7 +56,7 @@ public class CommentInsertServlet extends HttpServlet {
 			RequestDispatcher view = null;
 			
 			if (list.size() > 0) {
-				view = request.getRequestDispatcher("views/Main/mainqnadetail?no=" + q.getQNA_NO());
+				view = request.getRequestDispatcher("views/Main/detailqna?no=" + q.getQNA_NO());
 				request.setAttribute("list", list);
 			} else {
 				view = request.getRequestDispatcher("views/common/Error.jsp");

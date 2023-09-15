@@ -12,8 +12,8 @@ public class JDBCTemplate {
 	public static Connection getConnection() {
 		Connection conn = null;
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "TMTS", "TMTS");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/nhmpdb", "KMJ", "KMJ");
 			conn.setAutoCommit(false);
 		}
 		catch (ClassNotFoundException e) {
@@ -26,11 +26,10 @@ public class JDBCTemplate {
 	
 	public static Connection getConnection(String id, String pwd) {
 		Connection conn = null;
-		
-		
+
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", id, pwd);
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/nhmpdb", id, pwd);
 			conn.setAutoCommit(false);
 		}
 		catch (ClassNotFoundException e) {

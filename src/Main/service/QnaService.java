@@ -61,7 +61,6 @@ public class QnaService {
 			rollback(conn);
 		}
 		close(conn);
-		
 		return result;
 	}
 
@@ -71,5 +70,4 @@ public class QnaService {
 		close(conn);
 		return listCount;
 	}
-
 }

@@ -164,7 +164,7 @@ public class MloginServlet extends HttpServlet {
 		if(javax.servlet.annotation.WebServlet.urlPatterns("/mainhospitalservicesingup").equals("/mainhospitalservicesingup")) {
 			// 서비스 신청 처리용 컨트롤러  
 			String service = request.getParameter("selectType");
-			System.out.println("service : "+service);//o
+			System.out.println("service : "+ service);//o
 			//로그인 정보를 세션에서 가져옴
 			NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
 			//세션에서 가져온 로그인 정보에서 아이디와 비밀번호 추출
@@ -249,5 +249,4 @@ public class MloginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

@@ -109,7 +109,6 @@ public class QnaDao {
 		String query = "select * from qna where qna_no = ?";
 		
 		try {
-			
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, qnano);
 			rset = pstmt.executeQuery();
@@ -131,10 +130,7 @@ public class QnaDao {
 			close(rset);
 			close(pstmt);
 		}
-		
 		return q;
-		
-		
 	}
 
 	public int deleteQna(Connection conn, int qnano) {
@@ -168,7 +164,6 @@ public class QnaDao {
 		
 		try {
 			stmt = conn.createStatement();
-			
 			rset = stmt.executeQuery(query);
 			
 			if(rset.next()) {
