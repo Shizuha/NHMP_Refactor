@@ -2,7 +2,7 @@ package Main.vo;
 
 import java.io.Serializable;
 
-public class NursingHospitalVo implements Serializable{
+public class NursingHospitalVo implements Serializable {
 	private static final long serialVersionUID = 8111L;
 	private int NH_ID;
 	private String NH_NAME;

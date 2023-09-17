@@ -2,15 +2,18 @@
     pageEncoding="UTF-8"%>
 <%@ page import="ERP.Employee.model.vo.Employee, java.util.ArrayList, ERP.Empsalary.model.vo.EmpSalary
 	, ERP.Dependents.model.vo.Dependents, ERP.Career.model.vo.Career, ERP.Education.model.vo.Education" %>
-<% Employee emp = (Employee)request.getAttribute("emp");
-   EmpSalary empSal = (EmpSalary)request.getAttribute("empSal");
-   ArrayList<Dependents> dpenList = (ArrayList<Dependents>)request.getAttribute("dpenList");
-   ArrayList<Career> carList = (ArrayList<Career>)request.getAttribute("carList");
-   ArrayList<Education> eduList = (ArrayList<Education>)request.getAttribute("eduList");
-   Employee emp2 = (Employee)session.getAttribute("loginEmployee");
-   String[] rship = new String[14];
-   String[] fyshcl = new String[7];
-   String[] taking = new String[5];
+<% 	Employee emp = (Employee)request.getAttribute("emp");
+  	EmpSalary empSal = (EmpSalary)request.getAttribute("empSal");
+	@SuppressWarnings("unchecked")
+	 ArrayList<Dependents> dpenList = (ArrayList<Dependents>)request.getAttribute("dpenList");
+	@SuppressWarnings("unchecked")
+	 ArrayList<Career> carList = (ArrayList<Career>)request.getAttribute("carList");
+	@SuppressWarnings("unchecked")
+	 ArrayList<Education> eduList = (ArrayList<Education>)request.getAttribute("eduList");
+	 Employee emp2 = (Employee)session.getAttribute("loginEmployee");
+	 String[] rship = new String[14];
+	 String[] fyshcl = new String[7];
+	 String[] taking = new String[5];
    	
    	String ad1 = "";
    	String ad2 = "";

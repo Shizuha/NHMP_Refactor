@@ -7,6 +7,7 @@
 //스크립트 립 태그라고 함 //위에 페이지있는건 디렉트 태그라고 함.
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Calendar> list = (ArrayList<Calendar>) session.getAttribute("list");
 %>
 <!DOCTYPE html>
@@ -244,8 +245,8 @@
 		<div class="content-body" align="center" style="padding: 40px;">
 			<h2 align="center">환자 등록 페이지</h2>
 			<form action="/NHMP/patientinsert" method="post">
-				<table align="center" width="900" border="3" cellspacing="0"
-					cellpadding="5">
+				<table style="align:'center'; width:'900'; border:'3'; cellspacing:'0';
+					cellpadding:'5'">
 					<tr>
 						<th style="font-size: 16px;">환자명</th>
 						<td><input type="text" name="pat_name"
@@ -258,7 +259,7 @@
 					</tr>
 					<tr>
 						<th style="font-size: 16px;">환자성별</th>
-						<td style="font-size: 16px;" width: 300px;><input type="radio"
+						<td style="font-size: 16px; width:'300px'";><input type="radio"
 							name="pat_gender" value="M"> 남자 &nbsp; <input
 							type="radio" name="pat_gender" value="F"> 여자</td>
 					</tr>

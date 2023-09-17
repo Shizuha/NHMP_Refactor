@@ -8,7 +8,9 @@
 
 <%
  	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
+	@SuppressWarnings("unchecked")
 	ArrayList<Allowance> Alist = (ArrayList<Allowance>)request.getAttribute("Alist");
+	@SuppressWarnings("unchecked")
 	ArrayList<Deduction> Dlist = (ArrayList<Deduction>)request.getAttribute("Dlist");
 	Employee emp = (Employee)request.getAttribute("emp");
 	

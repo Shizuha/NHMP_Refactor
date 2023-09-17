@@ -6,7 +6,8 @@
 	import="Main.vo.NursingHospitalVo,java.util.ArrayList,ERP.Allowance.model.vo.Allowance"%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Allowance> list = (ArrayList<Allowance>)request.getAttribute("list");
 	String Bnum = (String)request.getAttribute("Bnum");
 %>
@@ -110,29 +111,24 @@ function Bcode(T01){
 	calc+=T01;
 	$("#Fwindow").val(calc);
 }
-
-
-
-
 </script>
-
 </head>
 <body>
 	<div id="div_root">
 		<div id="top">
-			<table width="130px" cellspacing="0" cellpadding="5" border="1"	id="deduction_talbe" style="float: left;">
-				<th width="auto"><a style="text-align: center;">기본급</a></th>
+			<table id="deduction_talbe" style="float:left; width:'130px'; cellspacing:'0'; cellpadding:'5'; border:'1'">
 				<tr align="center">
-					<td width="150px"><a herf="" onclick="Bcode('T01')" style="text-align: center;">T01</a></td>
+				<th width="auto"><a style="text-align: center;">기본급</a></th>
+					<td width="150px"><a href="" onclick="Bcode('T01')" style="text-align: center;">T01</a></td>
 				</tr>
 			</table>
 			<% for(Allowance a : list) { %>
-				<% if(a.getALLOWANCE_NO()%5 == 0  ) { %>
+				<% if(a.getALLOWANCE_NO()%5 == 0) { %>
 				<br>
 				<% }else { %>
-					<table width="130px" cellspacing="0" cellpadding="5" border="1" id="deduction_talbe" style="float: left;">
-						<th width="auto"><a style="text-align: center;"><%= a.getALLOWANCE_NAME() %></a></th>
+					<table id="deduction_talbe" style="float:left; width:'130px'; cellspacing:'0'; cellpadding:'5'; border:'1'">
 							<tr align="center">
+							<th width="auto"><a style="text-align: center;"><%= a.getALLOWANCE_NAME() %></a></th>
 						<td width="150px">
 							<a  onclick="Acode('<%= a.getALLOWANCE_CODE() %>')" style="text-align: center;"><%= a.getALLOWANCE_CODE() %></a>
 						</td>
@@ -142,8 +138,9 @@ function Bcode(T01){
 		</div>
 		
 		<div id="mid_l">
-			<table width="100" cellspacing="0" cellpadding="5" >
+			<table style="width:'100'; cellspacing:'0'; cellpadding:'5'" >
 				<tr align="center">
+					<td>
 					<h4>
 					설정한 계산식의 결과입니다<br>
 					맞게 설정이 되었으면<br>
@@ -151,11 +148,11 @@ function Bcode(T01){
 					-계산식 대신 값을 <br>
 					지정하셔도 됩니다.
 					</h4>
-					<input type="text" id="Fwindow"  style=" width:200px; text-align:right;"> <br><br>
+					<input type="text" id="Fwindow"  style=" width:200px; text-align:right;">
+					<br><br>
 					<input type="button" value="저장" id="savebtn" style=" width:100px; text-align:center;">
-					
+					</td>
 				</tr>
-	
 			</table>
 		</div>
 		

@@ -8,9 +8,10 @@
 %>	
  
 <%
-	 NursingHospitalVo loginAdmin = (NursingHospitalVo)session.getAttribute("loginHospital");
-	 	ArrayList<Cauthority> Alist = (ArrayList<Cauthority>)request.getAttribute("Alist");
-	 %>
+	NursingHospitalVo loginAdmin = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
+	ArrayList<Cauthority> Alist = (ArrayList<Cauthority>)request.getAttribute("Alist");
+%>
 <!DOCTYPE html>
 
 <html lang="ko">

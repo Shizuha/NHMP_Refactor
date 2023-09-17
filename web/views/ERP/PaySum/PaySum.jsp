@@ -6,8 +6,11 @@
 
 <%
 NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Allowance> Alist = (ArrayList<Allowance>)request.getAttribute("Alist");
+	@SuppressWarnings("unchecked")
 	ArrayList<Deduction> Dlist = (ArrayList<Deduction>)request.getAttribute("Dlist");
+	@SuppressWarnings("unchecked")
 	ArrayList<Employee> Elist = (ArrayList<Employee>)request.getAttribute("Elist");
 %>
 <!DOCTYPE html>

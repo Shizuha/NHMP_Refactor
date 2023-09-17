@@ -3,11 +3,13 @@
 
 <%@
 	page import="Main.vo.NursingHospitalVo,
-				java.util.ArrayList,ERP.Employee.model.vo.Employee"
+				java.util.ArrayList,
+				ERP.Employee.model.vo.Employee"
 %>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<NursingHospitalVo> list = (ArrayList<NursingHospitalVo>)request.getAttribute("list");
 	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
 %>
@@ -27,7 +29,7 @@ NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("login
 		var idRule = /^[a-zA-Z](([a-zA-Z])|([0-9])){3,12}$/gi;
 		var passRule = /^[a-zA-Z](([a-zA-Z])|([0-9])){3,12}$/gi;
 		if(!(idRule.test($("input[type=text]").val())) || !(passRule.test($("input[type=password]").val()))){
-			alert("아이디와 패스워드를 화인해주세요");
+			alert("아이디와 패스워드를 확인해주세요");
 			return false;
 		}
 		if(($("#selecname").val()=="기업을 선택하세요")){

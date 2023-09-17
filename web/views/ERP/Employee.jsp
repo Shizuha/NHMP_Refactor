@@ -8,6 +8,7 @@
 
 <%//스크립트 립 태그라고 함 //위에 페이지있는건 디렉트 태그라고 함.
 	Employee emp = (Employee)session.getAttribute("loginEmployee");
+	@SuppressWarnings("unchecked")
 	ArrayList<Calendar> list = (ArrayList<Calendar>)session.getAttribute("list");
 	Department dp = (Department)session.getAttribute("dp");
 	String tm = (String)session.getAttribute("tm");
