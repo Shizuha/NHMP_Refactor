@@ -8,10 +8,12 @@
 %>	
  
 <%
-	 NursingHospitalVo loginAdmin = (NursingHospitalVo)session.getAttribute("loginHospital");
-	 	ArrayList<NursingHospitalVo> list = (ArrayList<NursingHospitalVo>)request.getAttribute("list");
-	 	ArrayList<Cauthority> Alist = (ArrayList<Cauthority>)request.getAttribute("Alist");
-	 %>
+	NursingHospitalVo loginAdmin = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
+	ArrayList<NursingHospitalVo> list = (ArrayList<NursingHospitalVo>)request.getAttribute("list");
+	@SuppressWarnings("unchecked")
+	ArrayList<Cauthority> Alist = (ArrayList<Cauthority>)request.getAttribute("Alist");
+%>
 <!DOCTYPE html>
 
 <html lang="ko">

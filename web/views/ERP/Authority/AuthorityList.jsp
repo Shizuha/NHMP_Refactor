@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="ERP.Authority.model.vo.Authority, java.util.ArrayList"%>
 <%
+	@SuppressWarnings("unchecked")
 	ArrayList<Authority> auList = (ArrayList<Authority>)request.getAttribute("auList");
 %>
 <!DOCTYPE html>
@@ -371,7 +372,7 @@ function auList(id){
 				<div class="auLeft">
 				<h3>권한목록</h3>
 					<div class="auList">
-						<table class="auTable" width="100%" cellpadding="3" cellspacing="0" border="1" >
+						<table class="auTable" style="width:'100%'; cellpadding:'3'; cellspacing:'0'; border:'1'">
 							<tr>
 								<th style="padding:5px;"><input type="checkbox" name="auChk-all" id="auChk-all"></th>
 								<th>권한코드</th>
@@ -401,7 +402,7 @@ function auList(id){
 				</div>
 				</div>
 					<div class="auEmp">
-						<table  class="auEmpTable" width="100%" cellpadding="3" cellspacing="0" border="1">
+						<table  class="auEmpTable" style="width:'100%'; cellpadding:'3'; cellspacing:'0'; border:'1'">
 							<tr>
 								<th style="padding:5px;"><input type="checkbox" id="empChk-all"></th>
 								<th>이름</th>

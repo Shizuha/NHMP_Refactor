@@ -7,7 +7,8 @@
 				ERP.Allowance.model.vo.Allowance"%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Allowance> list = (ArrayList<Allowance>)request.getAttribute("list");
 %>
 <!DOCTYPE html>
@@ -359,7 +360,7 @@ NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("login
 				<br>
 				<br>
 				<form action="/NHMP/allowinsert" method="post">
-					<table cellspacing="0" cellpadding="5" border="1">
+					<table style ="cellspacing:'0'; cellpadding:'5'; border:'1'">
 						<tr>
 							<th></th>
 							<th align="center">수당명칭</th>

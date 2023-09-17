@@ -5,6 +5,7 @@
 %>
 
 <%
+	@SuppressWarnings("unchecked")
 	ArrayList<Cauthority> list = (ArrayList<Cauthority>)request.getAttribute("list");
 %>
 
@@ -330,8 +331,8 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                            <table align="right">
-                            	<td align="right">
+                            <table style="align:'right'">
+                            	<td style="align:'right'">
                             		<a href="#"><input type="button" value="추가"></a> &nbsp; &nbsp; 
                             		<a href="#"><input type="button" value="삭제"></a> &nbsp; &nbsp; 
                             	</td>
