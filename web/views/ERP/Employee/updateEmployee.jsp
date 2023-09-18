@@ -876,7 +876,7 @@ text-align:center;
         	<input type="hidden" name="empid" value="<%=emp.getEmpId() %>">
         	<input type="hidden" name="rfile" value="<%=emp.getEmpRenameFilename() %>">
         	<input type="hidden" name="ofile" value="<%=emp.getEmpImgOriginalFilename() %>">
-			<table class="insertemp" cellpadding="3" cellspacing="0" >
+			<table class="insertemp" style="cellpadding:3; cellspacing:0;" >
 				<tr>
 					<th>성명(한글)</th>
 						<td><input type="text" name="empname" value="<%=emp.getEmpName() %>"></td>
@@ -1060,9 +1060,9 @@ text-align:center;
 						<td colspan="3"><textarea rows="4"name="etc" cols="100"><%=emp.getEmpEtc() %></textarea></td>
 				</tr>
 			</table>
-			<!--  급여정보 란~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!--  급여정보 란 -->
 		<h2>급여정보</h2>
-		<table class="insertemp2" cellpadding="5" cellspacing="0" >
+		<table class="insertemp2" style="cellpadding:5; cellspacing:0;" >
 		<%if(empSal != null){%>
 			<tr id="no4" align="center">
 				<th>4대보험</th>
@@ -1211,7 +1211,7 @@ text-align:center;
 			<!-- 부양가족~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 			<h2>부양가족</h2>
 			
-				<table class="insertemp3" cellpadding="5" cellspacing="0">
+				<table class="insertemp3" style="cellpadding:5; cellspacing:0;">
 					<tr>
 						<th><input type="checkbox" class="fychkall" name="fychkall"></th>
 						<th>관계</th>
@@ -1424,7 +1424,7 @@ text-align:center;
 				</table>
 			<!-- 학력정보페이지~~~ -->
 				<h2>학력정보</h2>
-				<table class="insertemp4" cellpadding="5" cellspacing="0" >
+				<table class="insertemp4" style="cellpadding:5; cellspacing:0;" >
 					<tr>
 						<th>&nbsp;&nbsp;<input type="checkbox" class="shchkall" name="shchkall"></th>
 						<th>구분</th>
@@ -1542,7 +1542,7 @@ text-align:center;
 				</table>
 				<!-- 경력사항 테이블~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 				<h2>경력사항</h2>
-				<table class="insertemp5" cellpadding="5" cellspacing="0">
+				<table class="insertemp5" style="cellpadding:5; cellspacing:0;">
 					<tr>
 						<th>&nbsp;&nbsp;<input type="checkbox" class="comchkall" name="comchkall"></th>
 						<th>회사명</th>

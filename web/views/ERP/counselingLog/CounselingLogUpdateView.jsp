@@ -259,8 +259,7 @@
 			<h2 align="center">상담일지 수정 페이지</h2>
 			<form action="/NHMP/counselupdate" method="post"
 				enctype="multipart/form-data">
-				<table align="center" width="800" border="3" cellspacing="0"
-					cellpadding="5">
+				<table style="align:center; width:800; border:3; cellspacing:0; cellpadding:5;">
 					<tr>
 						<th style="font-size: 16px;">상담일지번호</th>
 						<td><input type="number" name="cl_no"

@@ -4,7 +4,8 @@
 <%@ page import="Main.Comment.model.vo.Comment,Main.vo.NursingHospitalVo,java.util.ArrayList" 
 %>
 <%
-ArrayList<Comment> list = (ArrayList<Comment>) request.getAttribute("list");
+	@SuppressWarnings("unchecked")
+	ArrayList<Comment> list = (ArrayList<Comment>) request.getAttribute("list");
 	QnaVo q = (QnaVo)request.getAttribute("qna");
 	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 %>

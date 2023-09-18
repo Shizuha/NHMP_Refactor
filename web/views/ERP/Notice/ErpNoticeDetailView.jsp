@@ -228,7 +228,7 @@ NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("login
 <!-- ErpNoticeListView.jsp 추가분 -->		
 <center>		
 		
-	<table align="center" width="500" border="1" cellspacing="0" cellpadding="5">
+	<table style="align:center; width:500; border:1; cellspacing:0; cellpadding:5">
 	<tr><th colspan="4"><%= notice.getNoticeNo() %>번 공지사항 화면</th></tr>
 	<tr><th >제목</th><td><%= notice.getNoticeTitle() %></td><th>조회수</th><td><%= notice.getNoticeCount() %></td></tr>
 	<tr><th>작성자</th><td colspan="3"><%= notice.getNoticeWriter() %></td></tr>

@@ -929,7 +929,7 @@ text-align:center;
 			<div class="insertbox">
         	<h2>기본정보</h2>
         	<form action="/NHMP/empin" method="post"  onsubmit="return formCheck();" enctype="multipart/form-data">
-			<table class="insertemp" cellpadding="6" cellspacing="0" >
+			<table class="insertemp" style="cellpadding:6; cellspacing:0" >
 				<tr>
 					<th>성명(한글)</th>
 						<td>
@@ -1103,7 +1103,7 @@ text-align:center;
 			</table>
 			<!--  급여정보 란~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 			<h2>급여정보</h2>
-			<table class="insertemp2" cellpadding="5" cellspacing="0" >
+			<table class="insertemp2" style="cellpadding:5; cellspacing:0" >
 				<tr id="no4" align="center">
 					<th>4대보험</th>
 						<td colspan="3">&nbsp;&nbsp;국민연금(<input type="checkbox" name="no1" class="chbox" value="Y" checked>)
@@ -1143,7 +1143,7 @@ text-align:center;
 			<!-- 부양가족~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 			<h2>부양가족</h2>
 			<div class="fbtn"><button class="btn1">추가</button>&nbsp;<button class="btn2">삭제</button></div>
-				<table class="insertemp3" cellpadding="3" cellspacing="0">
+				<table class="insertemp3" style="cellpadding:3; cellspacing:0">
 					<tr>
 						<th><input type="checkbox" class="fychkall" name="fychkall"></th>
 						<th>관계</th>
@@ -1296,7 +1296,7 @@ text-align:center;
 			<!-- 학력정보페이지~~~ -->
 				<h2>학력정보</h2>
 			<div class="fbtn"><button class="btn3">추가</button>&nbsp;<button class="btn4">삭제</button></div>
-				<table class="insertemp4" cellpadding="5" cellspacing="0" width="100%">
+				<table class="insertemp4" style="cellpadding:5; cellspacing:0; width:100%">
 					<tr>
 						<th>&nbsp;&nbsp;<input type="checkbox" class="shchkall" name="shchkall"></th>
 						<th>구분</th>
@@ -1364,7 +1364,7 @@ text-align:center;
 				<!-- 경력사항 테이블~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 				<h2>경력사항</h2>
 			<div class="fbtn"><button class="btn5">추가</button>&nbsp;<button class="btn6">삭제</button></div>
-				<table class="insertemp5" cellpadding="1" cellspacing="0" width="100%">
+				<table class="insertemp5" style="cellpadding:1; cellspacing:0; width:100%">
 					<tr>
 						<th>&nbsp;&nbsp;<input type="checkbox" class="comchkall" name="comchkall"></th>
 						<th>회사명</th>

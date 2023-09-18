@@ -422,13 +422,12 @@ $(function(){
 			</ul>
 		</div>
 <!-- ErpdataroomListView.jsp 추가분 -->		
-<center>
-	<form action="/NHMP/drupdate.ad" method="post" enctype="multipart/form-data">
+	<form action="/NHMP/drupdate.ad" method="post" enctype="multipart/form-data" style="text-align:center;">
 	<input type="hidden" name="dataroomno" value="<%= dataroom.getDataroomNo() %>">
 	<input type="hidden" name="ofile" value="<%= dataroom.getDataroomOriginalFileName() %>">
 	<input type="hidden" name="rfile" value="<%= dataroom.getDataroomRenameFileName() %>">
 
-	<table align="center" width="500" border="1" cellspacing="0" cellpadding="5">
+	<table style="align:center; width:500; border:1; cellspacing:0; cellpadding:5">
 	<tr><th colspan="4"><%= dataroom.getDataroomNo() %>번 자료실 화면</th></tr>
 	<tr><th >제목</th><td><%= dataroom.getDataroomTitle() %></td><th>조회수</th><td><%= dataroom.getDataroomCount() %></td></tr>
 	<tr><th>작성자</th><td colspan="3"><%= dataroom.getDataroomWriter() %></td></tr>
@@ -452,9 +451,7 @@ $(function(){
 		
 		</th></tr>
 	</table>
-	
 	</form>
-</center>
 <!-- ErpdataroomListView.jsp 추가분 끝-->
 
 

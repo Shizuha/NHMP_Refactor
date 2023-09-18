@@ -425,7 +425,7 @@ function moveList(){
 <br>
 <center>
 <form action="/NHMP/nwrite.ad" method="post">
-<table align="center" width="500" border="1" cellspacing="0" cellspacing="5">
+<table style="align:center; width:500; border:1; cellspacing:0; cellspacing:5">
 <tr><th>제목</th><td><input type="text" name="title" size="50"></td></tr>
 <tr><th>작성자</th><td><input type="text" name="writer" readonly value="<%= loginHospital.getNH_NAME() %>"></td></tr>
 <tr><th>내용</th><td><textarea name="content" rows="5" cols="50"></textarea></td></tr>

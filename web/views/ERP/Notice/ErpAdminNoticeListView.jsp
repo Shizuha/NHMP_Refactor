@@ -3,10 +3,14 @@
 	pageEncoding="UTF-8"%>
 
 <%@
-	page import="Main.vo.NursingHospitalVo,ERP.notice.model.vo.Notice,java.util.ArrayList"%>
+	page import="Main.vo.NursingHospitalVo,
+				ERP.notice.model.vo.Notice,
+				java.util.ArrayList"
+%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Notice> list = (ArrayList<Notice>)request.getAttribute("list");
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();
 	int beginPage = ((Integer)request.getAttribute("beginPage")).intValue();
@@ -524,7 +528,7 @@ function callFunction(){
 
 <br>
 
-<table align="center" width="600" border="1" cellspacing="0" cellpadding="5" float="block">
+<table style="align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
 	<tr >
 		<th>번호</th>
 		<th>제목</th>

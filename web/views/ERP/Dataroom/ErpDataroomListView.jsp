@@ -2,19 +2,18 @@
 	pageEncoding="UTF-8"%>
 
 <%@
-	page import="Main.vo.NursingHospitalVo"%>
+	page import="Main.vo.NursingHospitalVo,
+				ERP.Dataroom.model.vo.Dataroom,
+				java.util.ArrayList,
+				ERP.Employee.model.vo.Employee"%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
-%>
-
-<%@ page import="ERP.Dataroom.model.vo.Dataroom,java.util.ArrayList,ERP.Employee.model.vo.Employee" %>
-<% //스크립트릿(scriptlet) 태그라고 함
+	@SuppressWarnings("unchecked")
 	ArrayList<Dataroom> list = (ArrayList<Dataroom>)request.getAttribute("list");
 	Employee emp = (Employee)session.getAttribute("loginEmployee");
-%>
-<%
+	
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();
 	int beginPage = ((Integer)request.getAttribute("beginPage")).intValue();
 	int endPage = ((Integer)request.getAttribute("endPage")).intValue();
@@ -275,7 +274,7 @@ function showDiv(){
 <center>
 
 <br>
-<table align="center" width="600" border="1" cellspacing="0" cellpadding="5" float="block">
+<table style="align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
 <tr >
 	<th>번호</th>
 	<th>제목</th>

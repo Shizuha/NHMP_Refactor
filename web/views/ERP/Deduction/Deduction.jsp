@@ -2,10 +2,14 @@
 	pageEncoding="UTF-8"%>
 
 <%@
-	page import="Main.vo.NursingHospitalVo,java.util.ArrayList,ERP.Deduction.model.vo.Deduction"%>
+	page import="Main.vo.NursingHospitalVo,
+				java.util.ArrayList,
+				ERP.Deduction.model.vo.Deduction"
+%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Deduction> list = (ArrayList<Deduction>)request.getAttribute("list");
 %>
 <!DOCTYPE html>
@@ -371,7 +375,7 @@ $("#txtBox").removeAttr("disabled"); */
 				<br>
 				<br>	
 				<form action="/NHMP/deducinsert" method="post">
-					<table width="1000" cellspacing="0" cellpadding="5" border="1" id="deduction_talbe" style="float: left; ">
+					<table id="deduction_talbe" style="width:1000; cellspacing:0; cellpadding:5; border:1; float:left;">
 						<tr>
 							<th>선택</th>
 							<th align="center">공제명칭</th>

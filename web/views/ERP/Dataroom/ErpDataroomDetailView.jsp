@@ -232,7 +232,7 @@ Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
 	
 	
 		
-	<table align="center" width="500" border="1" cellspacing="0" cellpadding="5">
+	<table style="align:center; width:500; border:1; cellspacing:0; cellpadding:5">
 	<tr><th colspan="4"><%= dataroom.getDataroomNo() %>번 자료실 화면</th></tr>
 	<tr><th >제목</th><td><%= dataroom.getDataroomTitle() %></td><th>조회수</th><td><%= dataroom.getDataroomCount() %></td></tr>
 	<tr><th>작성자</th><td colspan="3"><%= dataroom.getDataroomWriter() %></td></tr>

@@ -267,8 +267,7 @@ ERP.Employee.model.vo.Employee"%>
 				<%=list.size()%>
 				명
 			</h2>
-			<table align="center" width="1400" border="1" cellspacing="1"
-				cellpadding="5">
+			<table style="align:center; width:1400; border:1; cellspacing:1; cellpadding:5">
 				<tr>
 					<th style="font-size: 16px;">병록번호</th>
 					<th style="font-size: 16px;">환자명</th>

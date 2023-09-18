@@ -501,7 +501,7 @@ function Acheckbox(Acode, Ano){
 						
 						<!-- PAYCENTER -->
 						<div id="Payright">
-							<table width="auto" border="1" margin="0 0 0 0">
+							<table style="width:auto; border:1; margin:0 0 0 0;">
 								<tr>
 									<th>선택</th>
 									<th align="center">수당명칭2</th>
@@ -524,7 +524,7 @@ function Acheckbox(Acode, Ano){
 						</div>
 						<!-- Paycenter -->
 						<div id="Paycenter">
-							<table width="auto" border="1" margin="0 0 0 0">
+							<table style="width:auto; border:1; margin:0 0 0 0;">
 								<tr>
 									<th>선택</th>
 									<th align="center">공제명칭1</th>

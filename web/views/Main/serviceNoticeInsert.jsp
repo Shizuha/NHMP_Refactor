@@ -20,7 +20,7 @@ function movelist(){
 </head>
 <body>
 <h2 align="center">새 공지사항 등록 페이지</h2>
-<table align="center" border="1" cellspacing="0" cellpadding="3">
+<table style="align:center; border:1; cellspacing:0; cellpadding:3">
 <form action="/NHMP/gongin" method="post">
 <tr><th>제목</th><td><input type="text" name="title"></td></tr>
 <tr><th>작성자</th>

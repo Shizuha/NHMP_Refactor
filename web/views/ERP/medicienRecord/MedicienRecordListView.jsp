@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page
-	import="ERP.medicienRecord.model.vo.MedicienRecord, java.util.ArrayList,
-	ERP.Employee.model.vo.Employee"%>
+<%@ page import="ERP.medicienRecord.model.vo.MedicienRecord,
+			java.util.ArrayList,
+			ERP.Employee.model.vo.Employee"
+%>
 <%
+	@SuppressWarnings("unchecked")
 	ArrayList<MedicienRecord> list = (ArrayList<MedicienRecord>) request.getAttribute("list");
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 	int currentPage = ((Integer) request.getAttribute("currentPage")).intValue();
@@ -265,8 +267,7 @@
 				<%=list.size()%>
 				개
 			</h2>
-			<table align="center" width="1200" border="1" cellspacing="1"
-				cellpadding="5">
+			<table style="align:center; width:1200; border:1; cellspacing:1; cellpadding:5">
 				<tr>
 					<th style="font-size: 16px;">투약일지번호</th>
 					<th style="font-size: 16px;">날짜</th>

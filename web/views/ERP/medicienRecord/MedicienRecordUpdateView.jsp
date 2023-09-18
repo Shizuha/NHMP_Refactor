@@ -324,8 +324,7 @@
 			<h2 align="center">투약일지 수정 페이지</h2>
 			<form action="/NHMP/recordupdate" method="post"
 				enctype="multipart/form-data">
-				<table align="center" width="800" border="2" cellspacing="0"
-					cellpadding="3">
+				<table style="align:center; width:800; border:2; cellspacing:0; cellpadding:3">
 					<tr>
 						<th style="font-size: 16px;">투약일지번호</th>
 						<td style="font-size: 16px;"><input type="number"

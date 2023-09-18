@@ -2,11 +2,14 @@
 	pageEncoding="UTF-8"%>
 
 <%@
-	page
-	import="Main.vo.NursingHospitalVo,java.util.ArrayList,ERP.Deduction.model.vo.Deduction"%>
+	page import="Main.vo.NursingHospitalVo,
+			java.util.ArrayList,
+			ERP.Deduction.model.vo.Deduction"
+%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Deduction> list = (ArrayList<Deduction>)request.getAttribute("list");
 	String Bnum = (String)request.getAttribute("Bnum");
 %>
@@ -119,7 +122,7 @@ function Bcode(T01){
 <body>
 	<div id="div_root">
 		<div id="top">
-			<table width="130px" cellspacing="0" cellpadding="5" border="1"	id="deduction_talbe" style="float: left;">
+			<table id="deduction_talbe" style="width:130px; cellspacing:0; cellpadding:5; border:1; float:left;">
 				<th width="auto"><a style="text-align: center;">기본급</a></th>
 				<tr align="center">
 					<td width="150px"><a herf="" onclick="Bcode('T01')" style="text-align: center;">T01</a></td>
@@ -130,7 +133,7 @@ function Bcode(T01){
 				<% if(d.getDEDUCTION_NO()%5 == 0  ) { %>
 				<br>
 				<% }else { %>
-					<table width="130px" cellspacing="0" cellpadding="5" border="1" id="deduction_talbe" style="float: left;">
+					<table id="deduction_talbe" style="width:130px; cellspacing:0; cellpadding:5; border:1; float:left;">
 						<th width="auto"><a style="text-align: center;"><%= d.getDEDUCTION_NAME() %></a></th>
 							<tr align="center">
 						<td width="150px"><a herf="" onclick="Dcode('<%= d.getDEDUCTION_CODE() %>')" style="text-align: center;"><%= d.getDEDUCTION_CODE() %></a></td>
@@ -142,7 +145,7 @@ function Bcode(T01){
 		</div>
 		
 		<div id="mid_l">
-			<table width="100" cellspacing="0" cellpadding="5" >
+			<table style="width:100; cellspacing:0; cellpadding:5;" >
 				<tr align="center">
 					<h4>
 					설정한 계산식의 결과입니다<br>
@@ -158,7 +161,7 @@ function Bcode(T01){
 		</div>
 		
 		<div id="mid_r" align="center">
-			<table width="100%" cellspacing="0" cellpadding="5" id="calcT" style="float:right;" >
+			<table id="calcT" style="width:100%; cellspacing:0; cellpadding:5; float:right;" >
 				<tr>
 					<td><input type="button" class="numB" value="("></td>
 					<td><input type="button" class="sing" value=")"></td>
