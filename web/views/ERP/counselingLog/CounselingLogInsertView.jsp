@@ -262,8 +262,7 @@
 			<h2 align="center">상담일지 등록 페이지</h2>
 			<form action="/NHMP/counselinsert" method="post"
 				enctype="multipart/form-data">
-				<table align="center" width="800" border="3" cellspacing="0"
-					cellpadding="5">
+				<table style="align:center; width:800; cellspacing:0; cellpadding:5; border:3">
 					<tr>
 						<th style="font-size: 16px;">제목</th>
 						<td><input type="text" name="cl_title" id="cl_title"

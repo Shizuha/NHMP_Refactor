@@ -157,7 +157,7 @@ function Bcode(T01){
 		</div>
 		
 		<div id="mid_r" align="center">
-			<table width="100%" cellspacing="0" cellpadding="5" id="calcT" style="float:right;" >
+			<table id="calcT" style="width:100%; cellspacing:0; cellpadding:5; float:right;" >
 				<tr>
 					<td><input type="button" class="numB" value="("></td>
 					<td><input type="button" class="sing" value=")"></td>

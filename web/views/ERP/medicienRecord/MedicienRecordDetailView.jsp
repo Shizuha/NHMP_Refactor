@@ -269,8 +269,7 @@ function movedelete(){
 			<h2 align="center">환자 투약일지 상세조회 페이지</h2>
 			<form action="/NHMP/recorddetail" method="post"
 				enctype="multipart/form-data">
-				<table align="center" width="600" cellspacing="0" cellpadding="5"
-					border="3">
+				<table style="align:center; width:600; cellspacing:0; cellpadding:5; border:3">
 					<tr>
 						<th style="font-size: 16px;">투약일지번호</th>
 						<td style="font-size: 16px;"><%=medicienRecord.getMrNo()%></td>

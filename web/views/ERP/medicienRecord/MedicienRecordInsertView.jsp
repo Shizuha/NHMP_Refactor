@@ -302,8 +302,7 @@
 			<h2>투약일지 등록 페이지</h2><br><br><br>
 			<form action="/NHMP/recordinsert" method="post"
 				enctype="multipart/form-data">
-				<table align="center" width="800" border="3" cellspacing="0"
-					cellpadding="5">
+				<table style="align:center; width:800; border:3; cellspacing:0; cellpadding:5">
 					<tr>
 						<th style="font-size: 16px;">증상</th>
 						<td style="font-size: 16px;"><input type="text"

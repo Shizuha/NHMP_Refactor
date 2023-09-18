@@ -5,7 +5,8 @@
 	page import="Main.vo.NursingHospitalVo,ERP.Dataroom.model.vo.Dataroom,java.util.ArrayList"%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Dataroom> list = (ArrayList<Dataroom>)request.getAttribute("list");
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();
 	int beginPage = ((Integer)request.getAttribute("beginPage")).intValue();
@@ -478,13 +479,10 @@ function callFunction(){
 		<!-- ErpDataroomListView.jsp 추가분 -->
 <h1 align="center">자료실 전체 목록 보기 : <%= list.size() %> 개</h1>
 <h3 align="center"><a href="/NHMP/drlist.ad">전체 목록 보기</a></h3>
-<center>
-
 
 <br>
-
-<table align="center" width="600" border="1" cellspacing="0" cellpadding="5" float="block">
-	<tr >
+<table style="text-align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
+	<tr>
 		<th>번호</th>
 		<th>제목</th>
 		<th>작성자</th>
@@ -507,7 +505,6 @@ function callFunction(){
 			&nbsp;
 		<% } %>
 	</td>
-		
 		<td><%= dataroom.getDataroomCount() %></td>
 	</tr>
 	<% } %>
@@ -515,13 +512,13 @@ function callFunction(){
 
 <br>
 
-<div align="center">
+<div style="text-align:center;">
 <button onclick="callFunction();">새 자료실 글 등록</button>
 </div>
 <br>
 
      <!-- 패이징처리 서블릿 -->
-<div id="pagebox" align="center">
+<div id="pagebox" style="text-align:center;">
 <a href="/NHMP/drlist.ad?page=1">|◁</a> &nbsp;
 <% if((beginPage - 10) < 1){ %>
 	<a href="/NHMP/drlist.ad?page=1">◀◀</a>
@@ -544,7 +541,7 @@ function callFunction(){
 </div>
 
 
-<div>
+<div style="text-align:center;">
 	<div>
 		
 		<input type="radio" name="item" value="title" checked> 제목 &nbsp; &nbsp; &nbsp; 
@@ -570,7 +567,6 @@ function callFunction(){
 </div>
         
 <!-- ErpListView.jsp 추가분 끝-->
-</center>
 <br>
 
 

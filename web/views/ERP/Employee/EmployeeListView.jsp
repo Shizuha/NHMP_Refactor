@@ -3,6 +3,7 @@
 <%@ page import="ERP.Employee.model.vo.Employee, java.util.ArrayList"%>
 <%
 	Employee emp = (Employee)session.getAttribute("loginEmployee");
+	@SuppressWarnings("unchecked")
 	ArrayList<Employee> empList = (ArrayList<Employee>)request.getAttribute("empList");
 	int listCount = (Integer)request.getAttribute("listCount");
 	int currentPage = (Integer)request.getAttribute("currentPage");
@@ -430,7 +431,7 @@
 			<input type="hidden" name="bpage" value="<%=beginPage %>">
 			<input type="submit" id="delbutton"value="삭제">&nbsp;
 			<button id="usernewpwd">비밀번호초기화</button></div><br>
-                <table class="table table-bordered" style="margin-top:10px;"id="dataTable" width="100%" cellspacing="0" >
+                <table class="table table-bordered" id="dataTable" style="margin-top:10px; width:100%; cellspacing:0;">
                   
                     <tr class="mainTr">
                       <th style="width:10%;"><input type="checkbox" class="check-all">&nbsp;전체선택</th>

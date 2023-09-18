@@ -5,7 +5,8 @@
 	import="Main.vo.NursingHospitalVo,Main.Cnotice.model.vo.Cnotice,java.util.ArrayList"%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Cnotice> list = (ArrayList<Cnotice>)request.getAttribute("list");
 	
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();

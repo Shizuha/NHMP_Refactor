@@ -126,7 +126,7 @@ var cnt = 0;
 <h3 align="center">모두 필수 입력 사항입니다.</h3>
 <br>
 <form action="/NHMP/singup" method="post" onsubmit="return validation();" id="target">
-	<table align="center" width="600" cellspacing="0" cellpadding="5" border="1">
+	<table style="align:center; width:600; cellspacing:0; cellpadding:5; border:1">
 		<tr>
 			<th>아이디 *</th>
 			<td>

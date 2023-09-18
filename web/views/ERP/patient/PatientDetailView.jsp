@@ -268,8 +268,7 @@ function movedelete(){
 		<div class="content-body" align="center" style="padding: 40px;">
 			<h2 align="center">환자 상세조회 페이지</h2>
 			<form action="/NHMP/patientdetail" method="post">
-				<table align="center" width="800" border="3" cellspacing="0"
-					cellpadding="5">
+				<table style="align:center; width:800; border:3; cellspacing:0; cellpadding:5">
 					<tr>
 						<th style="font-size: 16px;">병록번호</th>
 						<td style="font-size: 16px;"><%=patient.getPatNum()%></td>

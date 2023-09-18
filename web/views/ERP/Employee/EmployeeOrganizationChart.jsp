@@ -1,14 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="ERP.Department.model.vo.Department,ERP.Team.model.vo.Team, ERP.Employee.model.vo.Employee, ERP.Ward.model.vo.Ward
-				,ERP.Position.model.vo.Position, java.util.ArrayList" %>
+<%@ page import="ERP.Department.model.vo.Department,
+				ERP.Team.model.vo.Team,
+				ERP.Employee.model.vo.Employee,
+				ERP.Ward.model.vo.Ward,
+				ERP.Position.model.vo.Position,
+				java.util.ArrayList" 
+%>
 <%
-Employee emp = (Employee)session.getAttribute("loginEmployee");
-ArrayList<Employee> mList = (ArrayList<Employee>)request.getAttribute("mList");
-ArrayList<Department> dList = (ArrayList<Department>)request.getAttribute("dList");
-/* ArrayList<Team> tList = (ArrayList<Team>)request.getAttribute("tList");
-ArrayList<Ward> wList = (ArrayList<Ward>)request.getAttribute("wList");
-ArrayList<Position> pList =(ArrayList<Position>)request.getAttribute("pList"); */
+	Employee emp = (Employee)session.getAttribute("loginEmployee");
+	@SuppressWarnings("unchecked")
+	ArrayList<Employee> mList = (ArrayList<Employee>)request.getAttribute("mList");
+	@SuppressWarnings("unchecked")
+	ArrayList<Department> dList = (ArrayList<Department>)request.getAttribute("dList");
+	/* ArrayList<Team> tList = (ArrayList<Team>)request.getAttribute("tList");
+	ArrayList<Ward> wList = (ArrayList<Ward>)request.getAttribute("wList");
+	ArrayList<Position> pList =(ArrayList<Position>)request.getAttribute("pList"); */
 %>
 
 <!DOCTYPE html>
@@ -631,7 +638,7 @@ ul {
 					</div>
 					<%} %>
 					<div class="dept-right">
-					<table class="dp-cp"width="100%">
+					<table class="dp-cp" style="width:100%;">
 						<tr>
 						<th>부서명</th><th>부서코드</th><th>부서인원</th>
 						</tr>
@@ -642,7 +649,7 @@ ul {
 						</tr>
 					</table>
 					<br />
-					<table class="tm-cp"width="100%">
+					<table class="tm-cp" style="width:100%;">
 						<tr>
 						<th>팀 명&nbsp;</th><th>팀코드&nbsp;</th><th>팀인원&nbsp;</th>
 						</tr>

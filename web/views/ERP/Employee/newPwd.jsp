@@ -92,7 +92,7 @@ function checkPwd(){
 <form action="/NHMP/uppwd" method="post" onsubmit="return checkPwd();">
 <input type="hidden" name="empid" value="<%=emp.getEmpId() %>">
 <h3>사용자기본정보</h3>
-<table class="uppwd" cellspacing="0"  cellpadding="3" width="100%">
+<table class="uppwd" style="cellspacing:0;  cellpadding:3; width:100%;">
 	<%if(emp.getEmpRenameFilename() != null){ %>
 	<tr>
 		<td colspan="4" rowspan="5"><img alt="xx" src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename() %>"
@@ -121,7 +121,7 @@ function checkPwd(){
 	</tr>
 </table>
 <h3>비밀번호 초기화</h3>
-<table class="uppwd" cellspacing="0" cellpadding="3" width="100%">
+<table class="uppwd" style="cellspacing:0; cellpadding:3; width:100%;">
 	<tr>
 		<th>초기화 비밀번호 입력</th>
 		<td><input type="password" name="newpwd" id="newpwd" placeholder="내용을 입력해주세요"></td>

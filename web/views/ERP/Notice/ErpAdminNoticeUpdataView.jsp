@@ -422,7 +422,7 @@ function movelist(){
 <center>
 		
 <h2 align="center"><%= notice.getNoticeNo() %>번 게시글 수정 페이지 </h2>
-<table align="center" border="1" cellspacing="0" cellpadding="3">
+<table style="align:center; border:1; cellspacing:0; cellpadding:3">
 <form action="/NHMP/nupdate" method="post">
 <input type="hidden" name="page" value="<%= currentPage %>">
 <input type="hidden" name="no" value="<%= notice.getNoticeNo() %>">

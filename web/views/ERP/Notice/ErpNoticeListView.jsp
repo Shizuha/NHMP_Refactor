@@ -2,27 +2,23 @@
 	pageEncoding="UTF-8"%>
 
 <%@
-	page import="Main.vo.NursingHospitalVo"%>
-
-<%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	page import="Main.vo.NursingHospitalVo,
+				ERP.notice.model.vo.Notice,
+				java.util.ArrayList,
+				ERP.Employee.model.vo.Employee"
 %>
 
-<%@ page import="ERP.notice.model.vo.Notice,java.util.ArrayList" %>
-<% //스크립트릿(scriptlet) 태그라고 함
+<%
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<Notice> list = (ArrayList<Notice>)request.getAttribute("list");
-%>
-<%
+	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
+	Employee emp = (Employee)session.getAttribute("loginEmployee");
+	
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();
 	int beginPage = ((Integer)request.getAttribute("beginPage")).intValue();
 	int endPage = ((Integer)request.getAttribute("endPage")).intValue();
 	int maxPage = ((Integer)request.getAttribute("maxPage")).intValue();
-%>
-
-<%@page import="ERP.Employee.model.vo.Employee" %> 
-<%
-	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
-	Employee emp = (Employee)session.getAttribute("loginEmployee");
 %>
 
 <!DOCTYPE html>
@@ -327,8 +323,8 @@ function button3_click(){
 </div>
 </div>
 <br>
-<table align="center" width="600" border="1" cellspacing="0" cellpadding="5" float="block">
-<tr >
+<table style="align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
+<tr>
 	<th>번호</th>
 	<th>제목</th>
 	<th>작성자</th>

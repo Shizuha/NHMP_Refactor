@@ -472,9 +472,9 @@ thead td {
 			<%if(emp != null){ %>
 				<div class="member">
 				<%if(emp.getEmpRenameFilename() != null){ %>
-					<center><img alt="" src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename() %>" height="100" width="100"></center><br><br>
+					<img alt="" src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename() %>" style="text-align:center; height:100; width:100;"><br><br>
 					<%}else{ %>
-					<center><img alt="" src="/NHMP/resources/ERP/images/캡처12.PNG" height="100" width="100"></center><br><br>
+					<img alt="" src="/NHMP/resources/ERP/images/캡처12.PNG" style="text-align:center; height:100; width:100;"><br><br>
 					<%} %>
 					<ul id="header_list" style="border: 1px soild;">
 						<li><b>사원코드 :</b><%=emp.getEmpId() %></li><br>
@@ -486,7 +486,7 @@ thead td {
 				</div>
 				<% }else{ %>
 				<div class="member">
-					<center><img alt="" src="/NHMP/resources/ERP/images/testimonial2.jpg"></center><br><br>
+					<img alt="" src="/NHMP/resources/ERP/images/testimonial2.jpg" style="text-align:center;"><br><br>
 					<ul id="header_list">
 						<li>사원코드:</li><br>
 						<li>부서:</li>

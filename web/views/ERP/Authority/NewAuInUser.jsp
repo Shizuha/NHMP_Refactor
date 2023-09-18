@@ -1,10 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="ERP.Department.model.vo.Department,ERP.Team.model.vo.Team, ERP.Employee.model.vo.Employee, ERP.Ward.model.vo.Ward
-				,ERP.Position.model.vo.Position, java.util.ArrayList" %>
+<%@ page import="ERP.Department.model.vo.Department,
+				ERP.Team.model.vo.Team,
+				ERP.Employee.model.vo.Employee,
+				ERP.Ward.model.vo.Ward,
+				ERP.Position.model.vo.Position,
+				java.util.ArrayList"
+%>
     
 <%
+	@SuppressWarnings("unchecked")
 	ArrayList<Employee> mList = (ArrayList<Employee>)request.getAttribute("mList");
+	@SuppressWarnings("unchecked")	
 	ArrayList<Department> dList = (ArrayList<Department>)request.getAttribute("dList");
 	String authority = (String)request.getAttribute("authority");
 %>
@@ -455,7 +462,7 @@ input[type=checkbox]:checked{
 					<div class="emp-header-right" style=" margin:0px;  float:right;"><button id="empDel"class="Btn" style="margin-top:10px;">선택삭제</button>&nbsp;<button class="Btn"id="empIn"style="margin:0px;">선택적용</button></div>
 					</div>
 					<div class="empList">
-						<table class="empListTable" width="100%" cellpadding="2" cellspacing="0" border="1">
+						<table class="empListTable" style="width:100%; cellpadding:2; cellspacing:0; border:1">
 							<tr>
 								<th><input type="checkbox" id="empChk-all" style="width:17px;height:17px;"></th>
 								<th>이름</th>
@@ -468,7 +475,7 @@ input[type=checkbox]:checked{
 					<div class="empInList">
 					<form action="/NHMP/authorUp" method="post" onsubmit="return trueAndFalse();">
 						<input type="hidden" value="<%=authority%>" name="authority">
-						<table class="empInListTable" width="100%" cellpadding="2" cellspacing="0" border="1">
+						<table class="empInListTable" style="width:100%; cellpadding:2; cellspacing:0; border:1">
 							<tr>
 								<th><input type="checkbox" class="empChk2-all" style="width:17px;height:17px;"></th>
 								<th>이름</th>

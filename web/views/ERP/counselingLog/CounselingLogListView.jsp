@@ -5,6 +5,7 @@
 	ERP.Employee.model.vo.Employee, 
 	java.util.ArrayList"%>
 <%
+	@SuppressWarnings("unchecked")
 	ArrayList<CounselingLog> list = (ArrayList<CounselingLog>) request.getAttribute("list");
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 	int currentPage = ((Integer) request.getAttribute("currentPage")).intValue();
@@ -266,8 +267,7 @@
 				<%=list.size()%>
 				개
 			</h2>
-			<table align="center" border="1" width="1500" cellspacing="1"
-				cellpadding="5" style="font-size: 16px;">
+			<table style="font-size:16px; align:center; border:1; width:1500; cellspacing:1; cellpadding:5">
 				<tr>
 					<th style="font-size: 16px;">상담일지번호</th>
 					<th style="font-size: 16px;">제목</th>

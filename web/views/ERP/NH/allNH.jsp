@@ -190,7 +190,7 @@
         ***********************************-->
 		<div class="content-body">
 			<div id="rootdiv">
-				<table width="1000" cellspacing="0" cellpadding="5" border="1" id="NHlist_talbe" style="float: left; ">
+				<table id="NHlist_talbe" style="width:1000; cellspacing:0; cellpadding:5; border:1; float:left">
 					<tr>
 						<th align="center">고객번호</th>
 						<th align="center">이름</th>
