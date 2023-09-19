@@ -423,9 +423,8 @@ function moveList(){
 <!-- ErpAdminNoticeWriteForm.jsp 추가분 -->		
 <h1 align="center">관리자용 공지 등록 페이지</h1>
 <br>
-<center>
 <form action="/NHMP/nwrite.ad" method="post">
-<table style="align:center; width:500; border:1; cellspacing:0; cellspacing:5">
+<table style="text-align:center; width:500; border:1; cellspacing:0; cellspacing:5">
 <tr><th>제목</th><td><input type="text" name="title" size="50"></td></tr>
 <tr><th>작성자</th><td><input type="text" name="writer" readonly value="<%= loginHospital.getNH_NAME() %>"></td></tr>
 <tr><th>내용</th><td><textarea name="content" rows="5" cols="50"></textarea></td></tr>
@@ -436,8 +435,6 @@ function moveList(){
 </th></tr>
 </table>
 </form>
-
-</center>
 
 <!-- ErpNoticeListView.jsp 추가분 끝-->
 
@@ -1015,7 +1012,7 @@ function moveList(){
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						Copyright &copy; Designed & Developed by <a
+						Copyright &copy; Designed And Developed by <a
 							href="https://themeforest.net/user/quixlab">이민삼수</a> 2018
 					</p>
 				</div>

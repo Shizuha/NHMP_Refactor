@@ -492,8 +492,7 @@ function callFunction(){
 		<!-- ErpNoticeListView.jsp 추가분 -->
 <h1 align="center">공지사항 전체 목록 보기 : <%= list.size() %> 개</h1>
 <h3 align="center"><a href="/NHMP/nlist.ad">전체 목록 보기</a></h3>
-<center>
-<div class="searchbox">
+<div class="searchbox" style="text-align:center">
 	<div>
 		<h2>검색할 항목을 선택하시오.</h2>
 		<input type="radio" name="item" value="title" checked> 제목 &nbsp; &nbsp; &nbsp; 
@@ -528,7 +527,7 @@ function callFunction(){
 
 <br>
 
-<table style="align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
+<table style="text-align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
 	<tr >
 		<th>번호</th>
 		<th>제목</th>
@@ -549,7 +548,6 @@ function callFunction(){
 	</tr>
 	<% } %>
 </table>
-
 <br>
 
 <div align="center">
@@ -582,7 +580,6 @@ function callFunction(){
 
         
 <!-- ErpNoticeListView.jsp 추가분 끝-->
-</center>
 <br>
 
 
@@ -1159,7 +1156,7 @@ function callFunction(){
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						Copyright &copy; Designed & Developed by <a
+						Copyright &copy; Designed And Developed by <a
 							href="https://themeforest.net/user/quixlab">이민삼수</a> 2018
 					</p>
 				</div>

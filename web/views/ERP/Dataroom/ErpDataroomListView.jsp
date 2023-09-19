@@ -271,10 +271,8 @@ function showDiv(){
 		<!-- ErpNoticeListView.jsp 추가분 -->
 <h1 align="center">자료실 전체 목록 보기 : <%= list.size() %> 개</h1>
 <h3 align="center"><a href="/NHMP/drlist">전체 목록 보기</a></h3>
-<center>
-
 <br>
-<table style="align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
+<table style="text-align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
 <tr >
 	<th>번호</th>
 	<th>제목</th>
@@ -302,14 +300,10 @@ function showDiv(){
 		<td><%= dataroom.getDataroomCount() %></td>
 	</tr>
 	<% } %>
-
-
-
 </table>
 
+<div style="text-align:center">
 <div>
-<div>
-	
 	<input type="radio" name="item" value="title" checked> 제목 &nbsp; &nbsp; &nbsp; 
 	<input type="radio" name="item" value="writer"> 작성자 &nbsp; &nbsp; &nbsp; 
 </div>
@@ -332,7 +326,7 @@ function showDiv(){
 </div>
 
      <!-- 패이징처리 서블릿 -->
-<div id="pagebox" align="center">
+<div id="pagebox" style="text-align:center">
 <a href="/NHMP/drlist?page=1">|◁</a> &nbsp;
 <% if((beginPage - 10) < 1){ %>
 	<a href="/NHMP/drlist?page=1">◀◀</a>
@@ -353,10 +347,7 @@ function showDiv(){
 <% } %> &nbsp;
 <a href="/NHMP/drlist?page=<%= maxPage %>">▷|</a>
 </div>
-
-        
 <!-- ErpNoticeListView.jsp 추가분 끝-->
-</center>
 <br>
 
 
@@ -933,7 +924,7 @@ function showDiv(){
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						Copyright &copy; Designed & Developed by <a
+						Copyright &copy; Designed And Developed by <a
 							href="https://themeforest.net/user/quixlab">이민삼수</a> 2018
 					</p>
 				</div>

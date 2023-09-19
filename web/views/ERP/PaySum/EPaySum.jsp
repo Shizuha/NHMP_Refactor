@@ -621,7 +621,7 @@ function Acheckbox(Acode, Ano){
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						Copyright &copy; Designed & Developed by <a
+						Copyright &copy; Designed And Developed by <a
 							href="https://themeforest.net/user/quixlab">이민삼수</a> 2019
 					</p>
 				</div>

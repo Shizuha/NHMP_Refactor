@@ -146,17 +146,15 @@ function Bcode(T01){
 		
 		<div id="mid_l">
 			<table style="width:100; cellspacing:0; cellpadding:5;" >
-				<tr align="center">
-					<h4>
+				<tr style="text-align:center;">
+					<h4> <!-- 이부분 CSS로 수정해야 할듯 -->
 					설정한 계산식의 결과입니다<br>
 					맞게 설정이 되었으면<br>
 					[저장]을 눌러주세요.
 					</h4>
-					<input type="text" id="Fwindow"  style=" width:200px; text-align:right;"> <br><br>
-					<input type="button" value="저장" id="savebtn" style=" width:100px; text-align:center;">
-					
+					<input type="text" id="Fwindow" style=" width:200px; text-align:right;"><br><br> <!-- 이부분 CSS로 수정해야 할듯 -->
+					<input type="button" value="저장" id="savebtn" style="width:100px; text-align:center;">
 				</tr>
-	
 			</table>
 		</div>
 		

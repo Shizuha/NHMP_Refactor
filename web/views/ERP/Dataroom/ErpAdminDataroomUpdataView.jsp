@@ -419,8 +419,8 @@ function movelist(){
 		
 		<!-- ErpNoticeListView.jsp 추가분 -->
 <h2 style="text-align:center;"><%= dataroom.getDataroomNo() %>번 자료실글 수정 페이지 </h2>
-<table style="text-align:center; border:1; cellspacing:0; cellpadding:3;">
 <form action="/NHMP/drupdate" method="post" enctype="multipart/form-data">
+<table style="text-align:center; border:1; cellspacing:0; cellpadding:3;">
 <input type="hidden" name="page" value="<%= currentPage %>">
 <input type="hidden" name="no" value="<%= dataroom.getDataroomNo() %>">
 <tr><th>제목</th><td><input type="text" name="title" value="<%= dataroom.getDataroomTitle() %>"></td></tr>
@@ -442,8 +442,8 @@ function movelist(){
 	<input type="reset" value="초기화"> &nbsp; 
 	<input type="button" value="이전 페이지로" onclick="history.go(-1); return false;">
 </th></tr>
-</form>
 </table>
+</form>
 <br>
 		<!--**********************************
             Sidebar end
@@ -1016,7 +1016,7 @@ function movelist(){
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						Copyright &copy; Designed & Developed by <a
+						Copyright &copy; Designed And Developed by <a
 							href="https://themeforest.net/user/quixlab">이민삼수</a> 2018
 					</p>
 				</div>

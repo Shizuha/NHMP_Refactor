@@ -4,6 +4,7 @@
 	import="ERP.patient.model.vo.Patient, java.util.ArrayList,
 ERP.Employee.model.vo.Employee"%>
 <%
+	@SuppressWarnings("unchecked")
 	ArrayList<Patient> list = (ArrayList<Patient>) request.getAttribute("list");
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 	int maxPage = ((Integer) request.getAttribute("maxPage"));
@@ -373,7 +374,7 @@ ERP.Employee.model.vo.Employee"%>
 		<div class="footer">
 			<div class="copyright">
 				<p>
-					Copyright &copy; Designed & Developed by <a
+					Copyright &copy; Designed And Developed by <a
 						href="https://themeforest.net/user/quixlab">Quixlab</a> 2018
 				</p>
 			</div>
