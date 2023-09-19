@@ -418,12 +418,10 @@ function movelist(){
 		</div>
 
 		
-		<!-- ErpNoticeListView.jsp 추가분 -->
-<center>
-		
+		<!-- ErpNoticeListView.jsp 추가분 -->	
 <h2 align="center"><%= notice.getNoticeNo() %>번 게시글 수정 페이지 </h2>
-<table style="align:center; border:1; cellspacing:0; cellpadding:3">
 <form action="/NHMP/nupdate" method="post">
+<table style="text-align:center; border:1; cellspacing:0; cellpadding:3">
 <input type="hidden" name="page" value="<%= currentPage %>">
 <input type="hidden" name="no" value="<%= notice.getNoticeNo() %>">
 <tr><th>제목</th><td><input type="text" name="title" value="<%= notice.getNoticeTitle()%>"></td></tr>
@@ -436,9 +434,8 @@ function movelist(){
 	<input type="reset" value="초기화"> &nbsp; 
 	<input type="button" value="이전 페이지로" onclick="history.go(-1); return false;">
 </th></tr>
-</form>
 </table>
-</center>
+</form>
 <br>
 		<!--**********************************
             Sidebar end
@@ -1011,7 +1008,7 @@ function movelist(){
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						Copyright &copy; Designed & Developed by <a
+						Copyright &copy; Designed And Developed by <a
 							href="https://themeforest.net/user/quixlab">이민삼수</a> 2018
 					</p>
 				</div>

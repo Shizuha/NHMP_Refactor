@@ -5,7 +5,8 @@
 	import="Main.vo.NursingHospitalVo,Main.vo.QnaVo,java.util.ArrayList"%>
 
 <%
-NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+	@SuppressWarnings("unchecked")
 	ArrayList<QnaVo> list = (ArrayList<QnaVo>)request.getAttribute("list");
 	
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();

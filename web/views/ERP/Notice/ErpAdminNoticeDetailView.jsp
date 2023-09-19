@@ -426,9 +426,7 @@ $(function(){
 			</ul>
 		</div>
 <!-- ErpNoticeListView.jsp 추가분 -->		
-<center>		
-		
-	<table style="align:center; width:500; border:1; cellspacing:0; cellpadding:5">
+	<table style="text-align:center; width:500; border:1; cellspacing:0; cellpadding:5">
 	<tr><th colspan="4"><%= notice.getNoticeNo() %>번 공지사항 화면</th></tr>
 	<tr><th >제목</th><td><%= notice.getNoticeTitle() %></td><th>조회수</th><td><%= notice.getNoticeCount() %></td></tr>
 	<tr><th>작성자</th><td colspan="3"><%= notice.getNoticeWriter() %></td></tr>
@@ -442,9 +440,6 @@ $(function(){
 		
 		</th></tr>
 	</table>
-	
-
-</center>
 <!-- ErpNoticeListView.jsp 추가분 끝-->
 
 
@@ -1021,7 +1016,7 @@ $(function(){
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						Copyright &copy; Designed & Developed by <a
+						Copyright &copy; Designed And Developed by <a
 							href="https://themeforest.net/user/quixlab">이민삼수</a> 2018
 					</p>
 				</div>

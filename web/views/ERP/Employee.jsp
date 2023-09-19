@@ -477,10 +477,10 @@ thead td {
 					<img alt="" src="/NHMP/resources/ERP/images/캡처12.PNG" style="text-align:center; height:100; width:100;"><br><br>
 					<%} %>
 					<ul id="header_list" style="border: 1px soild;">
-						<li><b>사원코드 :</b><%=emp.getEmpId() %></li><br>
-						<li><b>부서 :</b><%= dp.getDeptName() %> </li><br />
-						<li style="font-size: 10pt; color:#7571f9;"><%= tm %></li><br>
-						<li><b>이름 :</b><%=emp.getEmpName() %></li><br>
+						<li><b>사원코드 :</b><%=emp.getEmpId() %><br></li>
+						<li><b>부서 :</b><%= dp.getDeptName() %><br></li>
+						<li style="font-size: 10pt; color:#7571f9;"><%= tm %><br></li>
+						<li><b>이름 :</b><%=emp.getEmpName() %><br></li>
 						<li><b>담당병동 :</b><%= wd.getWardName() %></li>
 					</ul><br>
 				</div>
@@ -488,12 +488,12 @@ thead td {
 				<div class="member">
 					<img alt="" src="/NHMP/resources/ERP/images/testimonial2.jpg" style="text-align:center;"><br><br>
 					<ul id="header_list">
-						<li>사원코드:</li><br>
+						<li>사원코드:<br></li>
 						<li>부서:</li>
-						<li style="font-size: 10pt;"></li><br>
-						<li>이름:</li><br>
-						<li>담당병동:</li>
-					</ul><br>
+						<li style="font-size:10pt;"><br></li>
+						<li>이름:<br></li>
+						<li>담당병동:<br></li>
+					</ul>
 				</div>
 				<%} %>
 				<div class="calendar1">
@@ -562,7 +562,7 @@ thead td {
 			<div class="footer">
 				<div class="copyright">
 					<p>
-						Copyright &copy; Designed & Developed by <a
+						Copyright &copy; Designed And Developed by <a
 							href="https://themeforest.net/user/quixlab">이민삼수</a> 2018
 					</p>
 				</div>
