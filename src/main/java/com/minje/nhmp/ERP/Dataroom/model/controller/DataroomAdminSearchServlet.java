@@ -46,7 +46,7 @@ public class DataroomAdminSearchServlet extends HttpServlet {
 		String search = request.getParameter("search");
 				
 		//3. 서비스로 전송 온 값 옮기고 결과받을 변수 준비
-		ArrayList<Dataroom> list = null;
+		ArrayList<DataroomVo> list = null;
 		
 		//4. 자료실서비스 준비
 		DataroomService drservice = new DataroomService();

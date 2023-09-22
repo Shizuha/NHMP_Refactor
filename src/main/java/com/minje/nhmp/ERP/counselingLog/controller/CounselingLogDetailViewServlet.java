@@ -48,7 +48,7 @@ public class CounselingLogDetailViewServlet extends HttpServlet {
 		}
 		
 		int clNo = Integer.parseInt(request.getParameter("cl_no"));
-		CounselingLog counselingLog = new CounselingLogService().DetailView(hostId, hostPwd, clNo);
+		CounselingLogVo counselingLog = new CounselingLogService().DetailView(hostId, hostPwd, clNo);
 				
 		RequestDispatcher view = null;
 		if(counselingLog != null) {

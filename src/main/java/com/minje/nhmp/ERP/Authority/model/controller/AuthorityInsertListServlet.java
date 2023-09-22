@@ -51,7 +51,7 @@ public class AuthorityInsertListServlet extends HttpServlet {
 		}
 		String authorityName = request.getParameter("author");
 		ArrayList<Employee> mList = new EmployeeService().selectEmployeeList(hostId, hostPwd);
-		ArrayList<Department> dList = new DepartmentService().selectAll(hostId, hostPwd);
+		ArrayList<DepartmentVo> dList = new DepartmentService().selectAll(hostId, hostPwd);
 		
 		
 		

@@ -76,7 +76,7 @@ public class MedicienRecordListViewServlet extends HttpServlet {
 		int startRow = (currentPage * limit) - 9;
 		int endRow = currentPage * limit;
 		
-		ArrayList<MedicienRecord> list = new MedicienRecordService().ListView(startRow, endRow, hostId, hostPwd);
+		ArrayList<MedicienRecordVo> list = new MedicienRecordService().ListView(startRow, endRow, hostId, hostPwd);
 		
 		RequestDispatcher view = null;
 		if(list.size() > 0) {

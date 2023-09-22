@@ -9,9 +9,9 @@
 %>
 
 <%
-	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	@SuppressWarnings("unchecked")
-	ArrayList<Notice> list = (ArrayList<Notice>)request.getAttribute("list");
+	ArrayList<ErpNoticeVo> list = (ArrayList<ErpNoticeVo>)request.getAttribute("list");
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();
 	int beginPage = ((Integer)request.getAttribute("beginPage")).intValue();
 	int endPage = ((Integer)request.getAttribute("endPage")).intValue();
@@ -276,7 +276,7 @@ function callFunction(){
 								class="drop-down dropdown-profile animated fadeIn dropdown-menu">
 								<div class="dropdown-content-body">
 									<ul>
-										<li><a href="/NHMP/myinfo.ad?userid=<%= loginHospital.getNH_USERID() %>"><i class="icon-user"></i>
+										<li><a href="/NHMP/myinfo.ad?userid=<%=loginHospital.getNH_USERID()%>"><i class="icon-user"></i>
 												<span>내정보 보기</span></a></li>
 
 
@@ -490,7 +490,7 @@ function callFunction(){
 
 		
 		<!-- ErpNoticeListView.jsp 추가분 -->
-<h1 align="center">공지사항 전체 목록 보기 : <%= list.size() %> 개</h1>
+<h1 align="center">공지사항 전체 목록 보기 : <%=list.size()%> 개</h1>
 <h3 align="center"><a href="/NHMP/nlist.ad">전체 목록 보기</a></h3>
 <div class="searchbox" style="text-align:center">
 	<div>
@@ -535,7 +535,9 @@ function callFunction(){
 		<th>작성날짜</th>
 		<th>조회수</th>
 	</tr>
-	<% for(Notice n : list){ %>
+	<%
+	for(ErpNoticeVo n : list){
+	%>
 	<tr >
 		<th><%= n.getNoticeNo() %></th>
 		<td><a href="/NHMP/ndetail.ad?no=<%= n.getNoticeNo() %>&page=<%= currentPage %>"><%= n.getNoticeTitle() %></a></td>

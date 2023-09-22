@@ -8,10 +8,10 @@
 %>	
  
 <%
-	NursingHospitalVo loginAdmin = (NursingHospitalVo)session.getAttribute("loginHospital");
-	@SuppressWarnings("unchecked")
-	ArrayList<Cauthority> Alist = (ArrayList<Cauthority>)request.getAttribute("Alist");
-%>
+	 NursingHospitalVo loginAdmin = (NursingHospitalVo)session.getAttribute("loginHospital");
+	 	@SuppressWarnings("unchecked")
+	 	ArrayList<CauthorityVo> Alist = (ArrayList<CauthorityVo>)request.getAttribute("Alist");
+	 %>
 <!DOCTYPE html>
 
 <html lang="ko">
@@ -263,7 +263,9 @@
 								<th>권한명</th>
 								<th>설명</th>
 							</tr>
-							<% for( Cauthority A : Alist ) { %>
+							<%
+							for( CauthorityVo A : Alist ) {
+							%>
 								<tr>
 									<td><input type="checkbox" class="AUTHbtn" ></td>
 									<td><%= A.getAUTHORITY_CODE() %></td>

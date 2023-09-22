@@ -62,11 +62,11 @@ public class AuthoritySelectEmpList extends HttpServlet {
 			empList.add(emp);
 		}
 		
-			ArrayList<Department> dList = new ArrayList<Department>();
-			ArrayList<Ward> wList= new ArrayList<Ward>();
+			ArrayList<DepartmentVo> dList = new ArrayList<DepartmentVo>();
+			ArrayList<WardVo> wList= new ArrayList<WardVo>();
 		for(Employee e : empList) {
-			Department dp = new DepartmentService().selectAuDeptName(hostId, hostPwd, e.getDeptCode());
-			Ward wd = new WardService().selectAuWardName(hostId, hostPwd, e.getWardCode());
+			DepartmentVo dp = new DepartmentService().selectAuDeptName(hostId, hostPwd, e.getDeptCode());
+			WardVo wd = new WardService().selectAuWardName(hostId, hostPwd, e.getWardCode());
 			dList.add(dp);
 			wList.add(wd);
 		}
@@ -87,12 +87,12 @@ public class AuthoritySelectEmpList extends HttpServlet {
 				tn.put("empid", e.getEmpId());
 				jarr1.add(tn);
 			}
-			for(Department d : dList) {
+			for(DepartmentVo d : dList) {
 				JSONObject tn = new JSONObject();
 				tn.put("deptname", URLEncoder.encode(d.getDeptName(), "utf-8"));
 				jarr2.add(tn);
 			}
-			for(Ward w : wList) {
+			for(WardVo w : wList) {
 				JSONObject tn = new JSONObject();
 				tn.put("posname", URLEncoder.encode(w.getWardName(), "utf-8"));
 				jarr3.add(tn);

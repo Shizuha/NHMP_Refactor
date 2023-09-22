@@ -4,15 +4,14 @@
 	import="ERP.patient.model.vo.Patient, java.util.ArrayList,
 ERP.Employee.model.vo.Employee"%>
 <%
-	@SuppressWarnings("unchecked")
-	ArrayList<Patient> list = (ArrayList<Patient>) request.getAttribute("list");
+@SuppressWarnings("unchecked")
+	ArrayList<PatientVo> list = (ArrayList<PatientVo>) request.getAttribute("list");
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 	int maxPage = ((Integer) request.getAttribute("maxPage"));
 	int currentPage = ((Integer) request.getAttribute("currentPage"));
 	int beginPage = ((Integer) request.getAttribute("beginPage"));
 	int endPage = ((Integer) request.getAttribute("endPage"));
 	int listCount = (Integer)request.getAttribute("listCount");
-	
 %>
 <!DOCTYPE html>
 <html>
@@ -68,7 +67,7 @@ ERP.Employee.model.vo.Employee"%>
 		<div class="nav-header">
 			<div class="brand-logo">
 				<%
-					if (emp != null) {
+				if (emp != null) {
 				%>
 				<a href="/NHMP/views/ERP/Employee.jsp"> <b class="logo-abbr"><img
 						src="/NHMP/resources/ERP/images/logo.png" alt=""> </b> <span
@@ -79,7 +78,7 @@ ERP.Employee.model.vo.Employee"%>
 				</span>
 				</a>
 				<%
-					} else {
+				} else {
 				%>
 				<a href="/NHMP/views/ERP/Admin_main.jsp"> <b class="logo-abbr"><img
 						src="/NHMP/resources/ERP/images/logo.png" alt=""> </b> <span
@@ -90,7 +89,7 @@ ERP.Employee.model.vo.Employee"%>
 				</span>
 				</a>
 				<%
-					}
+				}
 				%>
 			</div>
 		</div>
@@ -148,11 +147,11 @@ ERP.Employee.model.vo.Employee"%>
 		<div class="nk-sidebar">
 			<div class="nk-nav-scroll">
 				<%
-					if (emp != null) {
+				if (emp != null) {
 				%>
 				<ul class="metismenu" id="menu">
 					<%
-						if (emp.getAuthorityCode().equals("G5")) {
+					if (emp.getAuthorityCode().equals("G5")) {
 					%>
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> <i
@@ -164,10 +163,10 @@ ERP.Employee.model.vo.Employee"%>
 							<li><a href="/NHMP/ochart">조직도</a></li>
 						</ul></li>
 					<%
-						}
+					}
 					%>
 					<%
-						if (emp.getAuthorityCode().equals("G2")) {
+					if (emp.getAuthorityCode().equals("G2")) {
 					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-plus-square"></i><span
@@ -185,7 +184,7 @@ ERP.Employee.model.vo.Employee"%>
 									등록</a></li>
 						</ul></li>
 					<%
-						}
+					}
 					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-usd"></i><span
@@ -201,7 +200,7 @@ ERP.Employee.model.vo.Employee"%>
 							class="fa fa-download"></i> <span class="nav-text">자료실</span>
 					</a></li>
 					<%
-						} else {
+					} else {
 					%>
 					<ul class="metismenu" id="menu">
 						<li class="mega-menu mega-menu-sm"><a class="has-arrow"
@@ -242,7 +241,7 @@ ERP.Employee.model.vo.Employee"%>
 							<ul aria-expanded="false">
 								<li><a href="/NHMP/Epaylist">급여계산</a></li>
 							</ul> <%
- 	}
+ }
  %>
 						<li><a href="/NHMP/nlist.ad" aria-expanded="false"> <i
 								class="fa fa-slideshare"></i> <span class="nav-text">공지사항</span>
@@ -285,8 +284,8 @@ ERP.Employee.model.vo.Employee"%>
 					<th style="font-size: 16px;">담당의사</th>
 				</tr>
 				<%
-					for (int i = 0; i < list.size(); i++) {
-						Patient p = list.get(i);
+				for (int i = 0; i < list.size(); i++) {
+								PatientVo p = list.get(i);
 				%>
 				<tr>
 					<td style="font-size: 16px;"><a

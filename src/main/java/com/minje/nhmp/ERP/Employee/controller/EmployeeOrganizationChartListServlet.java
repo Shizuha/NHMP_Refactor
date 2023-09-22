@@ -63,12 +63,12 @@ public class EmployeeOrganizationChartListServlet extends HttpServlet {
 		
 		
 		
-		ArrayList<Team> team = new TeamService().selectOrganTeamName(deptName, hostId, hostPwd);
+		ArrayList<TeamVo> team = new TeamService().selectOrganTeamName(deptName, hostId, hostPwd);
 		
 		Department dp = new DepartmentService().selectDeptCode(deptName, hostId, hostPwd);
 		int empcount = 0;
 		
-		for(Team t : team) {
+		for(TeamVo t : team) {
 			empcount += new EmployeeService().teamEmpcount(t.getTeamCode(), hostId, hostPwd);
 		}
 		System.out.println(empcount);
@@ -78,7 +78,7 @@ public class EmployeeOrganizationChartListServlet extends HttpServlet {
 		JSONArray jarr = new JSONArray();
 		if(team != null) {
 			
-			for(Team t : team) {
+			for(TeamVo t : team) {
 				JSONObject tn = new JSONObject();
 				
 				tn.put("teamname",URLEncoder.encode(t.getTeamName(), "utf-8"));
@@ -102,12 +102,12 @@ public class EmployeeOrganizationChartListServlet extends HttpServlet {
 			String re2 = renameDeptName.trim();
 			
 			
-			ArrayList<Team> team = new TeamService().selectOrganTeamName(re2, hostId, hostPwd);
+			ArrayList<TeamVo> team = new TeamService().selectOrganTeamName(re2, hostId, hostPwd);
 			
 			Department dp = new DepartmentService().selectDeptCode(re2, hostId, hostPwd);
 			int empcount = 0;
 			
-			for(Team t : team) {
+			for(TeamVo t : team) {
 				empcount += new EmployeeService().teamEmpcount(t.getTeamCode(), hostId, hostPwd);
 			}
 			System.out.println(empcount);

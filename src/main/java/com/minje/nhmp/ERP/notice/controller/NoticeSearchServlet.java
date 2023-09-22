@@ -45,10 +45,10 @@ public class NoticeSearchServlet extends HttpServlet {
 		String search = request.getParameter("search");
 		
 		//3. 서비스로 전송 온 값 옮기고 결과받을 변수 준비
-		ArrayList<Notice> list = null;
+		ArrayList<ErpNoticeVo> list = null;
 		
 		//4. 노티스 서비스 준비
-		NoticeService nservice = new NoticeService();
+		ErpNoticeService nservice = new ErpNoticeService();
 		
 		//5. 검색자 구분하기
 		switch(search) {

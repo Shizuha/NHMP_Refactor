@@ -48,7 +48,7 @@ public class MedicienRecordDetailViewServlet extends HttpServlet {
 		}
 		
 		int mrNo = Integer.parseInt(request.getParameter("mr_no"));
-		MedicienRecord medicienRecord = new MedicienRecordService().DetailView(hostId, hostPwd, mrNo);
+		MedicienRecordVo medicienRecord = new MedicienRecordService().DetailView(hostId, hostPwd, mrNo);
 				
 		RequestDispatcher view = null;
 		if(medicienRecord != null) {

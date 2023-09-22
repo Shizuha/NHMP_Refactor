@@ -6,9 +6,9 @@
 	import="Main.vo.NursingHospitalVo,java.util.ArrayList,ERP.Allowance.model.vo.Allowance"%>
 
 <%
-	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	@SuppressWarnings("unchecked")
-	ArrayList<Allowance> list = (ArrayList<Allowance>)request.getAttribute("list");
+	ArrayList<AllowanceVo> list = (ArrayList<AllowanceVo>)request.getAttribute("list");
 	String Bnum = (String)request.getAttribute("Bnum");
 %>
 <!DOCTYPE html>
@@ -57,7 +57,7 @@
 <script type="text/javascript">
 var result = "";
 var calc = "";
-var Bnum = <%= Bnum %>;
+var Bnum = <%=Bnum%>;
 
 $(function(){
 	$(".numB").click(function(){
@@ -122,7 +122,9 @@ function Bcode(T01){
 					<td width="150px"><a href="" onclick="Bcode('T01')" style="text-align: center;">T01</a></td>
 				</tr>
 			</table>
-			<% for(Allowance a : list) { %>
+			<%
+			for(AllowanceVo a : list) {
+			%>
 				<% if(a.getALLOWANCE_NO()%5 == 0) { %>
 				<br>
 				<% }else { %>

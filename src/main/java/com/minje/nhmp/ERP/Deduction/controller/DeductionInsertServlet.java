@@ -37,7 +37,7 @@ public class DeductionInsertServlet extends HttpServlet {
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
 		request.setCharacterEncoding("utf-8");
 		
-		Deduction deduction = new Deduction();
+		DeductionVo deduction = new DeductionVo();
 		
 		
 		deduction.setDEDUCTION_CODE(request.getParameter("Dcode"));
@@ -50,7 +50,7 @@ public class DeductionInsertServlet extends HttpServlet {
 		int result = new DeductionService().insertDeduction(deduction,loginHospital);
 		RequestDispatcher view = null;
 		if(result > 0) {
-			ArrayList<Deduction> list = new DeductionService().selectList(loginHospital);
+			ArrayList<DeductionVo> list = new DeductionService().selectList(loginHospital);
 			view = request.getRequestDispatcher("views/ERP/Deduction/Deduction.jsp");
 			request.setAttribute("list", list);
 			view.forward(request, response);

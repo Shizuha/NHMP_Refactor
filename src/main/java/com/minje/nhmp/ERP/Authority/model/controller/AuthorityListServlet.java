@@ -47,7 +47,7 @@ public class AuthorityListServlet extends HttpServlet {
 			hostId = loginHospital.getNH_USERID();
 			hostPwd = loginHospital.getNH_USERPWD();
 		}
-		ArrayList<Authority> auList = new AuthorityService().selectAll(hostId, hostPwd);
+		ArrayList<AuthorityVo> auList = new AuthorityService().selectAll(hostId, hostPwd);
 		
 		RequestDispatcher view = null;
 		System.out.println("권한서블릿 조회해온값 :" + auList);

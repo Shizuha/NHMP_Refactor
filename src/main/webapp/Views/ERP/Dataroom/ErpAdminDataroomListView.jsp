@@ -5,9 +5,9 @@
 	page import="Main.vo.NursingHospitalVo,ERP.Dataroom.model.vo.Dataroom,java.util.ArrayList"%>
 
 <%
-	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	@SuppressWarnings("unchecked")
-	ArrayList<Dataroom> list = (ArrayList<Dataroom>)request.getAttribute("list");
+	ArrayList<DataroomVo> list = (ArrayList<DataroomVo>)request.getAttribute("list");
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();
 	int beginPage = ((Integer)request.getAttribute("beginPage")).intValue();
 	int endPage = ((Integer)request.getAttribute("endPage")).intValue();
@@ -262,7 +262,7 @@ function callFunction(){
 								class="drop-down dropdown-profile animated fadeIn dropdown-menu">
 								<div class="dropdown-content-body">
 									<ul>
-										<li><a href="/NHMP/myinfo.ad?userid=<%= loginHospital.getNH_USERID() %>"><i class="icon-user"></i>
+										<li><a href="/NHMP/myinfo.ad?userid=<%=loginHospital.getNH_USERID()%>"><i class="icon-user"></i>
 												<span>내정보 보기</span></a></li>
 
 
@@ -477,7 +477,7 @@ function callFunction(){
 
 		
 		<!-- ErpDataroomListView.jsp 추가분 -->
-<h1 align="center">자료실 전체 목록 보기 : <%= list.size() %> 개</h1>
+<h1 align="center">자료실 전체 목록 보기 : <%=list.size()%> 개</h1>
 <h3 align="center"><a href="/NHMP/drlist.ad">전체 목록 보기</a></h3>
 
 <br>
@@ -490,7 +490,9 @@ function callFunction(){
 		<th>첨부파일</th>
 		<th>조회수</th>
 	</tr>
-	<% for(Dataroom dataroom : list){ %>
+	<%
+	for(DataroomVo dataroom : list){
+	%>
 	<tr >
 		<th><%= dataroom.getDataroomNo() %></th>
 		<td><a href="/NHMP/drdetail.ad?no=<%= dataroom.getDataroomNo() %>&page=<%= currentPage %>"><%= dataroom.getDataroomTitle() %></a></td>

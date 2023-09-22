@@ -8,11 +8,11 @@
 				java.util.ArrayList" 
 %>
 <%
-	Employee emp = (Employee)session.getAttribute("loginEmployee");
+Employee emp = (Employee)session.getAttribute("loginEmployee");
 	@SuppressWarnings("unchecked")
 	ArrayList<Employee> mList = (ArrayList<Employee>)request.getAttribute("mList");
 	@SuppressWarnings("unchecked")
-	ArrayList<Department> dList = (ArrayList<Department>)request.getAttribute("dList");
+	ArrayList<DepartmentVo> dList = (ArrayList<DepartmentVo>)request.getAttribute("dList");
 	/* ArrayList<Team> tList = (ArrayList<Team>)request.getAttribute("tList");
 	ArrayList<Ward> wList = (ArrayList<Ward>)request.getAttribute("wList");
 	ArrayList<Position> pList =(ArrayList<Position>)request.getAttribute("pList"); */
@@ -401,7 +401,9 @@ ul {
         ***********************************-->
 		<div class="nav-header">
 			<div class="brand-logo">
-				<%if(emp != null){ %>
+				<%
+				if(emp != null){
+				%>
 				<a href="/NHMP/views/ERP/Employee.jsp">
 				 <b class="logo-abbr"><img
 						src="/NHMP/resources/ERP/images/logo.png" alt=""> </b> <span
@@ -411,7 +413,9 @@ ul {
 						src="/NHMP/resources/ERP/images/common/logo-text.png" alt="">
 				</span>
 				</a>
-				<%}else{ %>
+				<%
+				}else{
+				%>
 				<a href="/NHMP/views/ERP/Admin_main.jsp">
 				 <b class="logo-abbr"><img
 						src="/NHMP/resources/ERP/images/logo.png" alt=""> </b> <span
@@ -421,7 +425,9 @@ ul {
 						src="/NHMP/resources/ERP/images/common/logo-text.png" alt="">
 				</span>
 				</a>
-				<%} %>
+				<%
+				}
+				%>
 			</div>
 		</div>
 		<!--**********************************
@@ -477,9 +483,13 @@ ul {
         ***********************************-->
 		<div class="nk-sidebar">
 			<div class="nk-nav-scroll">
-				<%if(emp != null){ %>
+				<%
+				if(emp != null){
+				%>
 				<ul class="metismenu" id="menu">
-					<%if(emp.getAuthorityCode().equals("G5")){ %>
+					<%
+					if(emp.getAuthorityCode().equals("G5")){
+					%>
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
 						<i class="fa fa-users"></i><span class="nav-text">인사관리</span> 
@@ -490,8 +500,12 @@ ul {
 							<li><a href="/NHMP/ochart">조직도</a></li>
 						</ul>
 					</li>
-						<%} %>
-						<%if(emp.getAuthorityCode().equals("G2")){ %>
+						<%
+						}
+						%>
+						<%
+						if(emp.getAuthorityCode().equals("G2")){
+						%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-plus-square"></i><span
 							class="nav-text">환자 관리</span> <!--   <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">환자 관리</span> -->
@@ -503,7 +517,9 @@ ul {
 							<li><a href="/NHMP/counsellistview">상담일지 등록</a></li>
 							<li><a href="/NHMP/recordlistview">투약일지 등록</a></li>
 						</ul></li>
-					<%} %>
+					<%
+					}
+					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-usd"></i><span
 							class="nav-text">급여 관리</span> <!--    <i class="icon-grid menu-icon"></i><span class="nav-text">급여 관리</span>  -->
@@ -517,7 +533,9 @@ ul {
 					<li><a href="/NHMP/drlist" aria-expanded="false"> <i
 							class="fa fa-download"></i> <span class="nav-text">자료실</span>
 					</a></li>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<ul class="metismenu" id="menu">
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
@@ -562,7 +580,9 @@ ul {
 					<li><a href="/NHMP/drlist.ad" aria-expanded="false"> <i
 							class="fa fa-download"></i> <span class="nav-text">자료실</span>
 					</a></li>
-						<%} %>
+						<%
+						}
+						%>
 					</ul>
 			</div>
 		</div>
@@ -587,10 +607,14 @@ ul {
 			</div>
 				<div class="dept">
 					<div class="dept-left">
-					<%if(dList != null){%>
+					<%
+					if(dList != null){
+					%>
 						<div class="organ">
 							<ul>
-							<%for(Department d : dList){ %>
+							<%
+							for(DepartmentVo d : dList){
+							%>
 								<li class="deptList"><%= d.getDeptName()%>
 								<ul></ul>
 								</li>

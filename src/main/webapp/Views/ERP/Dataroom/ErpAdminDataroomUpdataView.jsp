@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="ERP.Dataroom.model.vo.Dataroom,Main.vo.NursingHospitalVo" %>
 <%
-Dataroom dataroom = (Dataroom)request.getAttribute("dataroom");
+DataroomVo dataroom = (DataroomVo)request.getAttribute("dataroom");
 	String currentPage = (String)request.getAttribute("currentPage");
 	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 %>

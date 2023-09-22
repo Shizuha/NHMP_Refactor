@@ -8,7 +8,7 @@
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	@SuppressWarnings("unchecked")
-	ArrayList<Calendar> list = (ArrayList<Calendar>) session.getAttribute("list");
+	ArrayList<CalendarVo> list = (ArrayList<CalendarVo>) session.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html>

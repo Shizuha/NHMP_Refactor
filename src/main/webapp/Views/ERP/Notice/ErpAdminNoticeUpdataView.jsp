@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="ERP.notice.model.vo.Notice,Main.vo.NursingHospitalVo" %>
 <%
-Notice notice = (Notice)request.getAttribute("notice");
+ErpNoticeVo notice = (ErpNoticeVo)request.getAttribute("notice");
 	String currentPage = (String)request.getAttribute("currentPage");
 	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 %>

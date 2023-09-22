@@ -7,13 +7,12 @@
 				ERP.Allowance.model.vo.Allowance, ERP.Employee.model.vo.Employee"%>
 
 <%
- 	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
+Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
 	@SuppressWarnings("unchecked")
-	ArrayList<Allowance> Alist = (ArrayList<Allowance>)request.getAttribute("Alist");
+	ArrayList<AllowanceVo> Alist = (ArrayList<AllowanceVo>)request.getAttribute("Alist");
 	@SuppressWarnings("unchecked")
-	ArrayList<Deduction> Dlist = (ArrayList<Deduction>)request.getAttribute("Dlist");
+	ArrayList<DeductionVo> Dlist = (ArrayList<DeductionVo>)request.getAttribute("Dlist");
 	Employee emp = (Employee)request.getAttribute("emp");
-	
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -336,13 +335,19 @@ function Acheckbox(Acode, Ano){
 						<li class="icons dropdown">
 							<div class="user-img c-pointer position-relative"
 								data-toggle="dropdown">
-								<span class="activity active"></span> <%if(emp.getEmpImgOriginalFilename() != null){ %>
-								<img src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename() %>" height="40"
+								<span class="activity active"></span> <%
+ if(emp.getEmpImgOriginalFilename() != null){
+ %>
+								<img src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename()%>" height="40"
 									width="40" alt="">
-								<%}else{ %>
+								<%
+								}else{
+								%>
 								<img src="/NHMP/resources/ERP/images/캡처12.PNG" height="40"
 									width="40" alt="">
-									<%} %>
+									<%
+									}
+									%>
 							</div>
 							<div
 								class="drop-down dropdown-profile animated fadeIn dropdown-menu">
@@ -373,9 +378,13 @@ function Acheckbox(Acode, Ano){
         ***********************************-->
 		<div class="nk-sidebar">
 			<div class="nk-nav-scroll">
-			<%if(emp != null){ %>
+			<%
+			if(emp != null){
+			%>
 				<ul class="metismenu" id="menu">
-					<%if(emp.getAuthorityCode().equals("G5")){ %>
+					<%
+					if(emp.getAuthorityCode().equals("G5")){
+					%>
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
 						<i class="fa fa-users"></i><span class="nav-text">인사관리</span> 
@@ -386,8 +395,12 @@ function Acheckbox(Acode, Ano){
 							<li><a href="/NHMP/ochart">조직도</a></li>
 						</ul>
 					</li>
-						<%} %>
-						<%if(emp.getAuthorityCode().equals("G2")){ %>
+						<%
+						}
+						%>
+						<%
+						if(emp.getAuthorityCode().equals("G2")){
+						%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-plus-square"></i><span
 							class="nav-text">환자 관리</span> <!--   <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">환자 관리</span> -->
@@ -399,7 +412,9 @@ function Acheckbox(Acode, Ano){
 							<li><a href="/NHMP/counsellistview">상담일지 등록</a></li>
 							<li><a href="/NHMP/recordlistview">투약일지 등록</a></li>
 						</ul></li>
-					<%} %>
+					<%
+					}
+					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-usd"></i><span
 							class="nav-text">급여 관리</span> <!--    <i class="icon-grid menu-icon"></i><span class="nav-text">급여 관리</span>  -->
@@ -407,7 +422,9 @@ function Acheckbox(Acode, Ano){
 						<ul aria-expanded="false">
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<ul class="metismenu" id="menu">
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
@@ -444,7 +461,9 @@ function Acheckbox(Acode, Ano){
 						<ul aria-expanded="false">
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%} %>
+						<%
+						}
+						%>
 					<li><a href="/NHMP/nlist" aria-expanded="false"> <i
 							class="fa fa-slideshare"></i> <span class="nav-text">공지사항</span>
 					</a></li>
@@ -475,9 +494,9 @@ function Acheckbox(Acode, Ano){
 									<th>사번</th>
 								</tr>
 								<tr align="center">
-									<td><input type="checkbox" name="ECheckBtn"	id="ECheckBtn<%= emp.getEmpId() %>" class="CECheckBtn" onclick="Echeckbox('<%= emp.getEmpId() %>','<%= emp.getSalary() %>')" style="text-align: center; vertical-align: middle; width: 1.0rem; height: 1.0rem"></td>
-									<td><%= emp.getEmpName() %></td>
-									<td><%= emp.getEmpId() %></td>
+									<td><input type="checkbox" name="ECheckBtn"	id="ECheckBtn<%=emp.getEmpId()%>" class="CECheckBtn" onclick="Echeckbox('<%=emp.getEmpId()%>','<%=emp.getSalary()%>')" style="text-align: center; vertical-align: middle; width: 1.0rem; height: 1.0rem"></td>
+									<td><%=emp.getEmpName()%></td>
+									<td><%=emp.getEmpId()%></td>
 								</tr>
 								<!-- 디비에서 list 받아서 가져오기 -->
 							</table>
@@ -490,17 +509,17 @@ function Acheckbox(Acode, Ano){
 									<th align="center">수당명칭2</th>
 								</tr>
 								<%
-									for (Allowance a : Alist) {
+								for (AllowanceVo a : Alist) {
 								%>
 								<tr align="center">
 									<td><input type="checkbox" class="ACheckBtn" 
-										id="ACheckBtn<%= a.getALLOWANCE_NO() %>"
-										onclick="Acheckbox('<%= a.getALLOWANCE_CODE() %>','<%= a.getALLOWANCE_NO() %>')"
+										id="ACheckBtn<%=a.getALLOWANCE_NO()%>"
+										onclick="Acheckbox('<%=a.getALLOWANCE_CODE()%>','<%=a.getALLOWANCE_NO()%>')"
 										style="text-align: center; vertical-align: middle; width: 1.0rem; height: 1.0rem"></td>
 									<td><%=a.getALLOWANCE_NAME()%></td>
 								</tr>
 								<%
-									}
+								}
 								%>
 								<!-- 디비에서 list 받아서 가져오기 -->
 							</table>
@@ -515,7 +534,7 @@ function Acheckbox(Acode, Ano){
 									<th align="center">공제명칭1</th>
 								</tr>
 								<%
-									for (Deduction d : Dlist) {
+								for (DeductionVo d : Dlist) {
 								%>
 								<tr align="center">
 									<td><input type="checkbox" class="DCheckBtn"
@@ -526,7 +545,7 @@ function Acheckbox(Acode, Ano){
 									<td><%=d.getDEDUCTION_NAME()%></td>
 								</tr>
 								<%
-									}
+								}
 								%>
 								<!-- 디비에서 list 받아서 가져오기 -->
 							</table>
@@ -536,18 +555,18 @@ function Acheckbox(Acode, Ano){
 								<div id="Payresult">
 									<table border="1">
 										<%
-											for (Allowance a : Alist) {
+										for (AllowanceVo a : Alist) {
 										%>
 										<tr>
 											<th style="text-align: center;"><%=a.getALLOWANCE_NAME()%>
 											<td style="text-align: center;"><input type="text"
-												id="payA<%= a.getALLOWANCE_NO() %>" class="CpayA"
+												id="payA<%=a.getALLOWANCE_NO()%>" class="CpayA"
 												value="0" style="text-align: right; width: 140px;" readonly>원
 											</td>
 											</th>
 											</th>
 											<%
-												}
+											}
 											%>
 										
 										<tr>
@@ -572,7 +591,7 @@ function Acheckbox(Acode, Ano){
 								<div id="Payresult">
 									<table border="1" id="resultwindow">
 										<%
-											for (Deduction d : Dlist) {
+										for (DeductionVo d : Dlist) {
 										%>
 										<tr>
 											<th style="text-align: center;"><%=d.getDEDUCTION_NAME()%>

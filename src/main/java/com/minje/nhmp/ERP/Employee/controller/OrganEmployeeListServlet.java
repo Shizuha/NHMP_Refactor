@@ -62,7 +62,7 @@ public class OrganEmployeeListServlet extends HttpServlet {
 		if(teamName.length() < 7) {
 			
 			ArrayList<Employee>	empList = new EmployeeService().selectOrganEmpList(hostId, hostPwd, teamName);
-			Team tcode = new TeamService().selectTeamCode(hostId, hostPwd, teamName);
+			TeamVo tcode = new TeamService().selectTeamCode(hostId, hostPwd, teamName);
 			System.out.println("조직도 팀코드=" + tcode);
 			int tCount = new EmployeeService().teamEmpcount(tcode.getTeamCode(),hostId, hostPwd);
 			
@@ -101,7 +101,7 @@ public class OrganEmployeeListServlet extends HttpServlet {
 			
 			ArrayList<Employee>	empList = new EmployeeService().selectOrganEmpList(hostId, hostPwd, re2);
 			
-			Team tcode = new TeamService().selectTeamCode(hostId, hostPwd, re2);
+			TeamVo tcode = new TeamService().selectTeamCode(hostId, hostPwd, re2);
 			if(empList != null && tcode != null) {
 			int tCount = new EmployeeService().teamEmpcount(tcode.getTeamCode(),hostId, hostPwd);
 			

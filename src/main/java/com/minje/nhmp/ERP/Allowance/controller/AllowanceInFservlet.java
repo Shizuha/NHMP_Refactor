@@ -37,7 +37,7 @@ public class AllowanceInFservlet extends HttpServlet {
 		String Bnum = request.getParameter("Bnum");
 		System.out.println(Bnum);
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
-		ArrayList<Allowance> list = new AllowanceService().selectList(loginHospital);
+		ArrayList<AllowanceVo> list = new AllowanceService().selectList(loginHospital);
 		RequestDispatcher view = null;
 		if(list.size() > 0) {
 			view = request.getRequestDispatcher("views/ERP/Allowance/insertFormulaA.jsp");

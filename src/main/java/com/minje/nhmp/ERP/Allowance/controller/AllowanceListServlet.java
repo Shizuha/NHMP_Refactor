@@ -35,7 +35,7 @@ public class AllowanceListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 수당 전체 조회용 컨트롤러
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
-		ArrayList<Allowance> list = new AllowanceService().selectList(loginHospital);
+		ArrayList<AllowanceVo> list = new AllowanceService().selectList(loginHospital);
 		
 		RequestDispatcher view = null;
 		

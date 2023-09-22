@@ -48,9 +48,9 @@ public class EpaysumListServlet extends HttpServlet {
 			System.out.println(hostid);
 			System.out.println(hostpwd);
 			
-			ArrayList<Deduction> Dlist = new DeductionService().EselectList(hostid,hostpwd);
+			ArrayList<DeductionVo> Dlist = new DeductionService().EselectList(hostid,hostpwd);
 			System.out.println("Dlist : "+Dlist);
-			ArrayList<Allowance> Alist = new AllowanceService().EselectList(hostid,hostpwd);
+			ArrayList<AllowanceVo> Alist = new AllowanceService().EselectList(hostid,hostpwd);
 			System.out.println("Alist : "+Alist);
 			Employee emp = new EmployeeService().selectOne(loginEmployee.getEmpNo(), hostid, hostpwd);
 			System.out.println("emp : "+emp);
@@ -67,8 +67,8 @@ public class EpaysumListServlet extends HttpServlet {
 			view.forward(request, response);
 		}else {//직원 로그인
 			System.out.println(loginHospital);
-			ArrayList<Deduction> Dlist = new DeductionService().selectList(loginHospital);
-			ArrayList<Allowance> Alist = new AllowanceService().selectList(loginHospital);
+			ArrayList<DeductionVo> Dlist = new DeductionService().selectList(loginHospital);
+			ArrayList<AllowanceVo> Alist = new AllowanceService().selectList(loginHospital);
 			ArrayList<Employee> Elist = new EmployeeService().selectAll(loginHospital);
 			System.out.println(Elist);
 			RequestDispatcher view = null;

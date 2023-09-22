@@ -13,7 +13,7 @@ NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("login
 
 
 <%
-Dataroom dataroom = (Dataroom)request.getAttribute("dataroom");
+DataroomVo dataroom = (DataroomVo)request.getAttribute("dataroom");
 Employee emp = (Employee)session.getAttribute("loginEmployee");
 Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
 %>   

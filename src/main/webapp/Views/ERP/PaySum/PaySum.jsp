@@ -7,9 +7,9 @@
 <%
 NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	@SuppressWarnings("unchecked")
-	ArrayList<Allowance> Alist = (ArrayList<Allowance>)request.getAttribute("Alist");
+	ArrayList<AllowanceVo> Alist = (ArrayList<AllowanceVo>)request.getAttribute("Alist");
 	@SuppressWarnings("unchecked")
-	ArrayList<Deduction> Dlist = (ArrayList<Deduction>)request.getAttribute("Dlist");
+	ArrayList<DeductionVo> Dlist = (ArrayList<DeductionVo>)request.getAttribute("Dlist");
 	@SuppressWarnings("unchecked")
 	ArrayList<Employee> Elist = (ArrayList<Employee>)request.getAttribute("Elist");
 %>
@@ -339,25 +339,33 @@ function Acheckbox(Acode, Ano){
         ***********************************-->
 		<div class="nav-header">
 			<div class="brand-logo">
-				<% if(loginHospital.getAUTHORITY_CODE().equals("G1")){ %>
+				<%
+				if(loginHospital.getAUTHORITY_CODE().equals("G1")){
+				%>
 					<a href="/NHMP/views/ERP/master_main.jsp"> <b class="logo-abbr">
 					<img src="/NHMP/resources/ERP/images/common/logo.png" alt=""> </b> 
 					<span class="logo-compact"><img src="/NHMP/resources/ERP/images/common/logo-compact.png" alt=""></span>
 					<span class="brand-title"> <img align="middle" src="/NHMP/resources/ERP/images/common/logo-text.png" ailgn=""></span>
 					</a>
-				<% }else if (loginHospital.getAUTHORITY_CODE().equals("G3") || loginHospital.getAUTHORITY_CODE().equals("G4") || loginHospital.getAUTHORITY_CODE().equals("G5")){ %>
+				<%
+				}else if (loginHospital.getAUTHORITY_CODE().equals("G3") || loginHospital.getAUTHORITY_CODE().equals("G4") || loginHospital.getAUTHORITY_CODE().equals("G5")){
+				%>
 					<a href="/NHMP/views/ERP/Admin_main.jsp"> <b class="logo-abbr">
 					<img src="/NHMP/resources/ERP/images/common/logo.png" alt=""> </b> 
 					<span class="logo-compact"><img src="/NHMP/resources/ERP/images/common/logo-compact.png" alt=""></span>
 					<span class="brand-title"> <img align="middle" src="/NHMP/resources/ERP/images/common/logo-text.png" ailgn=""></span>
 					</a>
-				<% }else{ %>
+				<%
+				}else{
+				%>
 					<a href="/NHMP/views/ERP/Employee.jsp"> <b class="logo-abbr">
 					<img src="/NHMP/resources/ERP/images/common/logo.png" alt=""> </b> 
 					<span class="logo-compact"><img src="/NHMP/resources/ERP/images/common/logo-compact.png" alt=""></span>
 					<span class="brand-title"> <img align="middle" src="/NHMP/resources/ERP/images/common/logo-text.png" ailgn=""></span>
 					</a>
-				<% } %>
+				<%
+				}
+				%>
 			</div>
 		</div>
 		<!--**********************************
@@ -481,7 +489,7 @@ function Acheckbox(Acode, Ano){
 									<th>사번</th>
 								</tr>
 								<%
-									for (Employee e : Elist) {
+								for (Employee e : Elist) {
 								%>
 								<tr align="center">
 									<td><input type="checkbox" name="ECheckBtn"
@@ -492,7 +500,7 @@ function Acheckbox(Acode, Ano){
 									<td><%=e.getEmpId()%></td>
 								</tr>
 								<%
-									}
+								}
 								%>
 								<!-- 디비에서 list 받아서 가져오기 -->
 							</table>
@@ -507,17 +515,17 @@ function Acheckbox(Acode, Ano){
 									<th align="center">수당명칭2</th>
 								</tr>
 								<%
-									for (Allowance a : Alist) {
+								for (AllowanceVo a : Alist) {
 								%>
 								<tr align="center">
 									<td><input type="checkbox" class="ACheckBtn" 
-										id="ACheckBtn<%= a.getALLOWANCE_NO() %>"
-										onclick="Acheckbox('<%= a.getALLOWANCE_CODE() %>','<%= a.getALLOWANCE_NO() %>')"
+										id="ACheckBtn<%=a.getALLOWANCE_NO()%>"
+										onclick="Acheckbox('<%=a.getALLOWANCE_CODE()%>','<%=a.getALLOWANCE_NO()%>')"
 										style="text-align: center; vertical-align: middle; width: 1.0rem; height: 1.0rem"></td>
 									<td><%=a.getALLOWANCE_NAME()%></td>
 								</tr>
 								<%
-									}
+								}
 								%>
 								<!-- 디비에서 list 받아서 가져오기 -->
 							</table>
@@ -530,7 +538,7 @@ function Acheckbox(Acode, Ano){
 									<th align="center">공제명칭1</th>
 								</tr>
 								<%
-									for (Deduction d : Dlist) {
+								for (DeductionVo d : Dlist) {
 								%>
 								<tr align="center">
 									<td><input type="checkbox" class="DCheckBtn"
@@ -541,7 +549,7 @@ function Acheckbox(Acode, Ano){
 									<td><%=d.getDEDUCTION_NAME()%></td>
 								</tr>
 								<%
-									}
+								}
 								%>
 								<!-- 디비에서 list 받아서 가져오기 -->
 							</table>
@@ -557,18 +565,18 @@ function Acheckbox(Acode, Ano){
 								<div id="Payresult">
 									<table border="1">
 										<%
-											for (Allowance a : Alist) {
+										for (AllowanceVo a : Alist) {
 										%>
 										<tr>
 											<th style="text-align: center;"><%=a.getALLOWANCE_NAME()%>
 											<td style="text-align: center;"><input type="text"
-												id="payA<%= a.getALLOWANCE_NO() %>" class="CpayA"
+												id="payA<%=a.getALLOWANCE_NO()%>" class="CpayA"
 												value="0" style="text-align: right; width: 140px;" readonly>원
 											</td>
 											</th>
 											</th>
 											<%
-												}
+											}
 											%>
 										
 										<tr>
@@ -594,7 +602,7 @@ function Acheckbox(Acode, Ano){
 								<div id="Payresult">
 									<table border="1" id="resultwindow">
 										<%
-											for (Deduction d : Dlist) {
+										for (DeductionVo d : Dlist) {
 										%>
 										<tr>
 											<th style="text-align: center;"><%=d.getDEDUCTION_NAME()%>

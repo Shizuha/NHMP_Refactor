@@ -54,7 +54,7 @@ public class DataroomAdminUpdateViewServlet extends HttpServlet {
 		
 		
 		//패이지 지정하고 수정할 내용 출력
-		Dataroom dataroom = new DataroomService().selectOne(dataroomNo, loginHospital);
+		DataroomVo dataroom = new DataroomService().selectOne(dataroomNo, loginHospital);
 		
 		//전달할 정보 출력
 		RequestDispatcher view = null;

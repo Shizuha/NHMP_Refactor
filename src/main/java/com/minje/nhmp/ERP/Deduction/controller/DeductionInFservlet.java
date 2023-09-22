@@ -37,7 +37,7 @@ public class DeductionInFservlet extends HttpServlet {
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
 		String Bnum = request.getParameter("Bnum");
 		System.out.println(Bnum);
-		ArrayList<Deduction> list = new DeductionService().selectList(loginHospital);
+		ArrayList<DeductionVo> list = new DeductionService().selectList(loginHospital);
 		RequestDispatcher view = null;
 		if(list.size() > 0) {
 			view = request.getRequestDispatcher("views/ERP/Deduction/insertFormula.jsp");

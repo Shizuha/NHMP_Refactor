@@ -41,7 +41,7 @@ public class NoticeAdminUpdataServlet extends HttpServlet {
 				
 				
 				//2. 전송온 값 꺼내서 객체에 저장하기
-				Notice notice = new Notice();
+				ErpNoticeVo notice = new ErpNoticeVo();
 				
 				notice.setNoticeNo(Integer.parseInt(request.getParameter("no")));
 				notice.setNoticeTitle(request.getParameter("title"));
@@ -51,7 +51,7 @@ public class NoticeAdminUpdataServlet extends HttpServlet {
 				
 				
 				//3.모델 서비스로 전달하고, 결과받기
-				int result = new NoticeService().updateNotice(notice,loginHospital);
+				int result = new ErpNoticeService().updateNotice(notice,loginHospital);
 				
 				
 				RequestDispatcher view = null;

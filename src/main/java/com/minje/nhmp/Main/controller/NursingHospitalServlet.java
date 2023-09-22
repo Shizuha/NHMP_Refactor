@@ -14,15 +14,15 @@ import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 
-import com.minje.nhmp.ERP.Calendar.Model.Service.CalendarService;
-import com.minje.nhmp.ERP.Calendar.Model.vo.Calendar;
-import com.minje.nhmp.ERP.Department.model.service.DepartmentService;
-import com.minje.nhmp.ERP.Department.model.vo.Department;
-import com.minje.nhmp.ERP.Employee.model.service.EmployeeService;
-import com.minje.nhmp.ERP.Employee.model.vo.Employee;
-import com.minje.nhmp.ERP.Team.model.service.TeamService;
-import com.minje.nhmp.ERP.Ward.model.service.WardService;
-import com.minje.nhmp.ERP.Ward.model.vo.Ward;
+import com.minje.nhmp.ERP.vo.CalendarVo;
+import com.minje.nhmp.ERP.vo.DepartmentVo;
+import com.minje.nhmp.ERP.service.EmployeeService;
+import com.minje.nhmp.ERP.vo.EmployeeVo;
+import com.minje.nhmp.ERP.vo.WardVo;
+import com.minje.nhmp.ERP.service.CalendarService;
+import com.minje.nhmp.ERP.service.DepartmentService;
+import com.minje.nhmp.ERP.service.TeamService;
+import com.minje.nhmp.ERP.service.WardService;
 import com.minje.nhmp.Main.service.NursingHospitalService;
 import com.minje.nhmp.Main.vo.NursingHospitalVo;
 
@@ -44,7 +44,7 @@ public class NursingHospitalServlet extends HttpServlet {
 			String userid = "";
 			String userpwd = "";
 			NursingHospitalVo loginHospital = null;
-			Employee loginEmployee = null;
+			EmployeeVo loginEmployee = null;
 			RequestDispatcher view = null;
 			if(!Cname.equals("관리자")) {//직원
 				String hostid = request.getParameter("hostid");
@@ -53,12 +53,12 @@ public class NursingHospitalServlet extends HttpServlet {
 				userpwd = request.getParameter("userpwd");
 				loginEmployee = new EmployeeService().loginCheck(userid, userpwd, hostid, hostpwd);
 				if( loginEmployee != null ) {
-					Department dp = new DepartmentService().selectAuDeptName(hostid, hostpwd, loginEmployee.getDeptCode());
+					DepartmentVo dp = new DepartmentService().selectAuDeptName(hostid, hostpwd, loginEmployee.getDeptCode());
 					String tm = new TeamService().selectTeamName(loginEmployee.getTeamCode(), hostid, hostpwd);
-					Ward wd = new WardService().selectAuWardName(hostid, hostpwd, loginEmployee.getWardCode());
+					WardVo wd = new WardService().selectAuWardName(hostid, hostpwd, loginEmployee.getWardCode());
 					HttpSession session = request.getSession();
 					String empname = loginEmployee.getEmpName();
-					ArrayList<Calendar> list = new CalendarService().EmployeeSelectList(empname, hostid, hostpwd);
+					ArrayList<CalendarVo> list = new CalendarService().EmployeeSelectList(empname, hostid, hostpwd);
 					session.setAttribute("list", list);
 					session.setAttribute("loginEmployee", loginEmployee);
 					session.setAttribute("dp", dp);
@@ -247,7 +247,7 @@ public class NursingHospitalServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 }

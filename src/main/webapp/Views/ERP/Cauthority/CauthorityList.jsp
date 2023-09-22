@@ -5,8 +5,8 @@
 %>
 
 <%
-	@SuppressWarnings("unchecked")
-	ArrayList<Cauthority> list = (ArrayList<Cauthority>)request.getAttribute("list");
+@SuppressWarnings("unchecked")
+	ArrayList<CauthorityVo> list = (ArrayList<CauthorityVo>)request.getAttribute("list");
 %>
 
     

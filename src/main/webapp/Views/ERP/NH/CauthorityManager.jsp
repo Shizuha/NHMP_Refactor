@@ -8,12 +8,12 @@
 %>	
  
 <%
-	NursingHospitalVo loginAdmin = (NursingHospitalVo)session.getAttribute("loginHospital");
-	@SuppressWarnings("unchecked")
-	ArrayList<NursingHospitalVo> list = (ArrayList<NursingHospitalVo>)request.getAttribute("list");
-	@SuppressWarnings("unchecked")
-	ArrayList<Cauthority> Alist = (ArrayList<Cauthority>)request.getAttribute("Alist");
-%>
+	 NursingHospitalVo loginAdmin = (NursingHospitalVo)session.getAttribute("loginHospital");
+	 	@SuppressWarnings("unchecked")
+	 	ArrayList<NursingHospitalVo> list = (ArrayList<NursingHospitalVo>)request.getAttribute("list");
+	 	@SuppressWarnings("unchecked")
+	 	ArrayList<CauthorityVo> Alist = (ArrayList<CauthorityVo>)request.getAttribute("Alist");
+	 %>
 <!DOCTYPE html>
 
 <html lang="ko">
@@ -311,15 +311,17 @@ function check(){
 							for( NursingHospitalVo NH : list ) {
 							%>
 								<tr>
-									<td><input type="checkbox" class="NHbtn" name="NHch" value="<%= NH.getNH_ID() %>" ></td>
-									<td><%= NH.getNH_ID() %></td>
-									<td><%= NH.getNH_NAME() %></td>
-									<td><%= NH.getCOMPANY_NAME() %></td>
-									<td><%= NH.getCOMPANY_NO() %></td>
-									<td><%= NH.getAUTHORITY_CODE() %></td>
-									<td><%= NH.getNH_SERVICE_HISTORY() %></td>
+									<td><input type="checkbox" class="NHbtn" name="NHch" value="<%=NH.getNH_ID()%>" ></td>
+									<td><%=NH.getNH_ID()%></td>
+									<td><%=NH.getNH_NAME()%></td>
+									<td><%=NH.getCOMPANY_NAME()%></td>
+									<td><%=NH.getCOMPANY_NO()%></td>
+									<td><%=NH.getAUTHORITY_CODE()%></td>
+									<td><%=NH.getNH_SERVICE_HISTORY()%></td>
 								</tr>
-							<% } %>
+							<%
+							}
+							%>
 						</table>
 					</div>
 					<div class="Authlist">
@@ -330,7 +332,9 @@ function check(){
 								<th>권한명</th>
 								<th>설명</th>
 							</tr>
-							<% for( Cauthority A : Alist ) { %>
+							<%
+							for( CauthorityVo A : Alist ) {
+							%>
 								<tr>
 									<td><input type="checkbox" class="AUTHbtn" name="AUch" value="<%= A.getAUTHORITY_CODE() %>" ></td>
 									<td><%= A.getAUTHORITY_CODE() %></td>
