@@ -3,7 +3,7 @@
 <%@ page
 	import="ERP.counselingLog.model.vo.CounselingLog, ERP.Employee.model.vo.Employee"%>
 <%
-	CounselingLog counselingLog = (CounselingLog) request.getAttribute("counselingLog");
+CounselingLogVo counselingLog = (CounselingLogVo) request.getAttribute("counselingLog");
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 %>
 <!DOCTYPE html>

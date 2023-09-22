@@ -37,7 +37,7 @@ public class AuthorityManagerServlet extends HttpServlet {
 		// 권한 적용 컨트롤러
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
 		ArrayList<NursingHospitalVo> list = new NHService().selectList();
-		ArrayList<Cauthority> Alist = new CauthorityService().selectList(loginHospital);
+		ArrayList<CauthorityVo> Alist = new CauthorityService().selectList(loginHospital);
 		
 		RequestDispatcher view = null;
 		System.out.println(Alist);

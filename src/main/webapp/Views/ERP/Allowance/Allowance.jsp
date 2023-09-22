@@ -7,9 +7,9 @@
 				ERP.Allowance.model.vo.Allowance"%>
 
 <%
-	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	@SuppressWarnings("unchecked")
-	ArrayList<Allowance> list = (ArrayList<Allowance>)request.getAttribute("list");
+	ArrayList<AllowanceVo> list = (ArrayList<AllowanceVo>)request.getAttribute("list");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -95,7 +95,7 @@
 	}
 	
 	$(function(){
-		var count = <%= list.size()+1 %>;
+		var count = <%=list.size()+1%>;
 		$("#btn_add_row").click(function(){
 			var lastTr = 'lastTr'+count;
 			var last = $('#'+lastTr);
@@ -114,7 +114,7 @@
 		});
 		
 		$("#btn_delete_row").click(function(){
-			if(count >= <%= list.size()+2 %>){
+			if(count >= <%=list.size()+2%>){
 				var lastTr = 'lastTr'+count;		
 				var last = $('#'+lastTr);
 				last.remove();
@@ -220,25 +220,33 @@
         ***********************************-->
 		<div class="nav-header">
 			<div class="brand-logo">
-				<% if(loginHospital.getAUTHORITY_CODE().equals("G1")){ %>
+				<%
+				if(loginHospital.getAUTHORITY_CODE().equals("G1")){
+				%>
 					<a href="/NHMP/views/ERP/master_main.jsp"> <b class="logo-abbr">
 					<img src="/NHMP/resources/ERP/images/common/logo.png" alt=""> </b> 
 					<span class="logo-compact"><img src="/NHMP/resources/ERP/images/common/logo-compact.png" alt=""></span>
 					<span class="brand-title"> <img align="middle" src="/NHMP/resources/ERP/images/common/logo-text.png" ailgn=""></span>
 					</a>
-				<% }else if (loginHospital.getAUTHORITY_CODE().equals("G3") || loginHospital.getAUTHORITY_CODE().equals("G4") || loginHospital.getAUTHORITY_CODE().equals("G5")){ %>
+				<%
+				}else if (loginHospital.getAUTHORITY_CODE().equals("G3") || loginHospital.getAUTHORITY_CODE().equals("G4") || loginHospital.getAUTHORITY_CODE().equals("G5")){
+				%>
 					<a href="/NHMP/views/ERP/Admin_main.jsp"> <b class="logo-abbr">
 					<img src="/NHMP/resources/ERP/images/common/logo.png" alt=""> </b> 
 					<span class="logo-compact"><img src="/NHMP/resources/ERP/images/common/logo-compact.png" alt=""></span>
 					<span class="brand-title"> <img align="middle" src="/NHMP/resources/ERP/images/common/logo-text.png" ailgn=""></span>
 					</a>
-				<% }else{ %>
+				<%
+				}else{
+				%>
 					<a href="/NHMP/views/ERP/Employee.jsp"> <b class="logo-abbr">
 					<img src="/NHMP/resources/ERP/images/common/logo.png" alt=""> </b> 
 					<span class="logo-compact"><img src="/NHMP/resources/ERP/images/common/logo-compact.png" alt=""></span>
 					<span class="brand-title"> <img align="middle" src="/NHMP/resources/ERP/images/common/logo-text.png" ailgn=""></span>
 					</a>
-				<% } %>
+				<%
+				}
+				%>
 			</div>
 		</div>
 		<!--**********************************
@@ -371,7 +379,9 @@
 							<th align="center">계산내역</th>
 							<th align="center">비고</th>
 						</tr>
-						<% for (Allowance a : list) { %>
+						<%
+						for (AllowanceVo a : list) {
+						%>
 						<tr align="center">
 							<td><input type="checkbox" class="Acheck" id="AnoCh<%= a.getALLOWANCE_NO() %>" style="text-align: center; vertical-align: middle; width: 1.0rem; height: 1.0rem"></td>
 							<td><input type="text" value="<%=a.getALLOWANCE_NAME()%>" readonly style="text-align: center; width: 100px;"></td>

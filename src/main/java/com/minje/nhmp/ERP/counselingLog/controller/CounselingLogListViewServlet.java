@@ -74,7 +74,7 @@ public class CounselingLogListViewServlet extends HttpServlet {
 		int startRow = (currentPage * limit) - 9;
 		int endRow = currentPage * limit;
 				
-		ArrayList<CounselingLog> list = new CounselingLogService().ListView(hostId, hostPwd);
+		ArrayList<CounselingLogVo> list = new CounselingLogService().ListView(hostId, hostPwd);
 				
 		RequestDispatcher view = null;
 		if(list.size() > 0) {

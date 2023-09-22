@@ -31,7 +31,7 @@ public class DeductionUpdateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 공제 수정 컨트롤러
-		Deduction deduction = new DeductionService().updateDeduction();
+		DeductionVo deduction = new DeductionService().updateDeduction();
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 

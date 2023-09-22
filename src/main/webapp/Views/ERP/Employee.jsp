@@ -6,13 +6,14 @@
 				 ERP.Department.model.vo.Department,
 				 ERP.Ward.model.vo.Ward" %>
 
-<%//스크립트 립 태그라고 함 //위에 페이지있는건 디렉트 태그라고 함.
+<%
+//스크립트 립 태그라고 함 //위에 페이지있는건 디렉트 태그라고 함.
 	Employee emp = (Employee)session.getAttribute("loginEmployee");
 	@SuppressWarnings("unchecked")
-	ArrayList<Calendar> list = (ArrayList<Calendar>)session.getAttribute("list");
-	Department dp = (Department)session.getAttribute("dp");
+	ArrayList<CalendarVo> list = (ArrayList<CalendarVo>)session.getAttribute("list");
+	DepartmentVo dp = (DepartmentVo)session.getAttribute("dp");
 	String tm = (String)session.getAttribute("tm");
-	Ward wd = (Ward)session.getAttribute("wd");
+	WardVo wd = (WardVo)session.getAttribute("wd");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -341,13 +342,19 @@ thead td {
 						<li class="icons dropdown">
 							<div class="user-img c-pointer position-relative"
 								data-toggle="dropdown">
-								<span class="activity active"></span> <%if(emp.getEmpImgOriginalFilename() != null){ %>
-								<img src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename() %>" height="40"
+								<span class="activity active"></span> <%
+ if(emp.getEmpImgOriginalFilename() != null){
+ %>
+								<img src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename()%>" height="40"
 									width="40" alt="">
-								<%}else{ %>
+								<%
+								}else{
+								%>
 								<img src="/NHMP/resources/ERP/images/캡처12.PNG" height="40"
 									width="40" alt="">
-									<%} %>
+									<%
+									}
+									%>
 							</div>
 							<div
 								class="drop-down dropdown-profile animated fadeIn dropdown-menu">
@@ -378,9 +385,13 @@ thead td {
         ***********************************-->
 		<div class="nk-sidebar">
 			<div class="nk-nav-scroll">
-			<%if(emp != null){ %>
+			<%
+			if(emp != null){
+			%>
 				<ul class="metismenu" id="menu">
-					<%if(emp.getAuthorityCode().equals("G5")){ %>
+					<%
+					if(emp.getAuthorityCode().equals("G5")){
+					%>
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
 						<i class="fa fa-users"></i><span class="nav-text">인사관리</span> 
@@ -391,8 +402,12 @@ thead td {
 							<li><a href="/NHMP/ochart">조직도</a></li>
 						</ul>
 					</li>
-						<%} %>
-						<%if(emp.getAuthorityCode().equals("G2")){ %>
+						<%
+						}
+						%>
+						<%
+						if(emp.getAuthorityCode().equals("G2")){
+						%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-plus-square"></i><span
 							class="nav-text">환자 관리</span> <!--   <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">환자 관리</span> -->
@@ -404,7 +419,9 @@ thead td {
 							<li><a href="/NHMP/views/ERP/counselingLog/CounselingLogInsertView.jsp">상담일지 등록</a></li>
 							<li><a href="/NHMP/views/ERP/medicienRecord/MedicienRecordInsertView.jsp">투약일지 등록</a></li>
 						</ul></li>
-					<%} %>
+					<%
+					}
+					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-usd"></i><span
 							class="nav-text">급여 관리</span> <!--    <i class="icon-grid menu-icon"></i><span class="nav-text">급여 관리</span>  -->
@@ -412,7 +429,9 @@ thead td {
 						<ul aria-expanded="false">
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<ul class="metismenu" id="menu">
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
@@ -449,7 +468,9 @@ thead td {
 						<ul aria-expanded="false">
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%} %>
+						<%
+						}
+						%>
 					<li><a href="/NHMP/nlist" aria-expanded="false"> <i
 							class="fa fa-slideshare"></i> <span class="nav-text">공지사항</span>
 					</a></li>
@@ -469,22 +490,32 @@ thead td {
         ***********************************-->
 		<div class="content-body">
 			<div class="memberDiv">
-			<%if(emp != null){ %>
+			<%
+			if(emp != null){
+			%>
 				<div class="member">
-				<%if(emp.getEmpRenameFilename() != null){ %>
-					<img alt="" src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename() %>" style="text-align:center; height:100; width:100;"><br><br>
-					<%}else{ %>
+				<%
+				if(emp.getEmpRenameFilename() != null){
+				%>
+					<img alt="" src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename()%>" style="text-align:center; height:100; width:100;"><br><br>
+					<%
+					}else{
+					%>
 					<img alt="" src="/NHMP/resources/ERP/images/캡처12.PNG" style="text-align:center; height:100; width:100;"><br><br>
-					<%} %>
+					<%
+					}
+					%>
 					<ul id="header_list" style="border: 1px soild;">
-						<li><b>사원코드 :</b><%=emp.getEmpId() %><br></li>
-						<li><b>부서 :</b><%= dp.getDeptName() %><br></li>
-						<li style="font-size: 10pt; color:#7571f9;"><%= tm %><br></li>
-						<li><b>이름 :</b><%=emp.getEmpName() %><br></li>
-						<li><b>담당병동 :</b><%= wd.getWardName() %></li>
+						<li><b>사원코드 :</b><%=emp.getEmpId()%><br></li>
+						<li><b>부서 :</b><%=dp.getDeptName()%><br></li>
+						<li style="font-size: 10pt; color:#7571f9;"><%=tm%><br></li>
+						<li><b>이름 :</b><%=emp.getEmpName()%><br></li>
+						<li><b>담당병동 :</b><%=wd.getWardName()%></li>
 					</ul><br>
 				</div>
-				<% }else{ %>
+				<%
+				}else{
+				%>
 				<div class="member">
 					<img alt="" src="/NHMP/resources/ERP/images/testimonial2.jpg" style="text-align:center;"><br><br>
 					<ul id="header_list">
@@ -495,11 +526,15 @@ thead td {
 						<li>담당병동:<br></li>
 					</ul>
 				</div>
-				<%} %>
+				<%
+				}
+				%>
 				<div class="calendar1">
 				<h2 style="background: rgb(117, 113, 249, 0.5);
       			color:rgba(0, 0, 0, 1); border-radius:3px; margin:3px;">금일일정</h2>
-      			<% for(Calendar c : list){ %>
+      			<%
+      			for(CalendarVo c : list){
+      			%>
       			<table style="border: 1px #000 solid; border-collapse: collapse;">
       			<tr style="border: 1px #000 solid; border-collapse: collapse; ">
       				<th style="border: 1px #000 solid; border-collapse: collapse; padding:10px 30px; text-align: center; background-color: #bbdefb;">날짜</th>

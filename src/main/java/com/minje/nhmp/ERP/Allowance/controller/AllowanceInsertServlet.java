@@ -36,7 +36,7 @@ public class AllowanceInsertServlet extends HttpServlet {
 		// 수당 등록용 컨트롤러
 		request.setCharacterEncoding("utf-8");
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
-		Allowance awna = new Allowance();
+		AllowanceVo awna = new AllowanceVo();
 		
 		awna.setALLOWANCE_CODE(request.getParameter("Acode"));
 		awna.setALLOWANCE_NAME(request.getParameter("Aname"));
@@ -47,7 +47,7 @@ public class AllowanceInsertServlet extends HttpServlet {
 		int result = new AllowanceService().insertAllowance(awna, loginHospital);
 		RequestDispatcher view = null;
 		if(result > 0 ) {
-			ArrayList<Allowance> list = new AllowanceService().selectList(loginHospital);
+			ArrayList<AllowanceVo> list = new AllowanceService().selectList(loginHospital);
 			view = request.getRequestDispatcher("views/ERP/Allowance/Allowance.jsp");
 			request.setAttribute("list", list);
 		}else {

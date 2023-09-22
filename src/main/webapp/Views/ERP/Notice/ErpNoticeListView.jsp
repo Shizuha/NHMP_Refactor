@@ -9,9 +9,9 @@
 %>
 
 <%
-	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	@SuppressWarnings("unchecked")
-	ArrayList<Notice> list = (ArrayList<Notice>)request.getAttribute("list");
+	ArrayList<ErpNoticeVo> list = (ArrayList<ErpNoticeVo>)request.getAttribute("list");
 	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
 	Employee emp = (Employee)session.getAttribute("loginEmployee");
 	
@@ -167,19 +167,25 @@ function button3_click(){
 						<li class="icons dropdown">
 							<div class="user-img c-pointer position-relative"
 								data-toggle="dropdown">
-								<span class="activity active"></span> <%if(emp.getEmpImgOriginalFilename() != null){ %>
-								<img src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename() %>" height="40"
+								<span class="activity active"></span> <%
+ if(emp.getEmpImgOriginalFilename() != null){
+ %>
+								<img src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename()%>" height="40"
 									width="40" alt="">
-								<%}else{ %>
+								<%
+								}else{
+								%>
 								<img src="/NHMP/resources/ERP/images/캡처12.PNG" height="40"
 									width="40" alt="">
-									<%} %>
+									<%
+									}
+									%>
 							</div>
 							<div
 								class="drop-down dropdown-profile animated fadeIn dropdown-menu">
 								<div class="dropdown-content-body">
 									<ul>
-										<li><a href="/NHMP/myinfo?userid=<%= loginEmployee.getUserId() %>"><i class="icon-user"></i>
+										<li><a href="/NHMP/myinfo?userid=<%=loginEmployee.getUserId()%>"><i class="icon-user"></i>
 												<span>내정보 보기</span></a></li>
 
 
@@ -204,9 +210,13 @@ function button3_click(){
         ***********************************-->
 		<div class="nk-sidebar">
 			<div class="nk-nav-scroll">
-			<%if(emp != null){ %>
+			<%
+			if(emp != null){
+			%>
 				<ul class="metismenu" id="menu">
-					<%if(emp.getAuthorityCode().equals("G5")){ %>
+					<%
+					if(emp.getAuthorityCode().equals("G5")){
+					%>
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
 						<i class="fa fa-users"></i><span class="nav-text">인사관리</span> 
@@ -217,8 +227,12 @@ function button3_click(){
 							<li><a href="/NHMP/ochart">조직도</a></li>
 						</ul>
 					</li>
-						<%} %>
-						<%if(emp.getAuthorityCode().equals("G2")){ %>
+						<%
+						}
+						%>
+						<%
+						if(emp.getAuthorityCode().equals("G2")){
+						%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-plus-square"></i><span
 							class="nav-text">환자 관리</span> <!--   <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">환자 관리</span> -->
@@ -230,7 +244,9 @@ function button3_click(){
 							<li><a href="/NHMP/counsellistview">상담일지 등록</a></li>
 							<li><a href="/NHMP/recordlistview">투약일지 등록</a></li>
 						</ul></li>
-					<%} %>
+					<%
+					}
+					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-usd"></i><span
 							class="nav-text">급여 관리</span> <!--    <i class="icon-grid menu-icon"></i><span class="nav-text">급여 관리</span>  -->
@@ -238,7 +254,9 @@ function button3_click(){
 						<ul aria-expanded="false">
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<ul class="metismenu" id="menu">
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
@@ -275,7 +293,9 @@ function button3_click(){
 						<ul aria-expanded="false">
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%} %>
+						<%
+						}
+						%>
 					<li><a href="/NHMP/nlist" aria-expanded="false"> <i
 							class="fa fa-slideshare"></i> <span class="nav-text">공지사항</span>
 					</a></li>
@@ -287,7 +307,7 @@ function button3_click(){
 		</div>
 		
 		<!-- ErpNoticeListView.jsp 추가분 -->
-<h1 align="center">공지사항 전체 목록 보기 : <%= list.size() %> 개</h1>
+<h1 align="center">공지사항 전체 목록 보기 : <%=list.size()%> 개</h1>
 <h3 align="center"><a href="/NHMP/nlist">전체 목록 보기</a></h3>
 <div class="searchbox" style="text-align:center">
 <div>
@@ -330,7 +350,9 @@ function button3_click(){
 	<th>작성날짜</th>
 	<th>조회수</th>
 </tr>
-<% for(Notice n : list){ %>
+<%
+for(ErpNoticeVo n : list){
+%>
 <tr >
 	<th><%= n.getNoticeNo() %></th>
 	<td><a href="/NHMP/ndetail?no=<%= n.getNoticeNo() %>"><%= n.getNoticeTitle() %></a></td>

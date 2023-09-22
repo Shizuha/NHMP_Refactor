@@ -35,7 +35,7 @@ public class CauthorityListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 권한 전체 목록 조회 컨트롤러
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
-		ArrayList<Cauthority> list = new CauthorityService().selectList(loginHospital);
+		ArrayList<CauthorityVo> list = new CauthorityService().selectList(loginHospital);
 		
 		RequestDispatcher view = null;
 		

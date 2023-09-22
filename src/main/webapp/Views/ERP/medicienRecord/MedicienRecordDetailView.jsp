@@ -4,7 +4,7 @@
 	import="ERP.medicienRecord.model.vo.MedicienRecord,
 ERP.Employee.model.vo.Employee"%>
 <%
-	MedicienRecord medicienRecord = (MedicienRecord) request.getAttribute("medicienRecord");
+MedicienRecordVo medicienRecord = (MedicienRecordVo) request.getAttribute("medicienRecord");
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 %>
 <!DOCTYPE html>

@@ -48,7 +48,7 @@ public class NoticeAdminDatailServlet extends HttpServlet {
 				
 				
 				//1증가된 조회수 셀렉트
-				NoticeService noticeservice = new NoticeService();
+				ErpNoticeService noticeservice = new ErpNoticeService();
 				noticeservice.updateReadCount(noticeNo,loginHospital); //조회수 1 증가 처리함
 				
 				
@@ -57,7 +57,7 @@ public class NoticeAdminDatailServlet extends HttpServlet {
 				//로그인 정보 안 NH_USERID, NH_USERPWD 가져오기 ???서비스로 보낼때 loginHospital에 담긴 id, pwd같이 가는건 아닌지?
 				
 				//노티스 정보 서비스로 보내기
-				Notice notice = new NoticeService().selectOne(noticeNo, loginHospital);
+				ErpNoticeVo notice = new ErpNoticeService().selectOne(noticeNo, loginHospital);
 				
 				RequestDispatcher view = null;
 				if (notice != null) {

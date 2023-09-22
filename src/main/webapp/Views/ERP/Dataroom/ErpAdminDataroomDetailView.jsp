@@ -13,7 +13,7 @@ NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("login
 <%@page import="org.apache.jasper.tagplugins.jstl.core.If"%>
 
 <%
-	Dataroom dataroom = (Dataroom)request.getAttribute("dataroom");
+DataroomVo dataroom = (DataroomVo)request.getAttribute("dataroom");
 	String currentPage = (String)request.getAttribute("currentPage");
 %>   
 

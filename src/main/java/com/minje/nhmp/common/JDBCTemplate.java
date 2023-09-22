@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.servlet.http.HttpSession;
-
 public class JDBCTemplate {
 	public static Connection getConnection() {
 		Connection conn = null;

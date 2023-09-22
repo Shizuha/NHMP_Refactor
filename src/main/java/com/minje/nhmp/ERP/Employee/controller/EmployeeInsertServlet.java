@@ -217,7 +217,7 @@ public class EmployeeInsertServlet extends HttpServlet {
 		Employee emp2 = new EmployeeService().selectOne(emp.getEmpNo(),hostId, hostPwd);
 		System.out.println("insert한뒤 사원주민번호로 사원조회해온 객체=" + emp2);
 		//사원 급여정보란
-		EmpSalary empSal = new EmpSalary();
+		EmpSalaryVo empSal = new EmpSalaryVo();
 		
 		
 		String natPension = mrequest.getParameter("no1");
@@ -287,7 +287,7 @@ public class EmployeeInsertServlet extends HttpServlet {
 		String[] iTOGETHER = mrequest.getParameterValues("I_TOGETHER");
 		String[] mChild = mrequest.getParameterValues("M_CHILD");
 		
-		ArrayList<Dependents> drr = new ArrayList<Dependents>();
+		ArrayList<DependentsVo> drr = new ArrayList<DependentsVo>();
 		if(rship != null) {
 		for(int i = 0; i < rship.length; i++) {
 			
@@ -300,11 +300,11 @@ public class EmployeeInsertServlet extends HttpServlet {
 			String rmChild = mChild[i];
 			
 			
-			drr.add(new Dependents(rrship, rfyname, rfyitfornal, rDIBILITY, rhISC, riTOGETHER, rmChild, emp2.getEmpId()));
+			drr.add(new DependentsVo(rrship, rfyname, rfyitfornal, rDIBILITY, rhISC, riTOGETHER, rmChild, emp2.getEmpId()));
 			}
 		
 		
-		for(Dependents d : drr) {
+		for(DependentsVo d : drr) {
 		
 		result2 = new DependentsService().insertDependent(d,hostId, hostPwd);
 		
@@ -328,7 +328,7 @@ public class EmployeeInsertServlet extends HttpServlet {
 		String[] taking = mrequest.getParameterValues("TAKING");
 		if(itforNal != null) {
 		
-		ArrayList<Education> eduList = new ArrayList<Education>();
+		ArrayList<EducationVo> eduList = new ArrayList<EducationVo>();
 		
 		for(int i = 0; i < itforNal.length; i++) {
 			
@@ -341,11 +341,11 @@ public class EmployeeInsertServlet extends HttpServlet {
 			
 			
 			
-			eduList.add(new Education(itforNal1, adDate1, grDate1, schName1, major1, taking1, emp2.getEmpId()));
+			eduList.add(new EducationVo(itforNal1, adDate1, grDate1, schName1, major1, taking1, emp2.getEmpId()));
 			}
 		
 			int result3 = 0;
-			for(Education e : eduList) {
+			for(EducationVo e : eduList) {
 				
 			 result3 = new EducationService().insertEdu(e, hostId, hostPwd);
 			
@@ -370,7 +370,7 @@ public class EmployeeInsertServlet extends HttpServlet {
 			String[] leaveReason = mrequest.getParameterValues("LEAVE_REASON");
 			
 			if(comName != null) {
-			ArrayList<Career> carList = new ArrayList<Career>();
+			ArrayList<CareerVo> carList = new ArrayList<CareerVo>();
 			
 			for(int i = 0; i < comName.length; i++) {
 				
@@ -390,12 +390,12 @@ public class EmployeeInsertServlet extends HttpServlet {
 				System.out.println(leaveReason1);
 				
 				
-				carList.add(new Career(emp2.getEmpId(), comName1, hireDate1, lastDate1, workTeam1, lastPosition1, resBilties1, leaveReason1));
+				carList.add(new CareerVo(emp2.getEmpId(), comName1, hireDate1, lastDate1, workTeam1, lastPosition1, resBilties1, leaveReason1));
 				}
 			
 			System.out.println(carList);
 			int result4 = 0;
-			for(Career c : carList) {
+			for(CareerVo c : carList) {
 			result4 = new CareerService().inserCar(c, hostId, hostPwd);
 			}
 			

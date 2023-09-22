@@ -9,12 +9,12 @@
 %>
     
 <%
-	@SuppressWarnings("unchecked")
-	ArrayList<Employee> mList = (ArrayList<Employee>)request.getAttribute("mList");
-	@SuppressWarnings("unchecked")	
-	ArrayList<Department> dList = (ArrayList<Department>)request.getAttribute("dList");
-	String authority = (String)request.getAttribute("authority");
-%>
+    @SuppressWarnings("unchecked")
+    	ArrayList<Employee> mList = (ArrayList<Employee>)request.getAttribute("mList");
+    	@SuppressWarnings("unchecked")	
+    	ArrayList<DepartmentVo> dList = (ArrayList<DepartmentVo>)request.getAttribute("dList");
+    	String authority = (String)request.getAttribute("authority");
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -407,10 +407,14 @@ input[type=checkbox]:checked{
 <body style="padding-right:50px; background:#F3F3F9;">
 	<div class="organList">
 		<div class="dept-left">
-					<%if(dList != null){%>
+					<%
+					if(dList != null){
+					%>
 						<div class="organ">
 							<ul>
-							<%for(Department d : dList){ %>
+							<%
+							for(DepartmentVo d : dList){
+							%>
 								<li class="deptList"><%= d.getDeptName()%>
 								<ul></ul>
 								</li>

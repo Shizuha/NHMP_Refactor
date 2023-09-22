@@ -48,7 +48,7 @@ public class PatientDetailViewServlet extends HttpServlet {
 		}
 		
 		int patNum = Integer.parseInt(request.getParameter("pat_num"));
-		Patient patient = new PatientService().DetailView(hostId, hostPwd, patNum);
+		PatientVo patient = new PatientService().DetailView(hostId, hostPwd, patNum);
 		
 		RequestDispatcher view = null;
 		if(patient != null) {

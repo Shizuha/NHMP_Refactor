@@ -45,7 +45,7 @@ public class NoticeAdminUpdateViewServlet extends HttpServlet {
 		String currentPage = (String)request.getParameter("page");
 		
 		//패이지 지정 수정할 내용 출력
-		Notice notice = new NoticeService().selectOne(noticeNo,loginHospital);
+		ErpNoticeVo notice = new ErpNoticeService().selectOne(noticeNo,loginHospital);
 		
 		//전달할 정보 출력
 		RequestDispatcher view = null;

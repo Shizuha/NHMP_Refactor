@@ -73,7 +73,7 @@ public class MedicienRecordUpdateServlet extends HttpServlet {
 		MultipartRequest mrequest = new MultipartRequest(request, savePath,
 				maxSize, "UTF-8", new DefaultFileRenamePolicy());
 		
-		MedicienRecord medicienRecord = new MedicienRecord();
+		MedicienRecordVo medicienRecord = new MedicienRecordVo();
 		
 		medicienRecord.setMrNo(Integer.parseInt(mrequest.getParameter("mr_no")));
 		medicienRecord.setMrDate(Date.valueOf(mrequest.getParameter("mr_date")));

@@ -43,7 +43,7 @@ public class NoticeAdminDeleteServlet extends HttpServlet {
 				String noticeNo = (String)request.getParameter("no");
 				
 				//3.모델의 서비스단과 연곃하고 전달받고, 결과받기
-				int result = new NoticeService().deleteNotice(noticeNo,loginHospital);
+				int result = new ErpNoticeService().deleteNotice(noticeNo,loginHospital);
 				
 				//4.삭제 처리시 조건절
 				if (result > 0) {

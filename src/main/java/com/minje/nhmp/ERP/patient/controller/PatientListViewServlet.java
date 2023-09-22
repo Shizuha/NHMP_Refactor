@@ -74,7 +74,7 @@ public class PatientListViewServlet extends HttpServlet {
 		int startRow = (currentPage * limit) - 9;
 		int endRow = currentPage * limit;
 		
-		ArrayList<Patient> list = new PatientService().ListView(startRow, endRow, hostId, hostPwd);
+		ArrayList<PatientVo> list = new PatientService().ListView(startRow, endRow, hostId, hostPwd);
 		
 		RequestDispatcher view = null;
 		if(list.size() > 0) {

@@ -53,7 +53,7 @@ public class DataroomAdminDetailServlet extends HttpServlet {
 			
 			
 			//상세보기 dataroom출력정보 서비스로 보내기
-			Dataroom dataroom = new DataroomService().selectOne(dataroomNo,loginHospital);
+			DataroomVo dataroom = new DataroomService().selectOne(dataroomNo,loginHospital);
 			
 			
 			RequestDispatcher view = null;

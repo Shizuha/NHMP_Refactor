@@ -35,7 +35,7 @@ public class DeductionListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 공제 전체 조회 컨트롤러
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
-		ArrayList<Deduction> list = new DeductionService().selectList(loginHospital);
+		ArrayList<DeductionVo> list = new DeductionService().selectList(loginHospital);
 		RequestDispatcher view = null;
 		
 		if(list.size() > 0) {

@@ -8,9 +8,9 @@
 %>
 
 <%
-	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	@SuppressWarnings("unchecked")
-	ArrayList<Deduction> list = (ArrayList<Deduction>)request.getAttribute("list");
+	ArrayList<DeductionVo> list = (ArrayList<DeductionVo>)request.getAttribute("list");
 	String Bnum = (String)request.getAttribute("Bnum");
 %>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@
 <script type="text/javascript">
 var result = "";
 var calc = "";
-var Bnum = <%= Bnum %>;
+var Bnum = <%=Bnum%>;
 $(function(){
 	$(".numB").click(function(){
 		calc += $(this).val();
@@ -129,7 +129,9 @@ function Bcode(T01){
 
 				</tr>
 			</table>
-			<% for(Deduction d : list){%>
+			<%
+			for(DeductionVo d : list){
+			%>
 				<% if(d.getDEDUCTION_NO()%5 == 0  ) { %>
 				<br>
 				<% }else { %>

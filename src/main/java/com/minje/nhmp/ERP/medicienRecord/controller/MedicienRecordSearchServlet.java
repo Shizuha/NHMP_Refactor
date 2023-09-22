@@ -52,7 +52,7 @@ public class MedicienRecordSearchServlet extends HttpServlet {
 		
 		String search = request.getParameter("search");
 		
-		ArrayList<MedicienRecord> list = null;
+		ArrayList<MedicienRecordVo> list = null;
 		MedicienRecordService mservice = new MedicienRecordService();
 		
 //		switch(search) {

@@ -31,7 +31,7 @@ public class AllowanceUpdateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 공제 수정용 컨트롤러
-		Allowance awna = new AllowanceService().updateAllowance();
+		AllowanceVo awna = new AllowanceService().updateAllowance();
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}

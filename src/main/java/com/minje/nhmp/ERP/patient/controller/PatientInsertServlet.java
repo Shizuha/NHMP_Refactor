@@ -63,7 +63,7 @@ public class PatientInsertServlet extends HttpServlet {
 			hostPwd = loginHospital.getNH_USERPWD();
 		}
 		
-		Patient patient = new Patient();
+		PatientVo patient = new PatientVo();
 		pat_nof = request.getParameter("pat_nof");
 		pat_nob = request.getParameter("pat_nob");
 		pat_no = pat_nof + "-" +  pat_nob;

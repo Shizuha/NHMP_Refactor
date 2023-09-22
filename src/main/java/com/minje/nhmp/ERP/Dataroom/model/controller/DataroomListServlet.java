@@ -67,7 +67,7 @@ public class DataroomListServlet extends HttpServlet {
 		int endRow = currentPage * limit;
 		
 		//조회할 목록의 시작행과 끝행 번호 서비스로 전달하고 결과받기
-		ArrayList<Dataroom> list = drservice.selectList(startRow, endRow, loginEmployee);
+		ArrayList<DataroomVo> list = drservice.selectList(startRow, endRow, loginEmployee);
 	
 		RequestDispatcher view = null;
 		if(list.size() >= 0) {

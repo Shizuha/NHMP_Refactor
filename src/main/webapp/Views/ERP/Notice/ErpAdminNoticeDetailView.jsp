@@ -13,10 +13,10 @@ Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
 <%@page import="org.apache.jasper.tagplugins.jstl.core.If"%>
 <%@page import="ERP.Employee.model.vo.Employee,ERP.notice.model.vo.Notice" %> 
 <%
-	Notice notice = (Notice)request.getAttribute("notice");
-	String currentPage = (String)request.getAttribute("currentPage");
-	Employee emp = (Employee)session.getAttribute("loginEmployee");
-%>   
+ ErpNoticeVo notice = (ErpNoticeVo)request.getAttribute("notice");
+ 	String currentPage = (String)request.getAttribute("currentPage");
+ 	Employee emp = (Employee)session.getAttribute("loginEmployee");
+ %>   
 
 <!DOCTYPE html>
 <html lang="en">

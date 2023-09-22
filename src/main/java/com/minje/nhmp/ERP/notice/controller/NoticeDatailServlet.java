@@ -40,12 +40,12 @@ public class NoticeDatailServlet extends HttpServlet {
 		
 				
 				//1증가된 조회수 셀렉트
-				NoticeService noticeservice = new NoticeService();
+				ErpNoticeService noticeservice = new ErpNoticeService();
 				noticeservice.updateReadCount(noticeNo,loginEmployee); //조회수 1 증가 처리함
 				
 				
 				
-				Notice notice = new NoticeService().selectOne(noticeNo, loginEmployee);
+				ErpNoticeVo notice = new ErpNoticeService().selectOne(noticeNo, loginEmployee);
 				
 				RequestDispatcher view = null;
 				if (notice != null) {

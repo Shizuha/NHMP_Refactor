@@ -46,7 +46,7 @@ public class NoticeListServlet extends HttpServlet {
 				int limit = 10;  //한 페이지에 출력할 목록 갯수
 				
 				//nservice변수 생성
-				NoticeService nservice = new NoticeService();
+				ErpNoticeService nservice = new ErpNoticeService();
 				
 				int listCount = nservice.getListCount(loginEmployee);  //테이블의 전체 목록 갯수 조회 + 1
 				//총 페이지 수 계산
@@ -66,7 +66,7 @@ public class NoticeListServlet extends HttpServlet {
 				int endRow = currentPage * limit;
 				
 				//조회할 목록의 시작행과 끝행 번호 전달하고 결과받기
-				ArrayList<Notice> list = nservice.selectList(startRow, endRow,loginEmployee);	//여기부터 수정
+				ArrayList<ErpNoticeVo> list = nservice.selectList(startRow, endRow,loginEmployee);	//여기부터 수정
 				
 				RequestDispatcher view = null;
 				if(list.size() >= 0) {

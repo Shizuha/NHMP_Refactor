@@ -53,7 +53,7 @@ public class NoticeWriteServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		//5. 전송온 값 꺼내서 객체에 저장하기
-		Notice notice = new Notice();
+		ErpNoticeVo notice = new ErpNoticeVo();
 		
 		notice.setNoticeTitle(request.getParameter("title"));
 		notice.setNoticeContent(request.getParameter("content"));
@@ -62,7 +62,7 @@ public class NoticeWriteServlet extends HttpServlet {
 		
 		
 		//6.모델 서비스로 전달하고, 결과받기
-		int result = new NoticeService().insertNotice(notice,loginHospital);
+		int result = new ErpNoticeService().insertNotice(notice,loginHospital);
 		
 		
 		RequestDispatcher view = null;

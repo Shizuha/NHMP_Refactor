@@ -231,7 +231,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 		
 		
 		//사원 급여정보란
-		EmpSalary empSal = new EmpSalary();
+		EmpSalaryVo empSal = new EmpSalaryVo();
 		
 		
 		String natPension = mrequest.getParameter("no1");
@@ -291,7 +291,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 		String[] mChild = mrequest.getParameterValues("M_CHILD");
 		if(rship != null && fyname != null && fyitfornal != null && dibility != null && 
 				hIsc != null && iTogether != null && mChild != null) {
-		ArrayList<Dependents> drr = new ArrayList<Dependents>();
+		ArrayList<DependentsVo> drr = new ArrayList<DependentsVo>();
 		
 		for(int i = 0; i < rship.length; i++) {
 			
@@ -303,7 +303,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 			String riTOGETHER = iTogether[i];
 			String rmChild = mChild[i];
 			
-		drr.add(new Dependents(rrship, rfyname, rfyitfornal, rDIBILITY, rhISC, riTOGETHER, rmChild, empId));
+		drr.add(new DependentsVo(rrship, rfyname, rfyitfornal, rDIBILITY, rhISC, riTOGETHER, rmChild, empId));
 			}
 		System.out.println(drr);
 		int result2 = 0;
@@ -312,7 +312,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 		fyNo = new DependentsService().selectDepenCode(empId, fyNo.length,hostId, hostPwd);
 		
 		int i = 0;
-		for(Dependents d : drr) {
+		for(DependentsVo d : drr) {
 			fyno1 = fyNo[i]; 
 			result2 = new DependentsService().updateDependent(d, fyno1,hostId, hostPwd);
 			i++;
@@ -342,7 +342,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 		
 		if(adDate != null && grDate != null && schName != null && 
 				major != null && taking != null) {
-		ArrayList<Education> eduList = new ArrayList<Education>();
+		ArrayList<EducationVo> eduList = new ArrayList<EducationVo>();
 		
 		for(int i = 0; i < itforNal.length; i++) {
 			
@@ -355,7 +355,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 			
 			
 			
-			eduList.add(new Education(itforNal1, adDate1, grDate1, schName1, major1, taking1, empId));
+			eduList.add(new EducationVo(itforNal1, adDate1, grDate1, schName1, major1, taking1, empId));
 			}
 			String[] eduCode = new String[eduList.size()];
 			String eduCode1 = null;
@@ -363,7 +363,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 		
 			int b = 0;
 			int result3 = 0;
-			for(Education e : eduList) {
+			for(EducationVo e : eduList) {
 				eduCode1 = eduCode[b];
 			 result3 = new EducationService().updateEdu(e, eduCode1,hostId, hostPwd);
 			 b++;
@@ -391,7 +391,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 			
 			if(comName != null && hireDate != null && lastDate != null && workTeam != null && 
 					lastPosition != null && resBilties != null && leaveReason != null) {
-			ArrayList<Career> carList = new ArrayList<Career>();
+			ArrayList<CareerVo> carList = new ArrayList<CareerVo>();
 			
 			for(int i = 0; i < comName.length; i++) {
 				
@@ -411,7 +411,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 				System.out.println(leaveReason1);
 				
 				
-				carList.add(new Career(empId, comName1, hireDate1, lastDate1, workTeam1, lastPosition1, resBilties1, leaveReason1));
+				carList.add(new CareerVo(empId, comName1, hireDate1, lastDate1, workTeam1, lastPosition1, resBilties1, leaveReason1));
 				}
 			System.out.println(carList);
 			String[] car = new String[carList.size()];
@@ -419,7 +419,7 @@ public class EmployeeUpdateServlet extends HttpServlet {
 			
 			car = new CareerService().selectCarCode(empId, car.length,hostId, hostPwd);
 			
-			for(Career c : carList) {
+			for(CareerVo c : carList) {
 				int result4 = new CareerService().updateCar(c,hostId, hostPwd);
 			
 			}

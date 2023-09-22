@@ -79,7 +79,7 @@ public class CounselingLogInsertServlet extends HttpServlet {
 		MultipartRequest mrequest = new MultipartRequest(request,
 						savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
 		
-		CounselingLog counselingLog = new CounselingLog();
+		CounselingLogVo counselingLog = new CounselingLogVo();
 		cl_phonef = request.getParameter("cl_phonef");
 		cl_phonem = request.getParameter("cl_phonem");
 		cl_phoneb = request.getParameter("cl_phoneb");

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="ERP.Authority.model.vo.Authority, java.util.ArrayList"%>
 <%
-	@SuppressWarnings("unchecked")
-	ArrayList<Authority> auList = (ArrayList<Authority>)request.getAttribute("auList");
+@SuppressWarnings("unchecked")
+	ArrayList<AuthorityVo> auList = (ArrayList<AuthorityVo>)request.getAttribute("auList");
 %>
 <!DOCTYPE html>
 <html>
@@ -379,7 +379,9 @@ function auList(id){
 								<th>권한명</th>
 								<th>권한내용</th>
 							</tr>
-							<% int i = 0; for(Authority au : auList){ %>
+							<%
+							int i = 0; for(AuthorityVo au : auList){
+							%>
 							<tr>
 								<td style="padding:5px;"><input type="checkbox" id="auChk<%=i %>"onclick="auList(this.id);" name="auChk" class="auChk" value="<%=au.getAuthorityCode() %>"></td>
 								<td><%=au.getAuthorityCode() %></td>

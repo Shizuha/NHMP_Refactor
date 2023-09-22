@@ -47,7 +47,7 @@ public class NoticeTopServlet extends HttpServlet {
 		String hostid = loginEmployee.getHostId();
 		String hostpwd = loginEmployee.getHostPwd();
 		
-		ArrayList<Notice> list = new NoticeService().selectTop3(hostid, hostpwd);
+		ArrayList<ErpNoticeVo> list = new ErpNoticeService().selectTop3(hostid, hostpwd);
 		
 		// 전송용 json 객체 생성
 		JSONObject sendJson = new JSONObject();
@@ -56,7 +56,7 @@ public class NoticeTopServlet extends HttpServlet {
 		JSONArray jarr = new JSONArray();
 
 		// list를 jarr로 옮기기
-		for (Notice n : list) {
+		for (ErpNoticeVo n : list) {
 			// b 객체 저장할 json 객체 생성
 			JSONObject job = new JSONObject();
 			job.put("no", n.getNoticeNo());
@@ -78,7 +78,7 @@ public class NoticeTopServlet extends HttpServlet {
 			String adminid = loginAdmin.getNH_USERID();
 			String adminpwd = loginAdmin.getNH_USERPWD();
 			
-			ArrayList<Notice> list = new NoticeService().AdminselectTop3(adminid, adminpwd);
+			ArrayList<ErpNoticeVo> list = new ErpNoticeService().AdminselectTop3(adminid, adminpwd);
 			
 			// 전송용 json 객체 생성
 			JSONObject sendJson = new JSONObject();
@@ -87,7 +87,7 @@ public class NoticeTopServlet extends HttpServlet {
 			JSONArray jarr = new JSONArray();
 
 			// list를 jarr로 옮기기
-			for (Notice n : list) {
+			for (ErpNoticeVo n : list) {
 				// b 객체 저장할 json 객체 생성
 				JSONObject job = new JSONObject();
 				job.put("no", n.getNoticeNo());

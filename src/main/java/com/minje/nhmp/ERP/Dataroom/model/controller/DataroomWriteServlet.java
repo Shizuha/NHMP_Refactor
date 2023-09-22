@@ -72,7 +72,7 @@ public class DataroomWriteServlet extends HttpServlet {
 		//객체 생성과 동시에 파일 업로드 됨.
 		
 		//6. 전송온 값 꺼내서 객체에 저장하기
-		Dataroom dataroom = new Dataroom();
+		DataroomVo dataroom = new DataroomVo();
 		
 		dataroom.setDataroomTitle(mrequest.getParameter("title"));
 		dataroom.setDataroomContent(mrequest.getParameter("content"));

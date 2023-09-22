@@ -12,10 +12,10 @@ NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("login
 <%@page import="org.apache.jasper.tagplugins.jstl.core.If"%>
 <%@page import="ERP.notice.model.vo.Notice,ERP.Employee.model.vo.Employee" %> 
 <%
-	Notice notice = (Notice)request.getAttribute("notice");
-	Employee emp = (Employee)session.getAttribute("loginEmployee");
-	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
-%>   
+ ErpNoticeVo notice = (ErpNoticeVo)request.getAttribute("notice");
+ 	Employee emp = (Employee)session.getAttribute("loginEmployee");
+ 	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
+ %>   
 
 <!DOCTYPE html>
 <html lang="en">

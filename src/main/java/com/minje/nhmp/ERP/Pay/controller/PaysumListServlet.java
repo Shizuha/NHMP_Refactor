@@ -40,8 +40,8 @@ public class PaysumListServlet extends HttpServlet {
 		// 급여 계산에 사용될 공제 및 수당 리스트 처리용 컨트롤러
 		NursingHospitalVo loginHospital = (NursingHospitalVo)request.getSession().getAttribute("loginHospital");
 		System.out.println(loginHospital);
-		ArrayList<Deduction> Dlist = new DeductionService().selectList(loginHospital);
-		ArrayList<Allowance> Alist = new AllowanceService().selectList(loginHospital);
+		ArrayList<DeductionVo> Dlist = new DeductionService().selectList(loginHospital);
+		ArrayList<AllowanceVo> Alist = new AllowanceService().selectList(loginHospital);
 		ArrayList<Employee> Elist = new EmployeeService().selectAll(loginHospital);
 		System.out.println(Elist);
 		RequestDispatcher view = null;

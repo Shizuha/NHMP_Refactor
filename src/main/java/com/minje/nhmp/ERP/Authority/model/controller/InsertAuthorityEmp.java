@@ -69,24 +69,24 @@ public class InsertAuthorityEmp extends HttpServlet {
 				if(teamName.length() < 7) {
 					
 					ArrayList<Employee>	empList = new EmployeeService().selectOrganEmpList(hostId, hostPwd, teamName);
-					Team tcode = new TeamService().selectTeamCode(hostId, hostPwd, teamName);
+					TeamVo tcode = new TeamService().selectTeamCode(hostId, hostPwd, teamName);
 					System.out.println("조직도 팀코드=" + tcode);
 					
 					
-					ArrayList<Department> dList = new ArrayList<Department>();
-					ArrayList<Ward> wList= new ArrayList<Ward>();
-					Department dp = null;
-					Ward po = null;
+					ArrayList<DepartmentVo> dList = new ArrayList<DepartmentVo>();
+					ArrayList<WardVo> wList= new ArrayList<WardVo>();
+					DepartmentVo dp = null;
+					WardVo po = null;
 				for(Employee e : empList) {
 					if(e.getDeptCode() != null) {
 					dp = new DepartmentService().selectAuDeptName(hostId, hostPwd, e.getDeptCode());
 					}else {
-						dp = new Department(" ","없음");
+						dp = new DepartmentVo(" ","없음");
 					}
 					if(e.getWardCode() != null) {
 					po = new WardService().selectAuWardName(hostId, hostPwd, e.getWardCode());
 					}else {
-						po = new Ward("","없음");
+						po = new WardVo("","없음");
 					}
 					dList.add(dp);
 					wList.add(po);
@@ -113,12 +113,12 @@ public class InsertAuthorityEmp extends HttpServlet {
 						tn.put("empid", e.getEmpId());
 						jarr1.add(tn);
 					}
-					for(Department d : dList) {
+					for(DepartmentVo d : dList) {
 						JSONObject tn = new JSONObject();
 						tn.put("deptname", URLEncoder.encode(d.getDeptName(), "utf-8"));
 						jarr2.add(tn);
 					}
-					for(Ward w : wList) {
+					for(WardVo w : wList) {
 						JSONObject tn = new JSONObject();
 						tn.put("posname", URLEncoder.encode(w.getWardName(), "utf-8"));
 						jarr3.add(tn);

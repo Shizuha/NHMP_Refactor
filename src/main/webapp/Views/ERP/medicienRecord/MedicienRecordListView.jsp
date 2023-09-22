@@ -5,8 +5,8 @@
 			ERP.Employee.model.vo.Employee"
 %>
 <%
-	@SuppressWarnings("unchecked")
-	ArrayList<MedicienRecord> list = (ArrayList<MedicienRecord>) request.getAttribute("list");
+@SuppressWarnings("unchecked")
+	ArrayList<MedicienRecordVo> list = (ArrayList<MedicienRecordVo>) request.getAttribute("list");
 	Employee emp = (Employee) session.getAttribute("loginEmployee");
 	int currentPage = ((Integer) request.getAttribute("currentPage")).intValue();
 	int beginPage = ((Integer) request.getAttribute("beginPage")).intValue();
@@ -67,7 +67,7 @@
 		<div class="nav-header">
 			<div class="brand-logo">
 				<%
-					if (emp != null) {
+				if (emp != null) {
 				%>
 				<a href="/NHMP/views/ERP/Employee.jsp"> <b class="logo-abbr"><img
 						src="/NHMP/resources/ERP/images/logo.png" alt=""> </b> <span
@@ -78,7 +78,7 @@
 				</span>
 				</a>
 				<%
-					} else {
+				} else {
 				%>
 				<a href="/NHMP/views/ERP/Admin_main.jsp"> <b class="logo-abbr"><img
 						src="/NHMP/resources/ERP/images/logo.png" alt=""> </b> <span
@@ -89,7 +89,7 @@
 				</span>
 				</a>
 				<%
-					}
+				}
 				%>
 			</div>
 		</div>
@@ -147,11 +147,11 @@
 		<div class="nk-sidebar">
 			<div class="nk-nav-scroll">
 				<%
-					if (emp != null) {
+				if (emp != null) {
 				%>
 				<ul class="metismenu" id="menu">
 					<%
-						if (emp.getAuthorityCode().equals("G5")) {
+					if (emp.getAuthorityCode().equals("G5")) {
 					%>
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> <i
@@ -163,10 +163,10 @@
 							<li><a href="/NHMP/ochart">조직도</a></li>
 						</ul></li>
 					<%
-						}
+					}
 					%>
 					<%
-						if (emp.getAuthorityCode().equals("G2")) {
+					if (emp.getAuthorityCode().equals("G2")) {
 					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-plus-square"></i><span
@@ -184,7 +184,7 @@
 									등록</a></li>
 						</ul></li>
 					<%
-						}
+					}
 					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-usd"></i><span
@@ -200,7 +200,7 @@
 							class="fa fa-download"></i> <span class="nav-text">자료실</span>
 					</a></li>
 					<%
-						} else {
+					} else {
 					%>
 					<ul class="metismenu" id="menu">
 						<li class="mega-menu mega-menu-sm"><a class="has-arrow"
@@ -241,7 +241,7 @@
 							<ul aria-expanded="false">
 								<li><a href="/NHMP/Epaylist">급여계산</a></li>
 							</ul> <%
- 	}
+ }
  %>
 						<li><a href="/NHMP/nlist.ad" aria-expanded="false"> <i
 								class="fa fa-slideshare"></i> <span class="nav-text">공지사항</span>
@@ -281,8 +281,8 @@
 					<th style="font-size: 16px;">첨부파일</th>
 				</tr>
 				<%
-					for (int i = 0; i < list.size(); i++) {
-						MedicienRecord mr = list.get(i);
+				for (int i = 0; i < list.size(); i++) {
+								MedicienRecordVo mr = list.get(i);
 				%>
 				<tr>
 					<td align="center" style="font-size: 16px;"><a

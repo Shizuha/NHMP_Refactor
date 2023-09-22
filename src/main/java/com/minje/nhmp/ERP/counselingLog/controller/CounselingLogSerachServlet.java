@@ -53,7 +53,7 @@ public class CounselingLogSerachServlet extends HttpServlet {
 		
 		String search = request.getParameter("search");
 		
-		ArrayList<CounselingLog> list = null;
+		ArrayList<CounselingLogVo> list = null;
 		CounselingLogService cservice = new CounselingLogService();
 		
 //		switch(search) {

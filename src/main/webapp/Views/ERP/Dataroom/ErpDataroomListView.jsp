@@ -8,10 +8,10 @@
 				ERP.Employee.model.vo.Employee"%>
 
 <%
-	NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
+NursingHospitalVo loginHospital = (NursingHospitalVo)session.getAttribute("loginHospital");
 	Employee loginEmployee = (Employee)session.getAttribute("loginEmployee");
 	@SuppressWarnings("unchecked")
-	ArrayList<Dataroom> list = (ArrayList<Dataroom>)request.getAttribute("list");
+	ArrayList<DataroomVo> list = (ArrayList<DataroomVo>)request.getAttribute("list");
 	Employee emp = (Employee)session.getAttribute("loginEmployee");
 	
 	int currentPage = ((Integer)request.getAttribute("currentPage")).intValue();
@@ -149,19 +149,25 @@ function showDiv(){
 						<li class="icons dropdown">
 							<div class="user-img c-pointer position-relative"
 								data-toggle="dropdown">
-								<span class="activity active"></span> <%if(emp.getEmpImgOriginalFilename() != null){ %>
-								<img src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename() %>" height="40"
+								<span class="activity active"></span> <%
+ if(emp.getEmpImgOriginalFilename() != null){
+ %>
+								<img src="/NHMP/resources/ERP/emp_Img_file/<%=emp.getEmpRenameFilename()%>" height="40"
 									width="40" alt="">
-								<%}else{ %>
+								<%
+								}else{
+								%>
 								<img src="/NHMP/resources/ERP/images/캡처12.PNG" height="40"
 									width="40" alt="">
-									<%} %>
+									<%
+									}
+									%>
 							</div>
 							<div
 								class="drop-down dropdown-profile animated fadeIn dropdown-menu">
 								<div class="dropdown-content-body">
 									<ul>
-										<li><a href="/NHMP/myinfo?userid=<%= loginEmployee.getUserId() %>"><i class="icon-user"></i>
+										<li><a href="/NHMP/myinfo?userid=<%=loginEmployee.getUserId()%>"><i class="icon-user"></i>
 												<span>내정보 보기</span></a></li>
 
 
@@ -186,9 +192,13 @@ function showDiv(){
         ***********************************-->
 		<div class="nk-sidebar">
 			<div class="nk-nav-scroll">
-			<%if(emp != null){ %>
+			<%
+			if(emp != null){
+			%>
 				<ul class="metismenu" id="menu">
-					<%if(emp.getAuthorityCode().equals("G5")){ %>
+					<%
+					if(emp.getAuthorityCode().equals("G5")){
+					%>
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
 						<i class="fa fa-users"></i><span class="nav-text">인사관리</span> 
@@ -199,8 +209,12 @@ function showDiv(){
 							<li><a href="/NHMP/ochart">조직도</a></li>
 						</ul>
 					</li>
-						<%} %>
-						<%if(emp.getAuthorityCode().equals("G2")){ %>
+						<%
+						}
+						%>
+						<%
+						if(emp.getAuthorityCode().equals("G2")){
+						%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-plus-square"></i><span
 							class="nav-text">환자 관리</span> <!--   <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">환자 관리</span> -->
@@ -212,7 +226,9 @@ function showDiv(){
 							<li><a href="/NHMP/counsellistview">상담일지 등록</a></li>
 							<li><a href="/NHMP/recordlistview">투약일지 등록</a></li>
 						</ul></li>
-					<%} %>
+					<%
+					}
+					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-usd"></i><span
 							class="nav-text">급여 관리</span> <!--    <i class="icon-grid menu-icon"></i><span class="nav-text">급여 관리</span>  -->
@@ -220,7 +236,9 @@ function showDiv(){
 						<ul aria-expanded="false">
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<ul class="metismenu" id="menu">
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
@@ -257,7 +275,9 @@ function showDiv(){
 						<ul aria-expanded="false">
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%} %>
+						<%
+						}
+						%>
 					<li><a href="/NHMP/nlist" aria-expanded="false"> <i
 							class="fa fa-slideshare"></i> <span class="nav-text">공지사항</span>
 					</a></li>
@@ -269,7 +289,7 @@ function showDiv(){
 		</div>
 		
 		<!-- ErpNoticeListView.jsp 추가분 -->
-<h1 align="center">자료실 전체 목록 보기 : <%= list.size() %> 개</h1>
+<h1 align="center">자료실 전체 목록 보기 : <%=list.size()%> 개</h1>
 <h3 align="center"><a href="/NHMP/drlist">전체 목록 보기</a></h3>
 <br>
 <table style="text-align:center; width:600; border:1; cellspacing:0; cellpadding:5; float:block">
@@ -281,7 +301,9 @@ function showDiv(){
 	<th>첨부파일</th>
 	<th>조회수</th>
 </tr>
-	<% for(Dataroom dataroom : list){ %>
+	<%
+	for(DataroomVo dataroom : list){
+	%>
 	<tr >
 		<th><%= dataroom.getDataroomNo() %></th>
 		<td><a href="/NHMP/drdetail?no=<%= dataroom.getDataroomNo() %>"><%= dataroom.getDataroomTitle() %></a></td>

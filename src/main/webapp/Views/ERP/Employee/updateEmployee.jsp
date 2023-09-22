@@ -2,14 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ page import="ERP.Employee.model.vo.Employee, java.util.ArrayList, ERP.Empsalary.model.vo.EmpSalary
 	, ERP.Dependents.model.vo.Dependents, ERP.Career.model.vo.Career, ERP.Education.model.vo.Education" %>
-<% 	Employee emp = (Employee)request.getAttribute("emp");
-  	EmpSalary empSal = (EmpSalary)request.getAttribute("empSal");
+<%
+Employee emp = (Employee)request.getAttribute("emp");
+  	EmpSalaryVo empSal = (EmpSalaryVo)request.getAttribute("empSal");
 	@SuppressWarnings("unchecked")
-	 ArrayList<Dependents> dpenList = (ArrayList<Dependents>)request.getAttribute("dpenList");
+	 ArrayList<DependentsVo> dpenList = (ArrayList<DependentsVo>)request.getAttribute("dpenList");
 	@SuppressWarnings("unchecked")
-	 ArrayList<Career> carList = (ArrayList<Career>)request.getAttribute("carList");
+	 ArrayList<CareerVo> carList = (ArrayList<CareerVo>)request.getAttribute("carList");
 	@SuppressWarnings("unchecked")
-	 ArrayList<Education> eduList = (ArrayList<Education>)request.getAttribute("eduList");
+	 ArrayList<EducationVo> eduList = (ArrayList<EducationVo>)request.getAttribute("eduList");
 	 Employee emp2 = (Employee)session.getAttribute("loginEmployee");
 	 String[] rship = new String[14];
 	 String[] fyshcl = new String[7];
@@ -140,13 +141,13 @@
 	String[] pho = new String[4];
 	
 	 for(int i = 0; i < pho.length; i ++){
-			switch(ph1){
-			case "010" : pho[0] = "selected";break;
-			case "011" : pho[1] = "selected";break;
-			case "017" : pho[2] = "selected";break;
-			case "016" : pho[3] = "selected";break;
-			
-			}
+	switch(ph1){
+	case "010" : pho[0] = "selected";break;
+	case "011" : pho[1] = "selected";break;
+	case "017" : pho[2] = "selected";break;
+	case "016" : pho[3] = "selected";break;
+	
+	}
 		} 
 	
 	
@@ -166,7 +167,7 @@
 		case "EM5" : ement[4] = "selected";break;
 		case "EM6" : ement[5] = "selected";break;
 		case "EM7" : ement[6] = "selected";break;
-			}
+	}
 		}
 	}
 	if(emp.getDeptCode() != null){
@@ -178,7 +179,7 @@
 		case "40" : dept[3] = "selected";break;
 		case "50" : dept[4] = "selected";break;
 		case "60" : dept[5] = "selected";break;
-			}
+	}
 		}
 	}
 	if(emp.getPosCode() != null){
@@ -190,7 +191,7 @@
 		case "PO4" : po[3] = "selected";break;
 		case "PO5" : po[4] = "selected";break;
 		case "PO6" : po[5] = "selected";break;
-			}
+	}
 		}
 	}
 	if(emp.getTeamCode() != null){
@@ -223,7 +224,7 @@
 		case "BD01" : ward[0] = "selected";break;
 		case "BD02" : ward[1] = "selected";break;
 		case "BD03" : ward[2] = "selected";break;
-			}
+	}
 		}
 	}
 	if(emp.getHoldOffice() != null){
@@ -233,7 +234,7 @@
 		case "HOD2" : hold[1] = "selected";break;
 		case "HOD3" : hold[2] = "selected";break;
 		
-			}
+	}
 		}
 	}
 %>
@@ -698,7 +699,9 @@ text-align:center;
         ***********************************-->
 		<div class="nav-header">
 			<div class="brand-logo">
-				<%if(emp2 != null){ %>
+				<%
+				if(emp2 != null){
+				%>
 				<a href="/NHMP/views/ERP/Employee.jsp">
 				 <b class="logo-abbr"><img
 						src="/NHMP/resources/ERP/images/logo.png" alt=""> </b> <span
@@ -708,7 +711,9 @@ text-align:center;
 						src="/NHMP/resources/ERP/images/common/logo-text.png" alt="">
 				</span>
 				</a>
-				<%}else{ %>
+				<%
+				}else{
+				%>
 				<a href="/NHMP/views/ERP/Admin_main.jsp">
 				 <b class="logo-abbr"><img
 						src="/NHMP/resources/ERP/images/logo.png" alt=""> </b> <span
@@ -718,7 +723,9 @@ text-align:center;
 						src="/NHMP/resources/ERP/images/common/logo-text.png" alt="">
 				</span>
 				</a>
-				<%} %>
+				<%
+				}
+				%>
 			</div>
 		</div>
 		<!--**********************************
@@ -774,9 +781,13 @@ text-align:center;
         ***********************************-->
 		<div class="nk-sidebar">
 			<div class="nk-nav-scroll">
-				<%if(emp2 != null){ %>
+				<%
+				if(emp2 != null){
+				%>
 				<ul class="metismenu" id="menu">
-					<%if(emp2.getAuthorityCode().equals("G5")){ %>
+					<%
+					if(emp2.getAuthorityCode().equals("G5")){
+					%>
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
 						<i class="fa fa-users"></i><span class="nav-text">인사관리</span> 
@@ -787,8 +798,12 @@ text-align:center;
 							<li><a href="/NHMP/ochart">조직도</a></li>
 						</ul>
 					</li>
-						<%} %>
-						<%if(emp2.getAuthorityCode().equals("G2")){ %>
+						<%
+						}
+						%>
+						<%
+						if(emp2.getAuthorityCode().equals("G2")){
+						%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-plus-square"></i><span
 							class="nav-text">환자 관리</span> <!--   <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">환자 관리</span> -->
@@ -800,7 +815,9 @@ text-align:center;
 							<li><a href="/NHMP/counsellistview">상담일지 등록</a></li>
 							<li><a href="/NHMP/recordlistview">투약일지 등록</a></li>
 						</ul></li>
-					<%} %>
+					<%
+					}
+					%>
 					<li><a class="has-arrow" href="javascript:void()"
 						aria-expanded="false"> <i class="fa fa-usd"></i><span
 							class="nav-text">급여 관리</span> <!--    <i class="icon-grid menu-icon"></i><span class="nav-text">급여 관리</span>  -->
@@ -809,7 +826,9 @@ text-align:center;
 						
 							<li><a href="/NHMP/Epaylist">급여계산</a></li>
 						</ul>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<ul class="metismenu" id="menu">
 					<li class="mega-menu mega-menu-sm"><a class="has-arrow"
 						href="javascript:void()" aria-expanded="false"> 
@@ -856,7 +875,9 @@ text-align:center;
 							class="fa fa-download"></i> <span class="nav-text">자료실</span>
 					</a></li>
 					</ul>
-				<%} %>
+				<%
+				}
+				%>
 				
 				
 			</div>
@@ -873,24 +894,24 @@ text-align:center;
 			<div class="insertbox">
         	<h2>기본정보</h2>
         	<form action="/NHMP/empup" method="post" enctype="multipart/form-data">
-        	<input type="hidden" name="empid" value="<%=emp.getEmpId() %>">
-        	<input type="hidden" name="rfile" value="<%=emp.getEmpRenameFilename() %>">
-        	<input type="hidden" name="ofile" value="<%=emp.getEmpImgOriginalFilename() %>">
+        	<input type="hidden" name="empid" value="<%=emp.getEmpId()%>">
+        	<input type="hidden" name="rfile" value="<%=emp.getEmpRenameFilename()%>">
+        	<input type="hidden" name="ofile" value="<%=emp.getEmpImgOriginalFilename()%>">
 			<table class="insertemp" style="cellpadding:3; cellspacing:0;" >
 				<tr>
 					<th>성명(한글)</th>
-						<td><input type="text" name="empname" value="<%=emp.getEmpName() %>"></td>
+						<td><input type="text" name="empname" value="<%=emp.getEmpName()%>"></td>
 					<th>고용형태</th>
 						<td>
 							<select id="empment" name="empment">
 								<option value="EM7">--고용형태--</option> 
-								<option value="EM1"<%=ement[0] %>>일용직</option>
-								<option value="EM2"<%=ement[1] %>>위촉직</option>
-								<option value="EM4"<%=ement[3] %>>계약직</option>
-								<option value="EM3"<%=ement[2] %>>정규직</option>
-								<option value="EM6"<%=ement[5] %>>임시직</option>
-								<option value="EM5"<%=ement[4] %>>파견직</option>
-								<option value="EM7"<%=ement[6] %>>인턴</option>
+								<option value="EM1"<%=ement[0]%>>일용직</option>
+								<option value="EM2"<%=ement[1]%>>위촉직</option>
+								<option value="EM4"<%=ement[3]%>>계약직</option>
+								<option value="EM3"<%=ement[2]%>>정규직</option>
+								<option value="EM6"<%=ement[5]%>>임시직</option>
+								<option value="EM5"<%=ement[4]%>>파견직</option>
+								<option value="EM7"<%=ement[6]%>>인턴</option>
 							</select>
 						</td>
 				</tr>
@@ -899,24 +920,24 @@ text-align:center;
 					<td>
 						<select id="dept" name="dept">
 							<option value="10">--부서구분--</option> 
-							<option value="10"<%=dept[0] %>>가정의학과</option>
-							<option value="30"<%=dept[2] %> >한방과</option>
-							<option value="40"<%=dept[3] %>>간호과</option>
-							<option value="60"<%=dept[5] %> >원무과</option>
-							<option value="50"<%=dept[4] %> >총무과</option>
-							<option value="20"<%=dept[1] %>>외과</option>
+							<option value="10"<%=dept[0]%>>가정의학과</option>
+							<option value="30"<%=dept[2]%> >한방과</option>
+							<option value="40"<%=dept[3]%>>간호과</option>
+							<option value="60"<%=dept[5]%> >원무과</option>
+							<option value="50"<%=dept[4]%> >총무과</option>
+							<option value="20"<%=dept[1]%>>외과</option>
 						</select>
 					</td>
 				<th>직위</th>
 					<td>
 						<select id="job" name="job">
 							<option value="0">--선택--</option> 
-							<option value="PO2"<%=po[1] %>>과장</option>
-							<option value="PO3"<%=po[2] %>>사원</option>
-							<option value="PO5"<%=po[4] %>>간호사</option>
-							<option value="PO1"<%=po[0] %>>병원장</option>
-							<option value="PO4"<%=po[3] %>>팀장</option>
-							<option value="PO6"<%=po[5] %>>수간호사</option>
+							<option value="PO2"<%=po[1]%>>과장</option>
+							<option value="PO3"<%=po[2]%>>사원</option>
+							<option value="PO5"<%=po[4]%>>간호사</option>
+							<option value="PO1"<%=po[0]%>>병원장</option>
+							<option value="PO4"<%=po[3]%>>팀장</option>
+							<option value="PO6"<%=po[5]%>>수간호사</option>
 						</select>
 					</td>
 				<tr>
@@ -924,18 +945,24 @@ text-align:center;
 				<th>내/외국인</th>
 					<td>
 						<select id="itfor" name="itfornal"> 
-						<%if(emp.getItnalFor().equals("내국인")){ %>
+						<%
+ 						if(emp.getItnalFor().equals("내국인")){
+ 						%>
 							<option value="내국인" selected>내국인</option>
 							<option value="외국인">외국인</option>
-							<%}else{ %>
+							<%
+							}else{
+							%>
 							<option value="내국인">내국인</option>
 							<option value="외국인"selected>외국인</option>
-							<%} %>
+							<%
+							}
+							%>
 						</select>
 					</td><th>주민번호</th>
 					<td>
-						<input type="text" name="empno1" value="<%=empNo1 %>" required>
-						-<input type="text" value="<%=empNo2 %>"  name="empno2"required>
+						<input type="text" name="empno1" value="<%=empNo1%>" required>
+						-<input type="text" value="<%=empNo2%>"  name="empno2"required>
 					</td>
 				<tr>
 				<tr>
@@ -943,66 +970,84 @@ text-align:center;
 					<td colspan="3">
 						<input type="text" id="sample4_postcode" placeholder="우편번호">
 						<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">&nbsp;
-						<input type="text" id="sample4_roadAddress"name="address1" placeholder="도로명주소"value="<%=ad1 %>" readonly>
-						<input type="text" id="sample4_jibunAddress"name="address2" placeholder="지번주소"value="<%=ad2 %>" readonly><br>
+						<input type="text" id="sample4_roadAddress"name="address1" placeholder="도로명주소"value="<%=ad1%>" readonly>
+						<input type="text" id="sample4_jibunAddress"name="address2" placeholder="지번주소"value="<%=ad2%>" readonly><br>
 						<span id="guide" style="color:#999;display:none"></span>
-						<input type="text" id="sample4_detailAddress"name="address3"value="<%=ad3 %>" placeholder="상세주소">
-						<input type="text" id="sample4_extraAddress"name="address4"value="<%=ad4 %>" placeholder="참고항목" readonly>
+						<input type="text" id="sample4_detailAddress"name="address3"value="<%=ad3%>" placeholder="상세주소">
+						<input type="text" id="sample4_extraAddress"name="address4"value="<%=ad4%>" placeholder="참고항목" readonly>
 					
 					</td>
 				</tr>
 				<tr>
 					<th>전화번호</th>
-						<%if(adTel[0] != null){ %>
+						<%
+						if(adTel[0] != null){
+						%>
 						<td>
 						<input typee="Tel" name="adtel1" value="<%=adTel[0]%>">-
 						<input typee="Tel" name="adtel2" value="<%=adTel[1]%>">-
 						<input typee="Tel" name="adtel3" value="<%=adTel[2]%>"></td>
-						<%}else{%>
+						<%
+						}else{
+						%>
 							<td>
 						<input typee="Tel" name="adtel1">-
 						<input typee="Tel" name="adtel2">-
 						<input typee="Tel" name="adtel3"></td>
-						<%} %>
+						<%
+						}
+						%>
 					<th>휴대폰</th>
 						<td>
 							<select name="phone">
-								<option value="010"<%=pho[0] %>>010</option>
-								<option value="011"<%=pho[1] %>>011</option>
-								<option value="017"<%=pho[2] %>>017</option>
-								<option value="016"<%=pho[3] %>>016</option>
+								<option value="010"<%=pho[0]%>>010</option>
+								<option value="011"<%=pho[1]%>>011</option>
+								<option value="017"<%=pho[2]%>>017</option>
+								<option value="016"<%=pho[3]%>>016</option>
 							</select>&nbsp;-<input type="Tel" name="phone2" value="<%=ph2%>">-
 								<input type="Tel" name="phone3" value="<%=ph3%>">
 						</td>
 				</tr>
 				<tr>
 					<th>아이디</th>
-						<td><input type="text" name="empids" value="<%=emp.getUserId() %>" readonly></td>
+						<td><input type="text" name="empids" value="<%=emp.getUserId()%>" readonly></td>
 					<th>비밀번호</th>
-						<td><input type="password" id="emppwd"name="emppwds" value="<%=emp.getUserpwd() %>" readonly></td>
+						<td><input type="password" id="emppwd"name="emppwds" value="<%=emp.getUserpwd()%>" readonly></td>
 				</tr>
 				<tr>
 					<th>이메일</th>
-						<td><input type="email" name="email" value="<%=emp.getEmail() %>"></td>
+						<td><input type="email" name="email" value="<%=emp.getEmail()%>"></td>
 					<th>기본급</th>
 						<td><input type="text" name="salary" value="<%=emp.getSalary()%>" required></td>
 				</tr>
 				<tr>
 					<th>성별</th>
-						<%if(emp.getGender().equals("M") == true){ %>
+						<%
+						if(emp.getGender().equals("M") == true){
+						%>
 						<td><input type="radio" name="gender" value="M" checked>남자&nbsp;
 							<input type="radio" name="gender" value="F">여자</td>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 							<td><input type="radio" name="gender" value="M">남자&nbsp;
 							<input type="radio" name="gender" value="F" checked>여자</td>
-						<%} %>
+						<%
+						}
+						%>
 						<th>이미지</th>
 						<td>
-						<%if(emp.getEmpImgOriginalFilename() != null){ %>
-						기존파일명:&nbsp;<%=emp.getEmpImgOriginalFilename() %>&nbsp;
-						<%}else{ %>
+						<%
+						if(emp.getEmpImgOriginalFilename() != null){
+						%>
+						기존파일명:&nbsp;<%=emp.getEmpImgOriginalFilename()%>&nbsp;
+						<%
+						}else{
+						%>
 						이미지파일 없음
-						<%} %>
+						<%
+						}
+						%>
 						<input type="file" name="upfiles"></td>
 				</tr>
 				<tr>
@@ -1057,34 +1102,50 @@ text-align:center;
 				</tr>
 				<tr>
 					<th>기타사항</th>
-						<td colspan="3"><textarea rows="4"name="etc" cols="100"><%=emp.getEmpEtc() %></textarea></td>
+						<td colspan="3"><textarea rows="4"name="etc" cols="100"><%=emp.getEmpEtc()%></textarea></td>
 				</tr>
 			</table>
 			<!--  급여정보 란 -->
 		<h2>급여정보</h2>
 		<table class="insertemp2" style="cellpadding:5; cellspacing:0;" >
-		<%if(empSal != null){%>
+		<%
+		if(empSal != null){
+		%>
 			<tr id="no4" align="center">
 				<th>4대보험</th>
 				
 					<td colspan="3">&nbsp;&nbsp;국민연금(
-									<%if(empSal.getNatPension() != null){ %>
-									<%if(empSal.getNatPension().equals("Y") == true)%>
+									<%
+									if(empSal.getNatPension() != null){
+									%>
+									<%
+									if(empSal.getNatPension().equals("Y") == true)
+									%>
 										<input type="checkbox" name="no1" class="chbox" value="Y" checked>
-										<%}else{ %>
+										<%
+										}else{
+										%>
 										<input type="checkbox" name="no1" class="chbox" value="Y" >
-										<%} %>)
+										<%
+										}
+										%>)
 						&nbsp;&nbsp;건강보험(
-						<%if(empSal.getHealInrance() != null){ %>
-						<%if(empSal.getHealInrance().equals("Y") == true)%>
+						<%
+										if(empSal.getHealInrance() != null){
+										%>
+						<%
+						if(empSal.getHealInrance().equals("Y") == true)
+						%>
 									<input type="checkbox" name="no2" class="chbox" value="Y" checked>)
 									감면(<select name="no2up" class="chbox">
-										<option value="1"<%=hRdc[0] %>>선택</option>
-										<option value="30"<%=hRdc[1] %>>30%</option>
-										<option value="50"<%=hRdc[2] %>>50%</option>
-										<option value="60"<%=hRdc[3] %>>60%</option>
+										<option value="1"<%=hRdc[0]%>>선택</option>
+										<option value="30"<%=hRdc[1]%>>30%</option>
+										<option value="50"<%=hRdc[2]%>>50%</option>
+										<option value="60"<%=hRdc[3]%>>60%</option>
 									</select>&nbsp;)
-						<%}else{ %>
+						<%
+									}else{
+									%>
 									<input type="checkbox" name="no2" class="chbox" value="Y">
 							감면(<select name="no2up" class="chbox">
 										<option value="1">선택</option>
@@ -1092,47 +1153,71 @@ text-align:center;
 										<option value="50">50%</option>
 										<option value="60">60%</option>
 									</select>&nbsp;)
-									<%} %>
+									<%
+									}
+									%>
 						&nbsp;&nbsp;노인장기요양보험(
-						<%if(empSal.getOldInrance() != null){ %>
-						<% if(empSal.getOldInrance().equals("Y") == true)%>
+						<%
+						if(empSal.getOldInrance() != null){
+						%>
+						<%
+						if(empSal.getOldInrance().equals("Y") == true)
+						%>
 						
 									<input type="checkbox" class="chbox" name="no3" value="Y" checked>
 							감면(<select name="no3up" class="chbox">
-										<option value="1"<%=oRdc[0] %>>선택</option>
-										<option value="30"<%=oRdc[1] %>>30%</option>
+										<option value="1"<%=oRdc[0]%>>선택</option>
+										<option value="30"<%=oRdc[1]%>>30%</option>
 									</select>)
-						<%}else{ %>
+						<%
+									}else{
+									%>
 									<input type="checkbox" class="chbox" name="no3" value="Y">)
 							감면(<select name="no3up" class="chbox">
 										<option value="1">선택</option>
 										<option value="30">30%</option>
 									</select>)
-									<%} %>
+									<%
+									}
+									%>
 						&nbsp;&nbsp;고용보험(
-						<%if(empSal.getEmentInrance() != null){ %>
-						<%if(empSal.getEmentInrance().equals("Y") == true)%>
+						<%
+						if(empSal.getEmentInrance() != null){
+						%>
+						<%
+						if(empSal.getEmentInrance().equals("Y") == true)
+						%>
 						<input type="checkbox" class="chbox" name="no4" value="Y" checked>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<input type="checkbox" class="chbox" name="no4" value="Y">
-						<%} %>)		
+						<%
+						}
+						%>)		
 						</td>
 				</tr>
 				<tr>
 				<th>갑근세</th>
 					<td colspan="3" align="center">
-						<%if(empSal.getEarIncome() != null){ %>
-						<%if(empSal.getEarIncome().equals("Y") == true)%>
+						<%
+						if(empSal.getEarIncome() != null){
+						%>
+						<%
+						if(empSal.getEarIncome().equals("Y") == true)
+						%>
 						<input type="checkbox" name="earner1" class="money1"value="Y" checked>
 						근로소득자 (근로소득간이세액표)새액:
 							<select name="earner1up" class="ear1up">
-								<option value="30"<%=eIn[0] %>>30%</option>
-								<option value="50"<%=eIn[1] %>>50%</option>
-								<option value="80"<%=eIn[2] %>>80%</option>
-								<option value="100"<%=eIn[3] %>>100%</option>
-								<option value="120"<%=eIn[4] %>>120%</option>
+								<option value="30"<%=eIn[0]%>>30%</option>
+								<option value="50"<%=eIn[1]%>>50%</option>
+								<option value="80"<%=eIn[2]%>>80%</option>
+								<option value="100"<%=eIn[3]%>>100%</option>
+								<option value="120"<%=eIn[4]%>>120%</option>
 							</select><br><br>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<input type="checkbox" name="earner1" class="money1"value="Y">
 						근로소득자 (근로소득간이세액표)새액:
 							<select name="earner1up" class="ear1up">
@@ -1142,34 +1227,70 @@ text-align:center;
 								<option value="100">100%</option>
 								<option value="120">120%</option>
 							</select><br><br>
-							<%} %>
-						<% if(empSal.getBsnIncome() != null){%>
-						<% if(empSal.getBsnIncome().equals("Y") == true) %>
+							<%
+							}
+							%>
+						<%
+						if(empSal.getBsnIncome() != null){
+						%>
+						<%
+						if(empSal.getBsnIncome().equals("Y") == true)
+						%>
 						<input type="checkbox" name="earner2" class="money2"value="3.3" checked>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<input type="checkbox" name="earner2" class="money2"value="3.3" >
-						<%} %>사업 소득자(3.3%)
-						<% if(empSal.getDailyJob() != null){%>
-						<%if(empSal.getDailyJob().equals("Y") == true)%>
+						<%
+						}
+						%>사업 소득자(3.3%)
+						<%
+						if(empSal.getDailyJob() != null){
+						%>
+						<%
+						if(empSal.getDailyJob().equals("Y") == true)
+						%>
 						<input type="checkbox" name="earner3"class="daily" value="2.9" checked>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<input type="checkbox" name="earner3"class="daily" value="2.9" >
-						<%} %>일용직(2.9%)
-						<% if(empSal.getEtcIncome() != null){%>
-						<% if(empSal.getEtcIncome().equals("Y") == true)%>
+						<%
+						}
+						%>일용직(2.9%)
+						<%
+						if(empSal.getEtcIncome() != null){
+						%>
+						<%
+						if(empSal.getEtcIncome().equals("Y") == true)
+						%>
 						<input type="checkbox" name="earner4"class="etcbsn" value="8.8" checked>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<input type="checkbox" name="earner4"class="etcbsn"  value="8.8">
-						<%} %>기타소득자(8.8%)
-						<% if(empSal.getEarBsnIncome() != null){%>
-						<%if(empSal.getEarBsnIncome().equals("Y") == true)%>
+						<%
+						}
+						%>기타소득자(8.8%)
+						<%
+						if(empSal.getEarBsnIncome() != null){
+						%>
+						<%
+						if(empSal.getEarBsnIncome().equals("Y") == true)
+						%>
 						<input type="checkbox" name="earner5" class="money3" checked>
-						<%}else{ %>
+						<%
+						}else{
+						%>
 						<input type="checkbox" name="earner5" class="money3">
-						<%} %>근로/사업소득자
+						<%
+						}
+						%>근로/사업소득자
 					</td>
 				</tr>
-				<%}else{ %>
+				<%
+				}else{
+				%>
 				<tr id="no4" align="center">
 				<th>4대보험</th>
 				
@@ -1206,7 +1327,9 @@ text-align:center;
 						<input type="checkbox" name="earner5" class="money3">근로/사업소득자
 					</td>
 				</tr>
-				<%} %>
+				<%
+				}
+				%>
 			</table>
 			<!-- 부양가족~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 			<h2>부양가족</h2>
@@ -1222,111 +1345,150 @@ text-align:center;
 						<th>동거여부</th>
 						<th>다자녀</th>
 					</tr>
-					<%if(dpenList != null) {%>
-					<%for(Dependents d : dpenList){ %>
-					<% switch(d.getRship().trim()){
-					
-						case "0" : rship[0] = "selected";break;
-						case "배우자" : rship[1] = "selected";break;
-						case "아들" : rship[2] = "selected";break;
-						case "딸" : rship[3] = "selected";break;
-						case "부" : rship[4] = "selected";break;
-						case "모" : rship[5] = "selected";break;
-						case "형제" : rship[6] = "selected";break;
-						case "자매" : rship[7] = "selected";break;
-						case "장인" : rship[8] = "selected";break;
-						case "장모" : rship[9] = "selected";break;
-						case "조부" : rship[10] = "selected";break;
-						case "조모" : rship[11] = "selected";break;
-						case "시아버지" : rship[12] = "selected";break;
-						case "시어머니" : rship[13] = "selected";break;
-							}
-						%>				
+					<%
+					if(dpenList != null) {
+					%>
+					<%
+					for(DependentsVo d : dpenList){
+					%>
+					<%
+					switch(d.getRship().trim()){
+											
+												case "0" : rship[0] = "selected";break;
+												case "배우자" : rship[1] = "selected";break;
+												case "아들" : rship[2] = "selected";break;
+												case "딸" : rship[3] = "selected";break;
+												case "부" : rship[4] = "selected";break;
+												case "모" : rship[5] = "selected";break;
+												case "형제" : rship[6] = "selected";break;
+												case "자매" : rship[7] = "selected";break;
+												case "장인" : rship[8] = "selected";break;
+												case "장모" : rship[9] = "selected";break;
+												case "조부" : rship[10] = "selected";break;
+												case "조모" : rship[11] = "selected";break;
+												case "시아버지" : rship[12] = "selected";break;
+												case "시어머니" : rship[13] = "selected";break;
+													}
+					%>				
 					 <tr>
 						<td><input type="checkbox" class="fychk" name="fychk"></td>
 						<td>
 							<select id="rship" name="rship">
 								<option value="0"<%=rship[0]%>>--관계구분--</option> 
-								<option value="배우자"<%= rship[1] %>>배우자</option>
-								<option value="아들"<%=rship[2] %>>아들</option>
-								<option value="딸"<%=rship[3] %>>딸</option>
-								<option value="부"<%=rship[4] %>>부</option>
-								<option value="모"<%=rship[5] %>>모</option>
-								<option value="형제"<%=rship[6] %>>형제</option>
-								<option value="자매"<%=rship[7] %>>자매</option>
-								<option value="장인"<%=rship[8] %>>장인</option>
-								<option value="장모"<%=rship[9] %>>장모</option>
-								<option value="조부"<%=rship[10] %>>조부</option>
-								<option value="조모"<%=rship[11] %>>조모</option>
-								<option value="시아버지"<%=rship[12] %>>시아버지</option>
-								<option value="시어머니"<%=rship[13] %>>시어머니</option>
+								<option value="배우자"<%=rship[1]%>>배우자</option>
+								<option value="아들"<%=rship[2]%>>아들</option>
+								<option value="딸"<%=rship[3]%>>딸</option>
+								<option value="부"<%=rship[4]%>>부</option>
+								<option value="모"<%=rship[5]%>>모</option>
+								<option value="형제"<%=rship[6]%>>형제</option>
+								<option value="자매"<%=rship[7]%>>자매</option>
+								<option value="장인"<%=rship[8]%>>장인</option>
+								<option value="장모"<%=rship[9]%>>장모</option>
+								<option value="조부"<%=rship[10]%>>조부</option>
+								<option value="조모"<%=rship[11]%>>조모</option>
+								<option value="시아버지"<%=rship[12]%>>시아버지</option>
+								<option value="시어머니"<%=rship[13]%>>시어머니</option>
 							</select>
 						</td>
-						<td><input type="text" name="fyname" value="<%=d.getfName() %>" required></td>
+						<td><input type="text" name="fyname" value="<%=d.getfName()%>" required></td>
 						<td>
-						<%if(d.getItNalfor().equals("내국인")== true){ %>
+						<%
+						if(d.getItNalfor().equals("내국인")== true){
+						%>
 							<select id="itfor" name="fyitfornal"> 
 								<option value="내국인" selected>내국인</option>
 								<option value="외국인">외국인</option>
 							</select>
-							<%}else{ %>
+							<%
+							}else{
+							%>
 							<select id="itfor" name="fyitfornal"> 
 								<option value="내국인">내국인</option>
 								<option value="외국인" selected>외국인</option>
 							</select>
-							<%} %>
+							<%
+							}
+							%>
 						</td>
-						<td><%if(d.getDibility().equals("Y")==true){ %>
+						<td><%
+						if(d.getDibility().equals("Y")==true){
+						%>
 							<select id="itfor" name="DIBILITY"> 
 								<option value="N">아니오</option>
 								<option value="Y" selected>예</option>
 							</select>
-							<%}else{ %>
+							<%
+							}else{
+							%>
 							<select id="itfor" name="DIBILITY"> 
 								<option value="N" selected>아니오</option>
 								<option value="Y">예</option>
 							</select>
-							<%} %>
+							<%
+							}
+							%>
 						</td>
-						<td><%if(d.gethIsc().equals("Y") == true){ %>
+						<td><%
+						if(d.gethIsc().equals("Y") == true){
+						%>
 							<select id="itfor" name="H_ISC"> 
 								<option value="N">아니오</option>
 								<option value="Y" selected>예</option>
 							</select>
-							<%}else{ %>
+							<%
+							}else{
+							%>
 							<select id="itfor" name="H_ISC"> 
 								<option value="N" selected>아니오</option>
 								<option value="Y">예</option>
 							</select>
-							<%} %>
+							<%
+							}
+							%>
 							</td>
-						<td><%if(d.getiTogether().equals("Y") == true){ %>
+						<td><%
+						if(d.getiTogether().equals("Y") == true){
+						%>
 							<select id="itfor" name="I_TOGETHER"> 
 								<option value="N">아니오</option>
 								<option value="Y" selected>예</option>
 							</select>
-							<%}else{ %>
+							<%
+							}else{
+							%>
 							<select id="itfor" name="I_TOGETHER"> 
 								<option value="N" selected>아니오</option>
 								<option value="Y">예</option>
 							</select>
-							<%} %>
+							<%
+							}
+							%>
 							</td>
-						<td><%if(d.getmChild().equals("Y") == true){ %>
+						<td><%
+						if(d.getmChild().equals("Y") == true){
+						%>
 							<select id="itfor" name="M_CHILD"> 
 								<option value="N">아니오</option>
 								<option value="Y" selected>예</option>
 							</select>
-							<%}else{ %>
+							<%
+							}else{
+							%>
 							<select id="itfor" name="M_CHILD"> 
 								<option value="N" selected>아니오</option>
 								<option value="Y">예</option>
 							</select>
-							<%} %>
+							<%
+							}
+							%>
 							</td>
 					</tr>
-						<%} %>
-					<%}else{%>
+						<%
+						}
+						%>
+					<%
+					}else{
+					%>
 					<tr>
 						<td><input type="checkbox" class="fychk" name="fychk"></td>
 						<td>
@@ -1420,7 +1582,9 @@ text-align:center;
 							</select></td>
 					</tr>
 					
-					<%} %>
+					<%
+										}
+										%>
 				</table>
 			<!-- 학력정보페이지~~~ -->
 				<h2>학력정보</h2>
@@ -1435,20 +1599,26 @@ text-align:center;
 						<th>이수</th>
 					</tr>
 					<tr>
-					<%if(eduList != null){ %>
-					<%for(Education e : eduList){ %>
+					<%
+					if(eduList != null){
+					%>
+					<%
+					for(EducationVo e : eduList){
+					%>
 						<td><input type="checkbox" class="shchk" name="shchk"></td>
 						<td>
-						<% switch(e.getItnalFor().trim()){
-					
-						case "0" : fyshcl[0] = "selected";break;
-						case "초등학교" : fyshcl[1] = "selected";break;
-						case "중학교" : fyshcl[2] = "selected";break;
-						case "고등학교" : fyshcl[3] = "selected";break;
-						case "대학교" : fyshcl[4] = "selected";break;
-						case "석사" : fyshcl[5] = "selected";break;
-						case "박사" : fyshcl[6] = "selected";break;
-						}%>	
+						<%
+						switch(e.getItnalFor().trim()){
+									
+										case "0" : fyshcl[0] = "selected";break;
+										case "초등학교" : fyshcl[1] = "selected";break;
+										case "중학교" : fyshcl[2] = "selected";break;
+										case "고등학교" : fyshcl[3] = "selected";break;
+										case "대학교" : fyshcl[4] = "selected";break;
+										case "석사" : fyshcl[5] = "selected";break;
+										case "박사" : fyshcl[6] = "selected";break;
+										}
+						%>	
 							<select id="shcool" name="shcool">
 								<option value="0"<%=fyshcl[0]%>>--구분--</option> 
 								<option value="초등학교" <%=fyshcl[1]%>>초등학교</option>
@@ -1459,19 +1629,21 @@ text-align:center;
 								<option value="박사" <%=fyshcl[6]%>>박사</option>
 							</select>
 						</td>
-						<td><input type="date" name="AD_DATE" min="1960-01-01" max="9999-12-31" value="<%=e.getAdDate() %>" required></td>
-						<td><input type="date" name="GR_DATE" min="1960-01-01" max="9999-12-31" value="<%=e.getGrDate() %>" required></td>
-						<td><input type="text" name="SCH_NAME"value="<%=e.getSchName() %>" required></td>
-						<td><input type="text" name="MAJOR" value="<%=e.getMajor() %>" required></td>
+						<td><input type="date" name="AD_DATE" min="1960-01-01" max="9999-12-31" value="<%=e.getAdDate()%>" required></td>
+						<td><input type="date" name="GR_DATE" min="1960-01-01" max="9999-12-31" value="<%=e.getGrDate()%>" required></td>
+						<td><input type="text" name="SCH_NAME"value="<%=e.getSchName()%>" required></td>
+						<td><input type="text" name="MAJOR" value="<%=e.getMajor()%>" required></td>
 						<td>
-						<% switch(e.getTaking()){
-					
-						case "0" : taking[0] = "selected";break;
-						case "졸업" : taking[1] = "selected";break;
-						case "수료" : taking[2] = "selected";break;
-						case "자퇴" : taking[3] = "selected";break;
-						case "재학" : taking[4] = "selected";break;
-						}%>	
+						<%
+						switch(e.getTaking()){
+									
+										case "0" : taking[0] = "selected";break;
+										case "졸업" : taking[1] = "selected";break;
+										case "수료" : taking[2] = "selected";break;
+										case "자퇴" : taking[3] = "selected";break;
+										case "재학" : taking[4] = "selected";break;
+										}
+						%>	
 							<select id="TAKING" name="TAKING">
 								<option value="0"<%=taking[0]%>>--구분--</option> 
 								<option value="졸업"<%=taking[1]%>>졸업</option>
@@ -1482,8 +1654,12 @@ text-align:center;
 						</td>
 					</tr>
 					
-					<%} %>
-					<%}else{ %>
+					<%
+										}
+										%>
+					<%
+					}else{
+					%>
 						<tr>
 						<td><input type="checkbox" class="shchk" name="shchk"></td>
 						<td>
@@ -1538,7 +1714,9 @@ text-align:center;
 							</select>
 						</td>
 					</tr>
-					<%} %>
+					<%
+					}
+					%>
 				</table>
 				<!-- 경력사항 테이블~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 				<h2>경력사항</h2>
@@ -1553,8 +1731,12 @@ text-align:center;
 						<th>담당직무</th>
 						<th>퇴사사유</th>
 					</tr>
-					<%if(carList != null){ %>
-						<%for(Career c : carList){ %>
+					<%
+					if(carList != null){
+					%>
+						<%
+						for(CareerVo c : carList){
+						%>
 					<tr>
 						<td><input type="checkbox" class="comchk" name="comchk"<%=emp.getEmpId() %>></td>
 						<td><input type="text" class="comchk" name="COM_NAME"value="<%=c.getComName() %>" required></td>

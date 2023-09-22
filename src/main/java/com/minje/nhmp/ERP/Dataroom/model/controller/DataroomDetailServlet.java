@@ -44,7 +44,7 @@ public class DataroomDetailServlet extends HttpServlet {
 					DataroomService dataroomservice = new DataroomService();
 					dataroomservice.updateReadCount(dataroomNo, loginEmployee);	//조회수 1증가 처리를 위한 서비스단 보내기
 					
-					Dataroom dataroom = new DataroomService().selectOne(dataroomNo, loginEmployee);
+					DataroomVo dataroom = new DataroomService().selectOne(dataroomNo, loginEmployee);
 					
 					RequestDispatcher view = null;
 					
