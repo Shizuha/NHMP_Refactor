@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.minje.nhmp.Main.service.RegistrationService;
-import com.minje.nhmp.Main.vo.RegistrationVo;
+// import com.minje.nhmp.Main.service.RegistrationService;
+// import com.minje.nhmp.Main.vo.RegistrationVo;
 
 @WebServlet("/servicebuy")
 public class RegistrationServlet extends HttpServlet {
@@ -21,7 +21,7 @@ public class RegistrationServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 서비스 등록 컨트롤러
-		RegistrationVo CRT = new RegistrationService().insertCRT();
+		// RegistrationVo CRT = new RegistrationService().insertCRT();
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
